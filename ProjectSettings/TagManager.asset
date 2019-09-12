@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall1
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - 
   - 
   - Floor
-  - 
-  - 
+  - Wall
+  - Item
   - 
   - 
   - 
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 776421721
+    locked: 0
+  - name: Walls
+    uniqueID: 1418395599
+    locked: 0
+  - name: Item
+    uniqueID: 1381691865
+    locked: 0
+  - name: Player
+    uniqueID: 1542076523
     locked: 0
