@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f);
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.gameObject.tag);
+            //Debug.Log(hit.collider.gameObject.tag);
 
             canMove = false;
         }
