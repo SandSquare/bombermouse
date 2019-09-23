@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    
+
     public void StartGame()
     {
         SceneManager.LoadScene("Level 1");
     }
 
-    
+    public void QuitGame()
+    {
+        //Debug.Log("lopetus");
+        Application.Quit();
+    }
 
 }
