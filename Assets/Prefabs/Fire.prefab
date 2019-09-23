@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ede0bc39317a414aa049a07f54d0334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnTime: 2
+  burnTime: 1
   destructibleWall:
     serializedVersion: 2
     m_Bits: 512

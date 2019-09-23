@@ -19,8 +19,6 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Debug.Log(destructibleWall.value + "   " + gameObject.layer);
         timer += Time.deltaTime;
         if (timer > burnTime)
         {
@@ -28,6 +26,12 @@ public class Fire : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.IsTouchingLayers())
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
