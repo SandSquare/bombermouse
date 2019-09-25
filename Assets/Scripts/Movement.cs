@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     bool legalMove;
     Vector2 direction;
 
+    [SerializeField]
+    LayerMask solid;
 
     void Update()
     {
@@ -39,6 +41,11 @@ public class Movement : MonoBehaviour
             yDir = (int)Input.GetAxisRaw("Vertical");
         }
 
+        if (xDir != 0 && yDir != 0)
+        {
+            yDir = 0;
+        }
+
 
         direction = new Vector2(xDir, yDir);
         legalMove = AttemptMove();
@@ -58,6 +65,7 @@ public class Movement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f);
         if (hit.collider != null)
         {
+            Debug.Log(hit.collider.gameObject.layer);
             //Debug.Log(hit.collider.gameObject.tag);
             canMove = false;
         }
