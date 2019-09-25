@@ -19,11 +19,17 @@ public class Fire : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    [HideInInspector]
     public bool isHorizontal = false;
+    [HideInInspector]
     public bool isLeft = false;
+    [HideInInspector]
     public bool isRight = false;
+    [HideInInspector]
     public bool isVertical = false;
+    [HideInInspector]
     public bool isUp = false;
+    [HideInInspector]
     public bool isDown = false;
 
     private void Awake()
