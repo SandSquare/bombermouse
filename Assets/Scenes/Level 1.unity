@@ -2726,6 +2726,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 308597141281888007, guid: cceda5278331ea4488de28d5b4cb3227,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8197ccc493ba7ba40829b0324dc30c52,
+        type: 3}
     - target: {fileID: -3518619292577287438, guid: cceda5278331ea4488de28d5b4cb3227,
         type: 3}
       propertyPath: m_Enabled
@@ -3512,7 +3518,7 @@ MonoBehaviour:
   m_SpeedFactor: 10
   solid:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &2060254609
 MonoBehaviour:
   m_ObjectHideFlags: 0

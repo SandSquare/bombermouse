@@ -62,11 +62,16 @@ public class Movement : MonoBehaviour
     {
         bool canMove = true;
         this.GetComponent<BoxCollider2D>().enabled = false;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, solid.value);
         if (hit.collider != null)
         {
+
             Debug.Log(hit.collider.gameObject.layer);
             //Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider)
+            {
+
+            }
             canMove = false;
         }
         this.GetComponent<BoxCollider2D>().enabled = true;
