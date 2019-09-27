@@ -31,7 +31,10 @@ public class Fire : MonoBehaviour
     {
         if (collision.IsTouchingLayers())
         {
-            Destroy(collision.gameObject);
+            if (collision.gameObject.layer == 9)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

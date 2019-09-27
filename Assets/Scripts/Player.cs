@@ -44,7 +44,6 @@ public class Player : MonoBehaviour
         //    direction = vector3.zero;
         //}
         #endregion
-
         if (Input.GetButtonDown("Jump"))
         {
             DropBomb();
