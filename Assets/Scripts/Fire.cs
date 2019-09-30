@@ -9,14 +9,40 @@ public class Fire : MonoBehaviour
     private float timer;
 
     [SerializeField]
-    float burnTime = 2.0f;
+    private float burnTime = 2.0f;
 
     [SerializeField]
-    LayerMask destructibleWall;
+    private LayerMask destructibleWall;
 
+    [SerializeField]
+    private Sprite[] fireSprites;
 
+    private SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
+    [HideInInspector]
+    public bool isHorizontal = false;
+    [HideInInspector]
+    public bool isLeft = false;
+    [HideInInspector]
+    public bool isRight = false;
+    [HideInInspector]
+    public bool isVertical = false;
+    [HideInInspector]
+    public bool isUp = false;
+    [HideInInspector]
+    public bool isDown = false;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+    }
+
+    void Start()
+    {
+        ChangeSprite();
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -24,6 +50,37 @@ public class Fire : MonoBehaviour
         {
             timer = 0;
             Destroy(gameObject);
+        }
+    }
+
+    void ChangeSprite()
+    {
+        if (isHorizontal)
+        {
+            spriteRenderer.sprite = fireSprites[0];
+            if (isLeft)
+            {
+                spriteRenderer.sprite = fireSprites[4];
+            }
+            else if(isRight)
+            {
+                spriteRenderer.sprite = fireSprites[5];
+            }
+        }else if(isVertical)
+        {
+            spriteRenderer.sprite = fireSprites[1];
+            if (isUp)
+            {
+                spriteRenderer.sprite = fireSprites[6];
+            }
+            else if(isDown)
+            {
+                spriteRenderer.sprite = fireSprites[3];
+            }
+        }
+        else
+        {
+            spriteRenderer.sprite = fireSprites[2];
         }
     }
 
