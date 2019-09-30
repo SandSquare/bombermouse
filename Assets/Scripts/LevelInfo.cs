@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blast1 : MonoBehaviour
+public class LevelInfo : MonoBehaviour
 {
     [SerializeField]
-    GameObject fire;
-
+    int bombAmount = 0;
+    // Start is called before the first frame update
     void Start()
     {
         
