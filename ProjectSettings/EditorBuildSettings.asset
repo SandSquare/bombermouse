@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 73f802532fcc6584bbb937a4e973ca18
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/SandBoxTommi.unity
+    guid: 798710304de47ba4a98f17eb5acf98ad
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/TestScene1.unity
+    guid: 93b6be8c039164748b92f68a2e462e68
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/TestScene2.unity
+    guid: 35ea52adc4cfb37438c70558951718e1
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/TestScene3.unity
+    guid: 8980afe3d97d5364d8459559a7446454
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/TestScene4.unity
+    guid: aa47af7b400f4bd42ad8b02834179b53
   m_configObjects: {}

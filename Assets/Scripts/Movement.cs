@@ -65,14 +65,12 @@ public class Movement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, solid.value);
         if (hit.collider != null)
         {
-
-            Debug.Log(hit.collider.gameObject.layer);
-            //Debug.Log(hit.collider.gameObject.tag);
-            if (hit.collider)
+            Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider.gameObject.CompareTag("Wall1"))
             {
-
             }
             canMove = false;
+            //Debug.Log("Exit found.");
         }
         this.GetComponent<BoxCollider2D>().enabled = true;
         return canMove;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8783000980806767184}
   - component: {fileID: 8783000980806767199}
   m_Layer: 10
-  m_Name: Bomb
+  m_Name: Bomb Orange
   m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7ba827a366aba4d8db46c640156b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1449963681608232559, guid: cceda5278331ea4488de28d5b4cb3227,
+  explosionPrefab: {fileID: 1449963681608232559, guid: 9a4a4b135c64c8349a19f7d9b1902fde,
     type: 3}
   indestructibleMask:
     serializedVersion: 2
@@ -103,4 +103,4 @@ MonoBehaviour:
     m_Bits: 512
   explosionLength: 3
   explosionExpandingTime: 0.02
-  bombColor: 0
+  bombColor: 2
