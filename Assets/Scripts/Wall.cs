@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
+    private bool hitpointWall;
+    [SerializeField]
+    private int healthPoint;
+    [SerializeField]
+    private WallType ColorType = WallType.Normal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +23,23 @@ public class Wall : MonoBehaviour
         
     }
 
-    public void DamageWall(object wallDamage)
+    public void DamageWall(int wallDamage)
     {
-        throw new NotImplementedException();
+        if(healthPoint > 1)
+        {
+            healthPoint -= wallDamage;
+        }
+        else if (healthPoint == 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public enum WallType
+    {
+        Normal,
+        Blue,
+        Red,
+        Orange
     }
 }
