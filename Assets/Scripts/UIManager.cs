@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("LevelUI");
     }
 
     public void QuitGame()
