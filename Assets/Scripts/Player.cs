@@ -8,14 +8,29 @@ public class Player : MonoBehaviour
     private bool legalMove;
 
     [SerializeField]
-    GameObject bombPrefab;
+    GameObject[] bombPrefabs;
     Movement movement;
+
+    private LevelInfo levelInfo;
+    public int explosionLength;
+    private int currentBombAmount;
+    
+    List<ObjectColors> bombList = new List<ObjectColors>();
 
 
     void Start()
     {
         legalMove = true;
         movement = GetComponent<Movement>();
+        levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
+
+        explosionLength = levelInfo.explosionLength;
+        currentBombAmount = levelInfo.bombAmount;
+
+        for(int i = 0; i < levelInfo.bombAmount; i++)
+        {
+            bombList.Add(ObjectColors.Normal);
+        }
     }
 
     // Update is called once per frame
@@ -52,9 +67,11 @@ public class Player : MonoBehaviour
 
     private void DropBomb()
     {
-        if (bombPrefab)
-        {
-            Instantiate(bombPrefab, new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefab.transform.rotation);
+        if (bombList.Count > 0)
+        { 
+            Instantiate(bombPrefabs[(int)bombList[0]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[0]].transform.rotation);
+            bombList.RemoveAt(0);
+            currentBombAmount--;
         }
     }
 }
