@@ -11,7 +11,7 @@ public class Wall : MonoBehaviour
     [SerializeField, Range(1,5)]
     private int hitpoints;
     [SerializeField]
-    private WallColors wallColor;
+    public ObjectColors wallColor;
 
     // Start is called before the first frame update
     void Start()
@@ -47,12 +47,12 @@ public class Wall : MonoBehaviour
         HitpointWall,
         ColorWall
     }
+}
 
-    public enum WallColors
-    {
-        Normal,
-        Blue,
-        Orange,
-        Red,
-    }
+public enum ObjectColors
+{
+    Normal,
+    Blue,
+    Orange,
+    Red,
 }

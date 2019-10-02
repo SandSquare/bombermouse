@@ -7,7 +7,6 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField]
     GameObject explosionPrefab;
-
     [SerializeField]
     LayerMask indestructibleMask;
     [SerializeField]
@@ -22,6 +21,8 @@ public class Bomb : MonoBehaviour
     private float timer;
     private float fuseTime = 2.0f;
 
+    [SerializeField]
+    ObjectColors bombColor = ObjectColors.Normal;
 
 
     void Start()
@@ -61,6 +62,7 @@ public class Bomb : MonoBehaviour
             if (!hit.collider)
             { 
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
+                
 
                 // Sprite switch and direction check
 

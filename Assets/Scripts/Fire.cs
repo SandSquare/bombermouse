@@ -12,6 +12,9 @@ public class Fire : MonoBehaviour
     private bool wallDamaged = false;
 
     [SerializeField]
+    private ObjectColors fireColor;
+
+    [SerializeField]
     private float burnTime = 2.0f;
 
     [SerializeField]
@@ -93,7 +96,7 @@ public class Fire : MonoBehaviour
 
         if (collision.IsTouchingLayers() && !wallDamaged)
         {
-            if (collision.gameObject.layer == 9)
+            if (wallHit.layer == 9 && wallHit.GetComponent<Wall>().wallColor == fireColor)
             {
                 wallHit.GetComponent<Wall>().DamageWall(damage);
                 wallDamaged = true;

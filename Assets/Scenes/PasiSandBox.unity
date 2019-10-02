@@ -3261,6 +3261,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b63dbf36130084b8a377c3507cdfac, type: 3}
+--- !u!1001 &1116898829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2984548040167917258, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_Name
+      value: ColorWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917255, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917256, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.31181023
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917256, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.586818
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984548040167917256, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718385314329441668, guid: c8a04b9681ab47a46975fa813af388cc,
+        type: 3}
+      propertyPath: wallColor
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8a04b9681ab47a46975fa813af388cc, type: 3}
 --- !u!1001 &1120296907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5261,5 +5350,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3778266850972728857, guid: 37c1781b3d7a42843b954bf5e40a53a9,
+        type: 3}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 8783000980806767198, guid: 8b0f4611c1992e844adfd00fda06d47c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c1781b3d7a42843b954bf5e40a53a9, type: 3}
