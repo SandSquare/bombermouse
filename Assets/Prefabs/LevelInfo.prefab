@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8061403640171679704}
   m_Layer: 0
   m_Name: LevelInfo
-  m_TagString: Untagged
+  m_TagString: LevelInfo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec79222ec9b362440b66035ae6e9f13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: 
   bombAmount: 3
+  explosionLength: 0

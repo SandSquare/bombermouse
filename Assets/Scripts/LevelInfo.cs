@@ -5,7 +5,14 @@ using UnityEngine;
 public class LevelInfo : MonoBehaviour
 {
     [SerializeField]
-    int bombAmount = 0;
+    private string levelName;
+    [SerializeField, Range(0,50)]
+    public int bombAmount = 0;
+    [SerializeField, Range(0,11)]
+    public int explosionLength;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {

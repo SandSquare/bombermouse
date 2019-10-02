@@ -144,8 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8df3f0a376411f47b7bc3edb0789f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 8783000980806767198, guid: af3aac82020a99540bafcf578d2b48cd,
-    type: 3}
+  bombPrefabs:
+  - {fileID: 8783000980806767198, guid: af3aac82020a99540bafcf578d2b48cd, type: 3}
+  - {fileID: 8783000980806767198, guid: 8b0f4611c1992e844adfd00fda06d47c, type: 3}
+  - {fileID: 8783000980806767198, guid: 2f97a5a360ee992438012ce1c9c3901e, type: 3}
+  - {fileID: 8783000980806767198, guid: 8092c187e3c50474284a9b666d7fee2e, type: 3}
 --- !u!114 &3778266850972728856
 MonoBehaviour:
   m_ObjectHideFlags: 0

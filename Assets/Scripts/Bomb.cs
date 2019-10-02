@@ -24,10 +24,14 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     ObjectColors bombColor = ObjectColors.Normal;
 
+    private GameObject player;
+
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         Invoke("Explode", fuseTime);
+        explosionLength = player.GetComponent<Player>().explosionLength;
     }
 
 
