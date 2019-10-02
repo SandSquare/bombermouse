@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
+    [SerializeField]
     private static int level = 0;
+
 
     void Awake()
     {
-        level = 1;
+        level = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
             instance = this;
         else if (instance != this)
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public static void LoadNextScene()
     {
+        Debug.Log("Loaded scene "+level);
         level++;
         SceneManager.LoadScene(level);
     }
