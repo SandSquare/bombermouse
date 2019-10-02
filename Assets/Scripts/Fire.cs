@@ -8,6 +8,9 @@ public class Fire : MonoBehaviour
 
     private float timer;
 
+    private int damage = 1;
+    private bool wallDamaged = false;
+
     [SerializeField]
     private float burnTime = 2.0f;
 
@@ -86,11 +89,14 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.IsTouchingLayers())
+        GameObject wallHit = collision.gameObject;
+
+        if (collision.IsTouchingLayers() && !wallDamaged)
         {
             if (collision.gameObject.layer == 9)
             {
-                Destroy(collision.gameObject);
+                wallHit.GetComponent<Wall>().DamageWall(damage);
+                wallDamaged = true;
             }
         }
     }
