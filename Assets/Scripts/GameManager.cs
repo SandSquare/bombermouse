@@ -2,13 +2,22 @@
 using System.Collections.Generic;        //Allows us to use Lists. 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
+    private int level = 0;
+    public float levelStartDelay = 2f;
+
     [SerializeField]
-    private static int level = 0;
+    private Text levelText;
+    [SerializeField]
+    private GameObject levelImage;
+    private bool doingSetup;
+
+    
 
 
     void Awake()
@@ -22,29 +31,47 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
-    public static void LoadNextScene()
+    public void LoadNextScene()
     {
         Debug.Log("Loaded scene "+level);
         level++;
+        InitGame();
         SceneManager.LoadScene(level);
     }
 
 
-    public static void LoadScene(int index)
+    public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+
+    public void InitGame()
+    {
+        doingSetup = true;
+        levelText.text = "Level " + level;
+        levelImage.SetActive(true);
+        Invoke("HideLevelImage", levelStartDelay);
+    }
+
+    private void HideLevelImage()
+    {
+        levelImage.SetActive(false);
+        doingSetup = false;
+    }
+
+    public void GameOver()
+    {
+        levelText.text = "You died.";
+        levelImage.SetActive(true);
+    }
+
+    void Update()
+    {
     }
 
     public int GetActiveScene()
     {
         return level;
-    }
-
-    void InitGame()
-    {
-    }
-
-    void Update()
-    {
     }
 }
