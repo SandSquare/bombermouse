@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public int explosionLength;
     private int currentBombAmount;
     
-    List<ObjectColors> bombList = new List<ObjectColors>();
+    public List<ObjectColors> bombList = new List<ObjectColors>();
 
 
     void Start()
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     {
         if (bombList.Count > 0)
         { 
-            Instantiate(bombPrefabs[(int)bombList[0]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[0]].transform.rotation);
+            Instantiate(bombPrefabs[(int)bombList[bombList.Count-1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[0]].transform.rotation);
             bombList.RemoveAt(0);
             currentBombAmount--;
             

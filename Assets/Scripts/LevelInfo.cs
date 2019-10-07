@@ -10,6 +10,8 @@ public class LevelInfo : MonoBehaviour
     public int bombAmount = 0;
     [SerializeField, Range(0,11)]
     public int explosionLength;
+    [SerializeField]
+    public ObjectColors objectColors = ObjectColors.Normal;
 
 
     
@@ -23,5 +25,11 @@ public class LevelInfo : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateColor(ObjectColors color)
+    {
+        this.objectColors = color;
+        Debug.Log(color);
     }
 }

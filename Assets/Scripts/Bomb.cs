@@ -51,6 +51,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector3.left));
 
         GetComponent<SpriteRenderer>().enabled = false;
+        Debug.Log(bombColor);
     }
 
     private IEnumerator CreateExplosions(Vector3 direction)

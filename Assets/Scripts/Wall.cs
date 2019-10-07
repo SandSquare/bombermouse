@@ -35,10 +35,15 @@ public class Wall : MonoBehaviour
             hitpoints -= wallDamage;
             GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
-        else if (hitpoints <= 1)
+        else if (hitpoints <= 1 && WallProperty == WallType.Normal)
         {
             Destroy(gameObject);
         }
+        else if (WallProperty == WallType.ColorWall)
+        {
+            Destroy(gameObject);
+        }
+      
     }
 
     public enum WallType
