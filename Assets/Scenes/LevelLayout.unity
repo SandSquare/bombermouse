@@ -4384,7 +4384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelStartDelay: 2
-  turnDelay: 0.1
+  levelText: {fileID: 0}
+  levelImage: {fileID: 0}
 --- !u!4 &1752300535
 Transform:
   m_ObjectHideFlags: 0
