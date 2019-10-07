@@ -4384,7 +4384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelStartDelay: 2
-  turnDelay: 0.1
+  levelText: {fileID: 0}
+  levelImage: {fileID: 0}
 --- !u!4 &1752300535
 Transform:
   m_ObjectHideFlags: 0
@@ -5247,7 +5248,7 @@ PrefabInstance:
     - target: {fileID: 3778266850972728837, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3778266850972728837, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}

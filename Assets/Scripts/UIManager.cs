@@ -18,4 +18,14 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void MenuButton()
+    {
+        
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
 }

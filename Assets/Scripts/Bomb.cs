@@ -7,7 +7,6 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField]
     GameObject explosionPrefab;
-
     [SerializeField]
     LayerMask indestructibleMask;
     [SerializeField]
@@ -22,11 +21,17 @@ public class Bomb : MonoBehaviour
     private float timer;
     private float fuseTime = 2.0f;
 
+    [SerializeField]
+    ObjectColors bombColor = ObjectColors.Normal;
+
+    private GameObject player;
 
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         Invoke("Explode", fuseTime);
+        explosionLength = player.GetComponent<Player>().explosionLength;
     }
 
 
@@ -46,6 +51,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector3.left));
 
         GetComponent<SpriteRenderer>().enabled = false;
+        Debug.Log(bombColor);
     }
 
     private IEnumerator CreateExplosions(Vector3 direction)
@@ -61,6 +67,7 @@ public class Bomb : MonoBehaviour
             if (!hit.collider)
             { 
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
+                
 
                 // Sprite switch and direction check
 

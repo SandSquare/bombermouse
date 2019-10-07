@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall1
   - Bomb
+  - Exit
+  - LevelInfo
+  - GameManager
   layers:
   - Default
   - TransparentFX

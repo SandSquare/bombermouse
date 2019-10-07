@@ -2,19 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Wall : MonoBehaviour
 {
-    private bool hitpointWall;
     [SerializeField]
-    private int healthPoint;
+    private WallType WallProperty = WallType.Normal;
+    [SerializeField, Range(1,5)]
+    private int hitpoints;
     [SerializeField]
-    private WallType ColorType = WallType.Normal;
+    public ObjectColors wallColor;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(WallProperty == WallType.HitpointWall)
+        {
+            GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
+        }
     }
 
     // Update is called once per frame
@@ -25,21 +30,34 @@ public class Wall : MonoBehaviour
 
     public void DamageWall(int wallDamage)
     {
-        if(healthPoint > 1)
+        if(hitpoints > 1 && WallProperty == WallType.HitpointWall)
         {
-            healthPoint -= wallDamage;
+            hitpoints -= wallDamage;
+            GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
-        else if (healthPoint == 1)
+        else if (hitpoints <= 1 && WallProperty == WallType.Normal)
         {
             Destroy(gameObject);
         }
+        else if (WallProperty == WallType.ColorWall)
+        {
+            Destroy(gameObject);
+        }
+      
     }
 
     public enum WallType
     {
         Normal,
-        Blue,
-        Red,
-        Orange
+        HitpointWall,
+        ColorWall
     }
+}
+
+public enum ObjectColors
+{
+    Normal,
+    Blue,
+    Orange,
+    Red,
 }

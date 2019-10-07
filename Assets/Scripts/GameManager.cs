@@ -1,15 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;        //Allows us to use Lists. 
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
+    private int level = 0;
+    public float levelStartDelay = 2f;
+
+    [SerializeField]
+    private Text levelText;
+    [SerializeField]
+    private GameObject levelImage;
+
+
+    private bool doingSetup;
+
+    
+
 
     void Awake()
     {
-        //Check if instance already exists
+        level = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
             instance = this;
         else if (instance != this)
@@ -18,27 +33,54 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
-    public static void LoadScene()
+    public void LoadNextScene()
     {
-        
+        Debug.Log("Loaded scene "+level);
+        level++;
+        InitGame();
+        SceneManager.LoadScene(level);
     }
 
-    private int level = 3;                                    //Current level number, expressed in game as "Day 1".
-
-    //Awake is always called before any Start functions
-
-
-    //Initializes the game for each level.
-    void InitGame()
+    public void RestartLevel()
     {
-
+        Debug.Log("Restarted scene " + level);
+        InitGame();
+        SceneManager.LoadScene(level);
     }
 
 
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
 
-    //Update is called every frame.
+
+    public void InitGame()
+    {
+        doingSetup = true;
+        levelText.text = "Level " + level;
+        levelImage.SetActive(true);
+        Invoke("HideLevelImage", levelStartDelay);
+    }
+
+    private void HideLevelImage()
+    {
+        levelImage.SetActive(false);
+        doingSetup = false;
+    }
+
+    public void GameOver()
+    {
+        levelText.text = "You died.";
+        levelImage.SetActive(true);
+    }
+
     void Update()
     {
+    }
 
+    public int GetActiveScene()
+    {
+        return level;
     }
 }

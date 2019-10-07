@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3778266850972728839}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,14 +123,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.8}
+    oldSize: {x: 1, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &3778266850972728857
 MonoBehaviour:
@@ -144,8 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8df3f0a376411f47b7bc3edb0789f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 8783000980806767198, guid: af3aac82020a99540bafcf578d2b48cd,
-    type: 3}
+  bombPrefabs:
+  - {fileID: 8783000980806767198, guid: af3aac82020a99540bafcf578d2b48cd, type: 3}
+  - {fileID: 8783000980806767198, guid: 8b0f4611c1992e844adfd00fda06d47c, type: 3}
+  - {fileID: 8783000980806767198, guid: 2f97a5a360ee992438012ce1c9c3901e, type: 3}
+  - {fileID: 8783000980806767198, guid: 8092c187e3c50474284a9b666d7fee2e, type: 3}
 --- !u!114 &3778266850972728856
 MonoBehaviour:
   m_ObjectHideFlags: 0
