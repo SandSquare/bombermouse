@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private Text levelText;
     [SerializeField]
     private GameObject levelImage;
+
+
     private bool doingSetup;
 
     
@@ -35,6 +37,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Loaded scene "+level);
         level++;
+        InitGame();
+        SceneManager.LoadScene(level);
+    }
+
+    public void RestartLevel()
+    {
+        Debug.Log("Restarted scene " + level);
         InitGame();
         SceneManager.LoadScene(level);
     }

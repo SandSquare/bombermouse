@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject[] bombPrefabs;
     Movement movement;
+    GameManager gm;
 
     private LevelInfo levelInfo;
     public int explosionLength;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         legalMove = true;
         movement = GetComponent<Movement>();
         levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
         explosionLength = levelInfo.explosionLength;
         currentBombAmount = levelInfo.bombAmount;
 
-        for(int i = 0; i < levelInfo.bombAmount; i++)
+        for (int i = 0; i < levelInfo.bombAmount; i++)
         {
             bombList.Add(ObjectColors.Normal);
         }
@@ -63,6 +65,11 @@ public class Player : MonoBehaviour
         {
             DropBomb();
         }
+        else if (Input.GetKeyDown("r"))
+        {
+            //Debug.Log("moro");
+            gm.RestartLevel();
+        }
     }
 
     private void DropBomb()
@@ -72,6 +79,7 @@ public class Player : MonoBehaviour
             Instantiate(bombPrefabs[(int)bombList[0]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[0]].transform.rotation);
             bombList.RemoveAt(0);
             currentBombAmount--;
+            
         }
     }
 }
