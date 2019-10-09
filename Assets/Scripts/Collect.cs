@@ -9,15 +9,15 @@ public class Collect : MonoBehaviour
     GameManager gm;
     LevelInfo levelInfo;
     [SerializeField]
-    ObjectColors objectColors = ObjectColors.Normal;
-    [SerializeField]
-    Player player;
+    ObjectColors pickupType = ObjectColors.Normal;
+    private Player player;
 
     void Start()
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         isColliding = false;
         levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,7 +26,7 @@ public class Collect : MonoBehaviour
         {
             isColliding = true;
             Debug.Log("Bomb found" + isColliding);
-            player.bombList.Add(objectColors);
+            player.bombList.Add(pickupType);
             Destroy(gameObject);
         }
     }
