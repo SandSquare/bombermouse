@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557af203a2a69a34095020565f0a657c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpointWall: 0
-  healthPoint: 1
-  ColorType: 0
+  WallProperty: 0
+  hitpoints: 1
+  wallColor: 0
