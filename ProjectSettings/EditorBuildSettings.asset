@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: b9e8d30b1a7896047ad711d3d2924739
   - enabled: 0
-    path: Assets/Scenes/Pates Scenes/TestiLevel.unity
+    path: Assets/Scenes/Pates Scenes/PateLevel1.unity
     guid: 1572a99ee712fb54ebbf888b94af97e2
   - enabled: 0
     path: Assets/Scenes/Pates Scenes/TestiLevel2.unity

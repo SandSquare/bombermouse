@@ -1274,8 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelStartDelay: 0.5
-  levelText: {fileID: 375858372}
-  levelImage: {fileID: 1117825439}
+  splashScreen: {fileID: 0}
 --- !u!4 &221407231
 Transform:
   m_ObjectHideFlags: 0
@@ -2343,18 +2342,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b63dbf36130084b8a377c3507cdfac, type: 3}
---- !u!114 &375858372 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5754140521659381672, guid: be25f94a41e61674080d8e616f0631a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1595468608}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &391193422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4242,7 +4229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667892142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 1, z: -10}
+  m_LocalPosition: {x: 3, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7175,12 +7162,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5790861007910895161, guid: e1b63dbf36130084b8a377c3507cdfac,
     type: 3}
   m_PrefabInstance: {fileID: 642378796}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1117825439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5754140520278997609, guid: be25f94a41e61674080d8e616f0631a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1595468608}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1125131985
 PrefabInstance:
