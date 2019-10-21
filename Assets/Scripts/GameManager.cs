@@ -8,19 +8,22 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
-    private int level = 0;
+    private int level = 1;
     public float levelStartDelay = 2f;
 
-    [SerializeField]
     private Text levelText;
-    [SerializeField]
+    private Text bombText;
     private GameObject levelImage;
 
+    [SerializeField]
+    private GameObject splashScreen;
 
+    private Player player;
     private bool doingSetup;
 
-    
-
+    private void Start()
+    {   
+    }
 
     void Awake()
     {
@@ -30,6 +33,11 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        splashScreen = Instantiate(splashScreen);
+        bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
+        levelText = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
+        levelImage = splashScreen.transform.GetChild(1).gameObject;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
         InitGame();
     }
 
@@ -77,6 +85,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        bombText.text = $"Bombs left: {player.bombList.Count}";
     }
 
     public int GetActiveScene()

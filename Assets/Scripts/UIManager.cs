@@ -28,4 +28,16 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
+    public Animator menuPanel;
+    //public Animator dialog;
+
+    public void OpenSettings()
+    {
+        menuPanel.SetBool("isHidden", true);
+    }
+
+    public void CloseSettings()
+    {
+        menuPanel.SetBool("isHidden", false);
+    }
 }

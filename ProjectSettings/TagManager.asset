@@ -9,6 +9,8 @@ TagManager:
   - Exit
   - LevelInfo
   - GameManager
+  - Item
+  - UI
   layers:
   - Default
   - TransparentFX
