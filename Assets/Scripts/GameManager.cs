@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private GameObject levelImage;
 
     [SerializeField]
+    private UIManager uiManager;
+
+    [SerializeField]
     private GameObject splashScreen;
 
     private Player player;
@@ -39,6 +42,11 @@ public class GameManager : MonoBehaviour
         levelImage = splashScreen.transform.GetChild(1).gameObject;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         InitGame();
+    }
+
+    public void UpdateUI()
+    {
+        uiManager.UpdateUI();
     }
 
     public void LoadNextScene()

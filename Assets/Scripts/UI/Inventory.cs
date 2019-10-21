@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
+    public static Inventory instance;
+
     // Start is called before the first frame update
     void Start()
     {

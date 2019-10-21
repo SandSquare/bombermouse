@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Collect : MonoBehaviour
 {
     GameManager gm;
+    UIManager uimanager;
     LevelInfo levelInfo;
     private Player player;
     private bool isColliding = false;
@@ -22,6 +23,7 @@ public class Collect : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        //uimanager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
         levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         isColliding = false;
@@ -36,12 +38,14 @@ public class Collect : MonoBehaviour
             {
                 Debug.Log("Bomb found!");
                 player.bombList.Add(pickupType);
+                //uimanager.AddBomb(pickupType);
             }
             if (ItemProperty == ItemType.PowerUp)
             {
                 Debug.Log("PowerUp found!");
                 player.explosionLength += powerUpValue;
             }
+            
             Destroy(gameObject);
         }
     }
