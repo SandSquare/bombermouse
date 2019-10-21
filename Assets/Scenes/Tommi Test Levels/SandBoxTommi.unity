@@ -4336,12 +4336,12 @@ PrefabInstance:
     - target: {fileID: 6740220909453719035, guid: f289a3d1696d24a4ab0345e2d1b70a43,
         type: 3}
       propertyPath: pickupType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6740220909453719035, guid: f289a3d1696d24a4ab0345e2d1b70a43,
         type: 3}
       propertyPath: ItemProperty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740220909453719035, guid: f289a3d1696d24a4ab0345e2d1b70a43,
         type: 3}
