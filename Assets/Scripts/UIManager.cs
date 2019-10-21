@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,14 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public Animator menuPanel;
+    //public Animator dialog;
+    GameObject inventoryUI;
+
+    void Start()
+    {
+        inventoryUI = this.gameObject.transform.GetChild(0).gameObject;
+    }
 
     public void StartGame()
     {
@@ -28,8 +37,6 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
-    public Animator menuPanel;
-    //public Animator dialog;
 
     public void OpenSettings()
     {
@@ -39,5 +46,15 @@ public class UIManager : MonoBehaviour
     public void CloseSettings()
     {
         menuPanel.SetBool("isHidden", false);
+    }
+
+    public void UpdateUI()
+    {
+
+    }
+
+    public void AddBomb(ObjectColors pickupType)
+    {
+        //inventoryUI
     }
 }

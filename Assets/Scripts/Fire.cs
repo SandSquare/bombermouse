@@ -41,12 +41,10 @@ public class Fire : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
 
     void Start()
     {
-        ChangeSprite();
     }
 
     void Update()
@@ -59,36 +57,36 @@ public class Fire : MonoBehaviour
         }
     }
 
-    void ChangeSprite()
-    {
-        if (isHorizontal)
-        {
-            spriteRenderer.sprite = fireSprites[0];
-            if (isLeft)
-            {
-                spriteRenderer.sprite = fireSprites[4];
-            }
-            else if(isRight)
-            {
-                spriteRenderer.sprite = fireSprites[5];
-            }
-        }else if(isVertical)
-        {
-            spriteRenderer.sprite = fireSprites[1];
-            if (isUp)
-            {
-                spriteRenderer.sprite = fireSprites[6];
-            }
-            else if(isDown)
-            {
-                spriteRenderer.sprite = fireSprites[3];
-            }
-        }
-        else
-        {
-            spriteRenderer.sprite = fireSprites[2];
-        }
-    }
+    //void ChangeSprite()
+    //{
+    //    if (isHorizontal)
+    //    {
+    //        spriteRenderer.sprite = fireSprites[0];
+    //        if (isLeft)
+    //        {
+    //            spriteRenderer.sprite = fireSprites[4];
+    //        }
+    //        else if(isRight)
+    //        {
+    //            spriteRenderer.sprite = fireSprites[5];
+    //        }
+    //    }else if(isVertical)
+    //    {
+    //        spriteRenderer.sprite = fireSprites[1];
+    //        if (isUp)
+    //        {
+    //            spriteRenderer.sprite = fireSprites[6];
+    //        }
+    //        else if(isDown)
+    //        {
+    //            spriteRenderer.sprite = fireSprites[3];
+    //        }
+    //    }
+    //    else
+    //    {
+    //        spriteRenderer.sprite = fireSprites[2];
+    //    }
+    //}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
