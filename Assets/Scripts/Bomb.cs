@@ -57,52 +57,65 @@ public class Bomb : MonoBehaviour
     private IEnumerator CreateExplosions(Vector3 direction)
     {
         GameObject explosion;
+        Vector3 lastExplosionPosition = transform.position;
 
-        for (int i = 1; i < explosionLength; i++)
+        for (int i = 1; i <= explosionLength; i++)
         {
             RaycastHit2D hit;
 
             hit = Physics2D.Raycast(transform.position, direction, i, indestructibleMask);
 
+            Debug.DrawRay(lastExplosionPosition, direction, Color.blue, 2);
+            
+            if(hit)
+            {
+                if (hit.collider.gameObject.CompareTag("Pipe"))
+                {
+                    hit.collider.gameObject.GetComponent<PipeWall>().CreateExplosion(explosionLength+1 - i, lastExplosionPosition);
+                    break;
+                }
+            }
+
             if (!hit.collider)
             { 
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
+                lastExplosionPosition = transform.position + (i * direction);
 
                 // Sprite switch and direction check
 
-                if(direction == Vector3.up || direction == Vector3.down)
-                {
-                    explosion.GetComponent<Fire>().isVertical = true;
+                //if(direction == Vector3.up || direction == Vector3.down)
+                //{
+                //    explosion.GetComponent<Fire>().isVertical = true;
 
-                    if (explosionLength == i + 1)
-                    {
-                        if(direction == Vector3.up)
-                        {
-                            explosion.GetComponent<Fire>().isUp = true;
-                        }
-                        else if(direction == Vector3.down)
-                        {
-                            explosion.GetComponent<Fire>().isDown = true;
-                        }
-                    }
-                }
-                if(direction == Vector3.left || direction == Vector3.right)
-                {
-                    explosion.GetComponent<Fire>().isHorizontal = true;
+                //    if (explosionLength == i + 1)
+                //    {
+                //        if(direction == Vector3.up)
+                //        {
+                //            explosion.GetComponent<Fire>().isUp = true;
+                //        }
+                //        else if(direction == Vector3.down)
+                //        {
+                //            explosion.GetComponent<Fire>().isDown = true;
+                //        }
+                //    }
+                //}
+                //if(direction == Vector3.left || direction == Vector3.right)
+                //{
+                //    explosion.GetComponent<Fire>().isHorizontal = true;
 
-                    if (explosionLength == i + 1)
-                    {
-                        if (direction == Vector3.left)
-                        {
-                            explosion.GetComponent<Fire>().isLeft = true;
-                        }
-                        else if (direction == Vector3.right)
-                        {
-                            explosion.GetComponent<Fire>().isRight = true;
-                        }
-                    }
-                }
-                if (explosionLength == i + 1)
+                //    if (explosionLength == i + 1)
+                //    {
+                //        if (direction == Vector3.left)
+                //        {
+                //            explosion.GetComponent<Fire>().isLeft = true;
+                //        }
+                //        else if (direction == Vector3.right)
+                //        {
+                //            explosion.GetComponent<Fire>().isRight = true;
+                //        }
+                //    }
+                //}
+                //if (explosionLength == i + 1)
 
                 if (explosion.GetComponent<BoxCollider2D>().IsTouchingLayers(destructibleMask))
                 {
