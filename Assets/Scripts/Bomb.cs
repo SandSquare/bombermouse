@@ -67,7 +67,6 @@ public class Bomb : MonoBehaviour
             if (!hit.collider)
             { 
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
-                
 
                 // Sprite switch and direction check
 
