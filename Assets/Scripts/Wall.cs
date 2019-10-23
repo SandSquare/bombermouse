@@ -9,7 +9,7 @@ public class Wall : MonoBehaviour
     [SerializeField]
     private WallType WallProperty = WallType.Normal;
     [SerializeField, Range(1,5)]
-    private int hitpoints;
+    private int hitpoints = 1;
     [SerializeField]
     public ObjectColors wallColor;
 
@@ -42,8 +42,7 @@ public class Wall : MonoBehaviour
         else if (WallProperty == WallType.ColorWall)
         {
             Destroy(gameObject);
-        }
-      
+        } 
     }
 
     public enum WallType
