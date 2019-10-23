@@ -37,9 +37,10 @@ public class PipeWall : MonoBehaviour
 
         for (int i = 1; i <= explosionLength; i++)
         {
-            RaycastHit2D hit;
+            RaycastHit2D hit, wallHit;
 
             hit = Physics2D.Raycast(startPoint, direction, i, indestructibleMask);
+            wallHit = Physics2D.Raycast(startPoint, direction, i, destructibleMask);
 
             Debug.DrawRay(lastExplosionPosition, direction, Color.blue, 2);
 
@@ -53,7 +54,14 @@ public class PipeWall : MonoBehaviour
                 }
             }
 
-            if (!hit.collider)
+            if (wallHit)
+            {
+                explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
+                lastExplosionPosition = transform.position + (i * direction);
+                break;
+            }
+
+            if (!hit.collider && wallHit.collider)
             {
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
                 lastExplosionPosition = transform.position + (i * direction);

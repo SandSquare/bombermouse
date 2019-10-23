@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tommi Test Levels/TestScene4.unity
     guid: aa47af7b400f4bd42ad8b02834179b53
   - enabled: 1
-    path: Assets/Scenes/PasiSandBox.unity
+    path: Assets/Scenes/Pasi Levels/PasiSandBox.unity
     guid: 2aa753a462630104099b98f2536193c8
   - enabled: 1
     path: Assets/Scenes/Tommi Test Levels/SandBoxTommi.unity
