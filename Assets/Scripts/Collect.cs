@@ -13,7 +13,6 @@ public class Collect : MonoBehaviour
 
     public ObjectColors pickupType = ObjectColors.Normal;
 
-
     public ItemType ItemProperty = ItemType.Bomb;
 
     [SerializeField, Range(-2, 2)]
