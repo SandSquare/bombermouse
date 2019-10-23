@@ -794,7 +794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -98.6, y: 0.0000081062}
+  m_AnchoredPosition: {x: -98.6, y: 0}
   m_SizeDelta: {x: 197.2, y: 393.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1684906289047025734
@@ -1349,7 +1349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 0}
-  inventoryUI: {fileID: 0}
 --- !u!1001 &7540539804191118104
 PrefabInstance:
   m_ObjectHideFlags: 0

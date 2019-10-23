@@ -13,12 +13,27 @@ public class LevelInfo : MonoBehaviour
     [SerializeField]
     public ObjectColors objectColors = ObjectColors.Normal;
 
+    public static LevelInfo instance = null;
 
     
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Two instaances!!");
+            Destroy(gameObject);
+            return;
+        }
     }
 
     // Update is called once per frame

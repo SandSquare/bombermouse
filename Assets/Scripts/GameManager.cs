@@ -25,16 +25,21 @@ public class GameManager : MonoBehaviour
     private bool doingSetup;
 
     private void Start()
-    {   
+    {
     }
 
     void Awake()
     {
         level = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
+        {
             instance = this;
+        }
         else if (instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
         bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
@@ -51,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        Debug.Log("Loaded scene "+level);
+        Debug.Log("Loaded scene " + level);
         level++;
         InitGame();
         SceneManager.LoadScene(level);
