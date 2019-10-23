@@ -55,8 +55,8 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    internal void AddBomb(GameObject gameObject)
+    public void AddBomb(GameObject gameObject)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }
