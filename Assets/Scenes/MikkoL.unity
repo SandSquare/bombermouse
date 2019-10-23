@@ -8010,6 +8010,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombItem (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6367629571101798794, guid: d7a70c6ae513e6444a71853e90d1d896,
+        type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 7193457441680987737, guid: d7a70c6ae513e6444a71853e90d1d896,
         type: 3}
       propertyPath: m_LocalPosition.x
