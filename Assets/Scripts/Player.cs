@@ -10,22 +10,23 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject[] bombPrefabs;
     Movement movement;
-    GameManager gm;
+    //GameManager gm;
 
     private LevelInfo levelInfo;
     public int explosionLength;
     private int currentBombAmount;
-    
-    public List<ObjectColors> bombList = new List<ObjectColors>();
 
+    public List<ObjectColors> bombList = new List<ObjectColors>();
+    private bool isColliding = false;
 
     void Start()
     {
-        gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        //gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         legalMove = true;
         movement = GetComponent<Movement>();
-        levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
+        //levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
 
+        levelInfo = LevelInfo.instance;
         explosionLength = levelInfo.explosionLength;
         currentBombAmount = levelInfo.bombAmount;
 
@@ -68,18 +69,42 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown("r"))
         {
             //Debug.Log("moro");
-            gm.RestartLevel();
+            GameManager.instance.RestartLevel();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Item") && !isColliding)
+        {
+            Collect collect = other.gameObject.GetComponent<Collect>();
+            //isColliding = true;
+            if (collect.ItemProperty == Collect.ItemType.Bomb)
+            {
+                Debug.Log("Bomb found!");
+                bombList.Add(collect.pickupType);
+                InventoryUI.instance.AddBomb(other.gameObject);
+                //uimanager.AddBomb(pickupType);
+            }
+            else if (collect.ItemProperty == Collect.ItemType.PowerUp)
+            {
+                Debug.Log("PowerUp found!");
+                explosionLength += collect.powerUpValue;
+            }
+            Destroy(other.gameObject);
+        }
+    }
+
+
 
     private void DropBomb()
     {
         if (bombList.Count > 0)
-        { 
-            Instantiate(bombPrefabs[(int)bombList[bombList.Count-1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
-            bombList.RemoveAt((int)bombList.Count-1);
+        {
+            Instantiate(bombPrefabs[(int)bombList[bombList.Count - 1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+            bombList.RemoveAt((int)bombList.Count - 1);
             currentBombAmount--;
-            
+            InventoryUI.instance.RemoveBomb();
         }
     }
 }

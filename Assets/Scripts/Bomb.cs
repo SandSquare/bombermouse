@@ -27,6 +27,7 @@ public class Bomb : MonoBehaviour
     private GameObject player;
 
 
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");

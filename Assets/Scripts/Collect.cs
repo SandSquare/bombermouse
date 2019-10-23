@@ -11,14 +11,13 @@ public class Collect : MonoBehaviour
     private Player player;
     private bool isColliding = false;
 
-    [SerializeField]
-    ObjectColors pickupType = ObjectColors.Normal;
+    public ObjectColors pickupType = ObjectColors.Normal;
 
-    [SerializeField]
-    private ItemType ItemProperty = ItemType.Bomb;
+
+    public ItemType ItemProperty = ItemType.Bomb;
 
     [SerializeField, Range(-2, 2)]
-    int powerUpValue = 1;
+    public int powerUpValue = 1;
      
     void Start()
     {
@@ -29,26 +28,7 @@ public class Collect : MonoBehaviour
         isColliding = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !isColliding)
-        {
-            isColliding = true;
-            if (ItemProperty == ItemType.Bomb)
-            {
-                Debug.Log("Bomb found!");
-                player.bombList.Add(pickupType);
-                //uimanager.AddBomb(pickupType);
-            }
-            if (ItemProperty == ItemType.PowerUp)
-            {
-                Debug.Log("PowerUp found!");
-                player.explosionLength += powerUpValue;
-            }
-            
-            Destroy(gameObject);
-        }
-    }
+
 
     private void Update()
     {

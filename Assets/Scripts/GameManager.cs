@@ -25,16 +25,22 @@ public class GameManager : MonoBehaviour
     private bool doingSetup;
 
     private void Start()
-    {   
+    {
+        InventoryUI.instance.Init();
     }
 
     void Awake()
     {
         level = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
+        {
             instance = this;
+        }
         else if (instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
         bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
@@ -51,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        Debug.Log("Loaded scene "+level);
+        Debug.Log("Loaded scene " + level);
         level++;
         InitGame();
         SceneManager.LoadScene(level);
@@ -77,6 +83,7 @@ public class GameManager : MonoBehaviour
         levelText.text = "Level " + level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
+        
     }
 
     private void HideLevelImage()
