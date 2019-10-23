@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InventoryUI.instance.Init();
+        InitGame();
+        //InventoryUI.instance.Init();
     }
 
     void Awake()
@@ -47,7 +48,6 @@ public class GameManager : MonoBehaviour
         levelText = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        InitGame();
     }
 
     public void UpdateUI()
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         level++;
         InitGame();
         SceneManager.LoadScene(level);
+        //InventoryUI.instance.Init();
     }
 
     public void RestartLevel()
@@ -83,7 +84,6 @@ public class GameManager : MonoBehaviour
         levelText.text = "Level " + level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
-        
     }
 
     private void HideLevelImage()
