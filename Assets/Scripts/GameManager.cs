@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InventoryUI.instance.Init();
+        //InventoryUI.instance.Init();
     }
 
     void Awake()
