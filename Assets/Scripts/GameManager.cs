@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        InventoryUI.instance.Init();
     }
 
     void Awake()
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
         levelText.text = "Level " + level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
+        
     }
 
     private void HideLevelImage()

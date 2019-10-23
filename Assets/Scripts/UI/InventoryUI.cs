@@ -38,25 +38,33 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        int length = LevelInfo.instance.bombAmount;
+        for (int i = 0; i < length; i++)
+        {
+            AddBomb(bombSlot);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void AddBomb(Bomb newBomb)
-    {
-        //Instantiate(newBombSlot, Vector3.zero, Quaternion.identity);
-        //bombSlot = newBomb;
-    }
-
-    void UpdateUI()
-    {
 
     }
+
 
     public void AddBomb(GameObject gameObject)
     {
-        //throw new NotImplementedException();
+        Debug.Log("Bomb added to inventory");
+        GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
+        //bombSlot.GetComponent<Image>();
+        newSlot.transform.SetParent(this.gameObject.transform);
+        newSlot.transform.SetSiblingIndex(0);
+    }
+
+    public void RemoveBomb()
+    {
+        Destroy(gameObject.transform.GetChild(0).gameObject);
     }
 }
