@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ public class LevelInfo : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        //GameManager.instance.levelName.text = levelName;
     }
 
     // Update is called once per frame
@@ -44,5 +46,10 @@ public class LevelInfo : MonoBehaviour
     {
         this.objectColors = color;
         Debug.Log(color);
+    }
+
+    public void UpdateLevelName()
+    {
+        //GameManager.instance.levelName.text = levelName;
     }
 }

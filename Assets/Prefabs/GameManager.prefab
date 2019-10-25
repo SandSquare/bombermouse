@@ -44,5 +44,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelStartDelay: 1
+  splashScreenStartDelay: 0.5
+  levelName: {fileID: 0}
+  uiManager: {fileID: 0}
   splashScreen: {fileID: 5754140521992092002, guid: be25f94a41e61674080d8e616f0631a7,
     type: 3}
+  doingSetup: 0
+  levelNames:
+  - 
+  - 
+  - First Steps
+  - Bombs Away
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

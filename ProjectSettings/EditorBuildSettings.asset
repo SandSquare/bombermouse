@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Pates Scenes/TestiLevel2.unity
     guid: b05bdf23b9c4a3f4d845547940953823
   - enabled: 1
-    path: Assets/Scenes/Tommi Test Levels/LevelTemplate Tommi.unity
-    guid: ed03ec0fbd63b6441ae0a2d91c3601f5
-  - enabled: 1
     path: Assets/Scenes/Tommi Test Levels/Level1 Tommi.unity
     guid: 1fd9a114cfd0ae840b16ae6f662453e7
   - enabled: 1

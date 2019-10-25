@@ -86,7 +86,10 @@ public class InventoryUI : MonoBehaviour
 
     public void RemoveBomb()
     {
-        Destroy(gameObject.transform.GetChild(1).gameObject);
+        if (this.gameObject.transform.childCount > 1)
+        {
+            Destroy(gameObject.transform.GetChild(1).gameObject);
+        }
         //Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
     }
 }

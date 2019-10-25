@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
     private int level = 1;
     public float levelStartDelay = 2f;
+    public float splashScreenStartDelay = .05f;
 
     private Text levelNumber;
-    private Text levelName;
+    public Text levelName;
     private Text bombText;
     private GameObject levelImage;
 
@@ -23,7 +24,10 @@ public class GameManager : MonoBehaviour
     private GameObject splashScreen;
 
     private Player player;
-    private bool doingSetup;
+    public bool doingSetup;
+
+    [SerializeField]
+    public string[] levelNames;
 
     private void Start()
     {
@@ -45,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
-        bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
+        //bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
         levelNumber = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
         levelName = splashScreen.transform.GetChild(1).transform.GetChild(1).GetComponent<Text>();
@@ -67,10 +71,14 @@ public class GameManager : MonoBehaviour
         {
             level = levelIndex;
         }
-        InitGame();
         SceneManager.LoadScene(level);
+        //levelName.text = LevelInfo.instance.levelName;
+        //LevelInfo.instance.UpdateLevelName();
+        
         InventoryUI.instance.Init();
         Debug.Log("Loaded scene " + level);
+        InitGame();
+        //Invoke("InitGame", splashScreenStartDelay);
     }
 
     public void RestartLevel()
@@ -91,8 +99,9 @@ public class GameManager : MonoBehaviour
     {
         doingSetup = true;
         levelNumber.text = $"Level {level}:";
-        levelName.text = LevelInfo.instance.levelName;
+        levelName.text = levelNames[level]!="" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
+
         Invoke("HideLevelImage", levelStartDelay);
     }
 
@@ -100,11 +109,13 @@ public class GameManager : MonoBehaviour
     {
         levelImage.SetActive(false);
         doingSetup = false;
+        levelName.text = "";
     }
 
     public void GameOver()
     {
-        levelNumber.text = "You died.";
+        levelNumber.text = "";
+        levelName.text = "You died.";
         levelImage.SetActive(true);
     }
 

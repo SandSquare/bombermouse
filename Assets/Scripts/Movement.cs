@@ -60,6 +60,10 @@ public class Movement : MonoBehaviour
 
     private bool AttemptMove()
     {
+        if (GameManager.instance.doingSetup)
+        {
+            return false;
+        }
         bool canMove = true;
         this.GetComponent<BoxCollider2D>().enabled = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, solid.value);
