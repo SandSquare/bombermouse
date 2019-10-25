@@ -17,6 +17,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField]
     private Sprite[] bombColors;
 
+    [SerializeField]
+    private int maxSize = 6;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +63,9 @@ public class InventoryUI : MonoBehaviour
 
     public void AddBomb(GameObject gameObject)
     {
-        Debug.Log("Bomb added to inventory");
+
+        //Debug.Log("Bomb added to inventory");
+        //Debug.Log($"Number of bombs: {this.gameObject.transform.childCount}");
         //ObjectColors color = gameObject.GetComponent<Collect>().pickupType;
         GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
         newSlot.transform.GetChild(0).GetComponent<Image>().sprite = bombColors[(int)gameObject.GetComponent<Collect>().pickupType];
@@ -68,11 +73,20 @@ public class InventoryUI : MonoBehaviour
 
         //bombSlot.GetComponent<Image>();
         newSlot.transform.SetParent(this.gameObject.transform);
+        newSlot.transform.SetSiblingIndex(1);
         //newSlot.transform.SetSiblingIndex(gameObject.transform.childCount);
+
+        if (this.gameObject.transform.childCount > maxSize + 1)
+        {
+            Debug.Log("Vial discarded");
+            //Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 2).gameObject);
+            Destroy(this.gameObject.transform.GetChild(maxSize - 1).gameObject);
+        }
     }
 
     public void RemoveBomb()
     {
-        Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
+        Destroy(gameObject.transform.GetChild(1).gameObject);
+        //Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
     }
 }

@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             //isColliding = true;
             if (collect.ItemProperty == Collect.ItemType.Bomb)
             {
-                Debug.Log("Bomb found!");
+                Debug.Log($"{collect.pickupType} Vial found!");
                 bombList.Add(collect.pickupType);
                 InventoryUI.instance.AddBomb(other.gameObject);
                 //uimanager.AddBomb(pickupType);
@@ -101,10 +101,13 @@ public class Player : MonoBehaviour
     {
         if (bombList.Count > 0)
         {
-            Instantiate(bombPrefabs[(int)bombList[bombList.Count - 1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+            GameObject b = Instantiate(bombPrefabs[(int)bombList[bombList.Count - 1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+            b.GetComponent<Bomb>().explosionLength = explosionLength;
+            explosionLength = 3;
             bombList.RemoveAt((int)bombList.Count - 1);
             currentBombAmount--;
             InventoryUI.instance.RemoveBomb();
+            
         }
     }
 }

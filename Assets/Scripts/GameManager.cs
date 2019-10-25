@@ -55,13 +55,20 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateUI();
     }
 
-    public void LoadNextScene()
+    public void LoadNextScene(int levelIndex)
     {
-        Debug.Log("Loaded scene " + level);
-        level++;
+        if (levelIndex == 0)
+        {
+            level++;
+        }
+        else
+        {
+            level = levelIndex;
+        }
         InitGame();
         SceneManager.LoadScene(level);
-        //InventoryUI.instance.Init();
+        InventoryUI.instance.Init();
+        Debug.Log("Loaded scene " + level);
     }
 
     public void RestartLevel()
@@ -100,7 +107,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        bombText.text = $"Bombs left: {player.bombList.Count}";
     }
 
     public int GetActiveScene()

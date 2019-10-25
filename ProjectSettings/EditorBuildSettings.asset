@@ -11,15 +11,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tommi Test Levels/LevelUI Tommi.unity
     guid: 53ee1cfe5fafc304eb3202fd52ed7506
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: b9e8d30b1a7896047ad711d3d2924739
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Pates Scenes/PateLevel1.unity
     guid: 1572a99ee712fb54ebbf888b94af97e2
+  - enabled: 0
+    path: Assets/Scenes/Pates Scenes/TestiLevel2.unity
+    guid: b05bdf23b9c4a3f4d845547940953823
   - enabled: 1
-    path: Assets/Scenes/Pates Scenes/PateLevel2.unity
-    guid: fef91721053a2f24dbf1b00b04ebece5
+    path: Assets/Scenes/Tommi Test Levels/LevelTemplate Tommi.unity
+    guid: ed03ec0fbd63b6441ae0a2d91c3601f5
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/Level1 Tommi.unity
+    guid: 1fd9a114cfd0ae840b16ae6f662453e7
+  - enabled: 1
+    path: Assets/Scenes/Tommi Test Levels/Level2 Tommi.unity
+    guid: e43475b827af5d343b552c68de735e75
   - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 73f802532fcc6584bbb937a4e973ca18
@@ -41,7 +50,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pasi Levels/PasiSandBox.unity
     guid: 2aa753a462630104099b98f2536193c8
-  - enabled: 1
-    path: Assets/Scenes/Tommi Test Levels/SandBoxTommi.unity
-    guid: 798710304de47ba4a98f17eb5acf98ad
   m_configObjects: {}

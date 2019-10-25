@@ -8,6 +8,8 @@
 [Aa]ssets/Plugins.meta
 [Aa]ssets/TextMesh*Pro/
 [Aa]ssets/TextMesh*Pro.meta
+[Pp]rojectSettings/EditorBuildSettings.asset
+
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
