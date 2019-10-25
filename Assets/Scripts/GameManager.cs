@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     private int level = 1;
     public float levelStartDelay = 2f;
 
-    private Text levelText;
+    private Text levelNumber;
+    private Text levelName;
     private Text bombText;
     private GameObject levelImage;
 
@@ -45,8 +46,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
         bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
-        levelText = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
+        levelNumber = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
+        levelName = splashScreen.transform.GetChild(1).transform.GetChild(1).GetComponent<Text>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
@@ -88,7 +90,8 @@ public class GameManager : MonoBehaviour
     public void InitGame()
     {
         doingSetup = true;
-        levelText.text = "Level " + level;
+        levelNumber.text = $"Level {level}:";
+        levelName.text = LevelInfo.instance.levelName;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
     }
@@ -101,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        levelText.text = "You died.";
+        levelNumber.text = "You died.";
         levelImage.SetActive(true);
     }
 
