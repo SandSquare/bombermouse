@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
+
     public GameObject gameManager;            //GameManager prefab to instantiate.
+    public GameObject soundManager;
+
+    [SerializeField]
+    private bool soundsOn = false;
 
     void Awake()
     {
@@ -18,8 +23,8 @@ public class Loader : MonoBehaviour
         SceneManager.LoadScene(0, LoadSceneMode.Additive);
 
         //Check if a SoundManager has already been assigned to static variable GameManager.instance or if it's still null
-        //if (SoundManager.instance == null)
-
+        if (SoundManager.Instance == null)
+            Instantiate(soundManager);
         //    //Instantiate SoundManager prefab
         //    Instantiate(soundManager);
     }
