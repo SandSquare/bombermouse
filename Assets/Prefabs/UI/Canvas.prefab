@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 64
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -843,6 +843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombSlot: {fileID: 2724028812595100954, guid: 220a717d08ca6534da9cdc6fb6bcf061,
     type: 3}
+  bombColors: []
 --- !u!1 &1684906289358808305
 GameObject:
   m_ObjectHideFlags: 0
