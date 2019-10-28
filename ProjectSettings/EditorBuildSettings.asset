@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pasi Levels/PasiSandBox.unity
     guid: 2aa753a462630104099b98f2536193c8
+  - enabled: 1
+    path: Assets/Scenes/Pasi Levels/PasiLevelTest.unity
+    guid: 9a24cf55154ac0b42956a4d078b10443
   m_configObjects: {}
