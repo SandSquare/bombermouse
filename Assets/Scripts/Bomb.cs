@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour
     LayerMask destructibleMask;
 
     [SerializeField, Range (0, 20)]
-    int explosionLength = 3;
+    public int explosionLength = 3;
 
     [SerializeField, Range(0, 0.1f)]
     float explosionExpandingTime = 0.02f;
@@ -32,7 +32,7 @@ public class Bomb : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         Invoke("Explode", fuseTime);
-        explosionLength = player.GetComponent<Player>().explosionLength;
+        //explosionLength = player.GetComponent<Player>().explosionLength;
     }
 
 

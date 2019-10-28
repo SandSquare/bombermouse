@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec79222ec9b362440b66035ae6e9f13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: 
+  levelName: Default Level Name
   bombAmount: 3
   explosionLength: 0
+  objectColors: 0

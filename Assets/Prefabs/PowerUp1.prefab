@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupType: 0
   ItemProperty: 1
-  powerUpValue: 1
+  powerUpValue: 18
 --- !u!61 &3344651557004147703
 BoxCollider2D:
   m_ObjectHideFlags: 0

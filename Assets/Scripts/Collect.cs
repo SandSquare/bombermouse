@@ -15,8 +15,8 @@ public class Collect : MonoBehaviour
 
     public ItemType ItemProperty = ItemType.Bomb;
 
-    [SerializeField, Range(-2, 2)]
-    public int powerUpValue = 1;
+    [SerializeField]
+    public int powerUpValue = 18;
      
     void Start()
     {
@@ -25,14 +25,15 @@ public class Collect : MonoBehaviour
         levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         isColliding = false;
+        powerUpValue = 18;
     }
 
 
 
     private void Update()
-    {
-        
+    {  
     }
+
     public enum ItemType
     {
         Bomb,
