@@ -9,7 +9,7 @@ public class Wall : MonoBehaviour
     [SerializeField]
     private WallType WallProperty = WallType.Normal;
     [SerializeField, Range(1,5)]
-    private int hitpoints;
+    private int hitpoints = 1;
     [SerializeField]
     public ObjectColors wallColor;
 
@@ -27,7 +27,7 @@ public class Wall : MonoBehaviour
     {
         
     }
-
+    // This method damages and destroys walls
     public void DamageWall(int wallDamage)
     {
         if(hitpoints > 1 && WallProperty == WallType.HitpointWall)
@@ -35,15 +35,14 @@ public class Wall : MonoBehaviour
             hitpoints -= wallDamage;
             GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
-        else if (hitpoints <= 1 && WallProperty == WallType.Normal)
+        else if (hitpoints <= 1)
         {
             Destroy(gameObject);
         }
         else if (WallProperty == WallType.ColorWall)
         {
             Destroy(gameObject);
-        }
-      
+        } 
     }
 
     public enum WallType

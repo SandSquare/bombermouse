@@ -5,29 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class Collect : MonoBehaviour
 {
-    private bool isColliding = false;
     GameManager gm;
+    UIManager uimanager;
     LevelInfo levelInfo;
-    [SerializeField]
-    ObjectColors objectColors = ObjectColors.Normal;
-    [SerializeField]
-    Player player;
+    private Player player;
+    private bool isColliding = false;
 
+    public ObjectColors pickupType = ObjectColors.Normal;
+
+    public ItemType ItemProperty = ItemType.Bomb;
+
+    [SerializeField]
+    public int powerUpValue = 18;
+     
     void Start()
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-        isColliding = false;
+        //uimanager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
         levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        isColliding = false;
+        powerUpValue = 18;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+
+    private void Update()
+    {  
+    }
+
+    public enum ItemType
     {
-        if (other.CompareTag("Player") && !isColliding)
-        {
-            isColliding = true;
-            Debug.Log("Bomb found" + isColliding);
-            player.bombList.Add(objectColors);
-            Destroy(gameObject);
-        }
+        Bomb,
+        PowerUp
     }
 }

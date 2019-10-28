@@ -43,6 +43,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947fe5b6e2e4d4a46ab43736ca52f3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelStartDelay: 2
-  levelText: {fileID: 0}
-  levelImage: {fileID: 0}
+  levelStartDelay: 1
+  splashScreenStartDelay: 0.5
+  levelName: {fileID: 0}
+  uiManager: {fileID: 0}
+  splashScreen: {fileID: 5754140521992092002, guid: be25f94a41e61674080d8e616f0631a7,
+    type: 3}
+  doingSetup: 0
+  levelNames:
+  - 
+  - 
+  - First Steps
+  - Bombs Away
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
