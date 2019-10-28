@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'My Vials:'
+  m_text: 'My Bombs:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8fb727ac19a430143a9b34f7f54b0bf5, type: 2}
   m_sharedMaterial: {fileID: 1322309982711763229, guid: 8fb727ac19a430143a9b34f7f54b0bf5,
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1003,7 +1003,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombSlot: {fileID: 2724028812595100954, guid: 220a717d08ca6534da9cdc6fb6bcf061,
     type: 3}
-  bombColors: []
+  bombColors:
+  - {fileID: 21300000, guid: d5a845e426f9ebc4bbf1a32b81b45cbd, type: 3}
+  - {fileID: 21300000, guid: ac3785ed5aa07dc45941a2ee0cbb939a, type: 3}
+  - {fileID: 21300000, guid: 401c399fc7586f04d96a8465d43e7dc1, type: 3}
+  - {fileID: 21300000, guid: b2a311e5b39fc76458e9e528bedb23d3, type: 3}
   maxSize: 8
 --- !u!1 &1684906289358808305
 GameObject:
