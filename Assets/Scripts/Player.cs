@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     //GameManager gm;
 
     private LevelInfo levelInfo;
-    public int explosionLength; // TODO: FIRST BOMB HAS LENGTH OF 2 AND AFTER PLACING IT CHANGES TO 3
+    public int explosionLength;
     private int currentBombAmount;
 
     public List<ObjectColors> bombList = new List<ObjectColors>();
@@ -75,6 +75,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.CompareTag("Fire") && !isColliding)
+        {
+            Lose();
+            gameObject.GetComponent<Movement>().enabled = false;
+        }
+
         if (other.CompareTag("Item") && !isColliding)
         {
             Collect collect = other.gameObject.GetComponent<Collect>();
@@ -95,7 +101,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Lose()
+    {
+        //Play death animation and then open lose panel
 
+        UIManager.Instance.OpenLosePanel();
+    }
 
     private void DropBomb()
     {

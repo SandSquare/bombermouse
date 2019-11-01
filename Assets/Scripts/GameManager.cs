@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private Text bombText;
     private GameObject levelImage;
 
-    [SerializeField]
-    private UIManager uiManager;
+    //[SerializeField]
+    //private UIManager uiManager;
 
     [SerializeField]
     private GameObject splashScreen;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        uiManager.UpdateUI();
+        //uiManager.UpdateUI();
     }
 
     public void LoadNextScene(int levelIndex)
