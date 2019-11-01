@@ -1394,9 +1394,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947fe5b6e2e4d4a46ab43736ca52f3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelStartDelay: 0.5
+  levelStartDelay: 1
+  splashScreenStartDelay: 0.05
+  levelName: {fileID: 0}
   uiManager: {fileID: 0}
-  splashScreen: {fileID: 0}
+  splashScreen: {fileID: 1549635919}
+  doingSetup: 0
+  levelNames: []
 --- !u!4 &221407231
 Transform:
   m_ObjectHideFlags: 0
@@ -10735,6 +10739,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb6572f6c6ad554e8f27e3e619036d3, type: 3}
+--- !u!1 &1549635919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5754140521992092002, guid: be25f94a41e61674080d8e616f0631a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1595468608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1549704285
 PrefabInstance:
   m_ObjectHideFlags: 0
