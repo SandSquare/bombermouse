@@ -19,7 +19,7 @@ public class Collect : MonoBehaviour
     public int powerUpValue = 18;
 
     [SerializeField]
-    private int rotationSpeed = 90;
+    private int rotationSpeed = 30;
 
     private float time = 0;
     private int direction = 1;

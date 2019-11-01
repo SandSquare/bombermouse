@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     public void InitGame()
     {
         doingSetup = true;
-        levelNumber.text = $"Level {level}:";
+        levelNumber.text = $"Level {level - 1}:";
         levelName.text = levelNames[level]!="" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
 
