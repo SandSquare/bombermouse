@@ -22,7 +22,8 @@ public class Exit : MonoBehaviour
         {
             Debug.Log("Exit found" + isColliding);
             isColliding = true;
-            GameManager.instance.LoadNextScene(loadLevel);
+            UIManager.Instance.OpenWinPanel(loadLevel);
+            //GameManager.instance.LoadNextScene(loadLevel);
             //GameManager.LoadScene(GameManager.GetActiveScene().buildIndex);
         }
     }

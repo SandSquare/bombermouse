@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private Text bombText;
     private GameObject levelImage;
 
-    [SerializeField]
-    private UIManager uiManager;
+    //[SerializeField]
+    //private UIManager uiManager;
 
     [SerializeField]
     private GameObject splashScreen;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        uiManager.UpdateUI();
+        //uiManager.UpdateUI();
     }
 
     public void LoadNextScene(int levelIndex)
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     public void InitGame()
     {
         doingSetup = true;
-        levelNumber.text = $"Level {level}:";
+        levelNumber.text = $"Level {level - 1}:";
         levelName.text = levelNames[level]!="" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
 
