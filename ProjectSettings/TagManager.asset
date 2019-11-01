@@ -12,6 +12,7 @@ TagManager:
   - Item
   - UI
   - Pipe
+  - Fire
   layers:
   - Default
   - TransparentFX
