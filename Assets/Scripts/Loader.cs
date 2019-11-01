@@ -20,7 +20,7 @@ public class Loader : MonoBehaviour
             Instantiate(gameManager);
 
         //SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
-        SceneManager.LoadScene(0, LoadSceneMode.Additive);
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
 
         //Check if a SoundManager has already been assigned to static variable GameManager.instance or if it's still null
         if (SoundManager.Instance == null)
