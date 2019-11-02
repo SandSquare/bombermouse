@@ -13,11 +13,12 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject LosePanelUI;
     [SerializeField]
-    private GameObject WinPanelUI;
+    public GameObject WinPanelUI;
 
     private int levelToLoad;
 
     public static UIManager Instance = null;
+    public bool windowOpen = false;
 
     private void Awake()
     {
@@ -66,7 +67,7 @@ public class UIManager : MonoBehaviour
         level = levelToLoad;
         if (WinPanelUI == null)
         {
-            if(level <= 1)
+            if (level <= 1)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 return;
@@ -87,18 +88,20 @@ public class UIManager : MonoBehaviour
 
     public void OnNextLevelButton()
     {
-        if (levelToLoad <= 1)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            return;
-        }
-
         GameManager.instance.LoadNextScene(levelToLoad);
+        // if (levelToLoad <= 1)
+        // {
+        //     GameManager.instance.LoadNextScene(levelToLoad);
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //     return;
+        // }
+        // GameManager.instance.LoadNextScene(levelToLoad);
     }
 
     public void OnRestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.instance.RestartLevel();
     }
 
     public void OnMainMenuButton()
@@ -109,7 +112,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        
     }
 
     public void AddBomb(ObjectColors pickupType)

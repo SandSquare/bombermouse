@@ -369,6 +369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitpointWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1874383742744940968, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1874383742744940965, guid: 003b6d400bb6fcc48bfdb109d756af90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -423,6 +428,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351077, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351077, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003b6d400bb6fcc48bfdb109d756af90, type: 3}
