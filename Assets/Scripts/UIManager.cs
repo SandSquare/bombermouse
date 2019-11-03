@@ -42,10 +42,10 @@ public class UIManager : MonoBehaviour
         //inventoryUI = this.gameObject.transform.GetChild(0).gameObject;
     }
 
-    public void PlayOrPauseMusic()
-    {
-        SoundManager.Instance.PlayOrPauseMusic();
-    }
+    //public void PlayOrPauseMusic()
+    //{
+    //    SoundManager.Instance.PlayOrPauseMusic();
+    //}
 
     public void OpenMainMenu()
     {
@@ -89,6 +89,7 @@ public class UIManager : MonoBehaviour
     {
         if (levelToLoad <= 1)
         {
+            FindObjectOfType<SoundManager>().Play("BackgroundMusic");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour
 
     public void OnRestartButton()
     {
+        FindObjectOfType<SoundManager>().Play("BackgroundMusic");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

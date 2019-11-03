@@ -89,12 +89,14 @@ public class Player : MonoBehaviour
             {
                 Debug.Log($"{collect.pickupType} Vial found!");
                 bombList.Add(collect.pickupType);
+                FindObjectOfType<SoundManager>().Play("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);
                 //uimanager.AddBomb(pickupType);
             }
             else if (collect.ItemProperty == Collect.ItemType.PowerUp)
             {
                 Debug.Log("PowerUp found!");
+                FindObjectOfType<SoundManager>().Play("PowerUp");
                 explosionLength += collect.powerUpValue;
             }
             Destroy(other.gameObject);
@@ -106,6 +108,8 @@ public class Player : MonoBehaviour
         //Play death animation and then open lose panel
 
         UIManager.Instance.OpenLosePanel();
+        FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
+        FindObjectOfType<SoundManager>().Play("GameOver");
     }
 
     private void DropBomb()

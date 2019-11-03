@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         Debug.Log(SceneManager.GetActiveScene().buildIndex + 2);
+        FindObjectOfType<SoundManager>().Play("BackgroundMusic");
         SceneManager.LoadScene(2);
     }
 

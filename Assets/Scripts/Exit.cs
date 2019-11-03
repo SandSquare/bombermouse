@@ -22,6 +22,8 @@ public class Exit : MonoBehaviour
         {
             Debug.Log("Exit found" + isColliding);
             isColliding = true;
+            FindObjectOfType<SoundManager>().Play("LevelComplete");
+            FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
             UIManager.Instance.OpenWinPanel(loadLevel);
             //GameManager.instance.LoadNextScene(loadLevel);
             //GameManager.LoadScene(GameManager.GetActiveScene().buildIndex);

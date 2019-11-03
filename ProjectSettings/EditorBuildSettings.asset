@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tommi Test Levels/SandBoxTommi.unity
     guid: 798710304de47ba4a98f17eb5acf98ad
+  - enabled: 1
+    path: Assets/Scenes/Pates Scenes/PateLevel7.unity
+    guid: 173a2fd7d699bc54082d3d161478a52f
+  - enabled: 1
+    path: Assets/Scenes/Pates Scenes/PateLevel8.unity
+    guid: 7c940bd39398e82439f9b4349c232f25
   m_configObjects: {}

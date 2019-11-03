@@ -71,10 +71,11 @@ public class GameManager : MonoBehaviour
         {
             level = levelIndex;
         }
+
         SceneManager.LoadScene(level);
         //levelName.text = LevelInfo.instance.levelName;
         //LevelInfo.instance.UpdateLevelName();
-        
+
         InventoryUI.instance.Init();
         Debug.Log("Loaded scene " + level);
         InitGame();
