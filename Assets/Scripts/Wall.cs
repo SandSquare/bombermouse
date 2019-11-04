@@ -43,7 +43,6 @@ public class Wall : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // EI MENE TÄNNE IKINÄ
         else if (WallProperty == WallType.ColorWall)
         {
             Debug.Log("väri seinä tuhottu");
