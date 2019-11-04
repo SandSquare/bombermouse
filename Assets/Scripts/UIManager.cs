@@ -95,7 +95,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        GameManager.instance.LoadNextScene(levelToLoad);
+        //GameManager.instance.LoadNextScene(levelToLoad);
         // if (levelToLoad <= 1)
         // {
         //     GameManager.instance.LoadNextScene(levelToLoad);
