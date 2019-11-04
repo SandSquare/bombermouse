@@ -62,20 +62,26 @@ public class Player : MonoBehaviour
         //    direction = vector3.zero;
         //}
         #endregion
-        if (Input.GetButtonDown("Jump"))
+        if (!UIManager.Instance.WinPanelUI.activeInHierarchy)
         {
-            DropBomb();
-        }
-        else if (Input.GetKeyDown("r"))
-        {
-            //Debug.Log("moro");
-            GameManager.instance.RestartLevel();
+            if (Input.GetButtonDown("Jump"))
+            {
+                DropBomb();
+            }
+            else if (Input.GetKeyDown("r"))
+            {
+                GameManager.instance.RestartLevel();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                UIManager.Instance.OpenLosePanel();
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Fire") && !isColliding)
+        if (other.CompareTag("Fire") && !isColliding)
         {
             Lose();
             gameObject.GetComponent<Movement>().enabled = false;
@@ -122,7 +128,7 @@ public class Player : MonoBehaviour
             bombList.RemoveAt((int)bombList.Count - 1);
             currentBombAmount--;
             InventoryUI.instance.RemoveBomb();
-            
+
         }
     }
 }

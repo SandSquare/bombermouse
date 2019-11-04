@@ -10,6 +10,8 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
+        // SoundManager.Instance.PlayOrPauseMusic();
         SceneManager.LoadScene(levelNumber);
+        // GameManager.instance.LoadScene(levelNumber);
     }
 }

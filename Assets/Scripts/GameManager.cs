@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
-    private int level = 1;
+    public int level = 1;
     public float levelStartDelay = 2f;
     public float splashScreenStartDelay = .05f;
 
@@ -22,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject splashScreen;
+    [SerializeField]
+    public GameObject levelManager;
 
     private Player player;
     public bool doingSetup;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
+        levelManager = Instantiate(levelManager);
         //bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
         levelNumber = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
