@@ -45,8 +45,8 @@ public class Bomb : MonoBehaviour
     private void Animate()
     {
         SpriteRenderer s = GetComponent<SpriteRenderer>();
-        Color a = s.color;
-        s.color = Color.Lerp(a, Color.red, timer * 0.02f);
+        //Color a = s.color;
+        //s.color = Color.Lerp(a, Color.red, timer * 0.02f);
         float expansion = 0.1f;
         transform.localScale += Vector3.one * expansion * Time.deltaTime;
     }
