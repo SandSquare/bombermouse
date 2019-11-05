@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 1418395599
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fd74b482eaad5694bbf8f4d1de40643d, type: 3}
-  m_Color: {r: 0.3207547, g: 0.23680364, b: 0.17702028, a: 1}
+  m_Sprite: {fileID: 21300000, guid: face8dff7b83dea41b3de330966b587a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallProperty: 1
-  hitpoints: 3
+  hitpoints: 2
   wallColor: 0
 --- !u!1 &3704237855136539668
 GameObject:
@@ -310,17 +310,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 3
+  m_text: 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8fb727ac19a430143a9b34f7f54b0bf5, type: 2}
+  m_sharedMaterial: {fileID: 1322309982711763229, guid: 8fb727ac19a430143a9b34f7f54b0bf5,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479860
-  m_fontColor: {r: 0.7075472, g: 0.19691172, b: 0.19691172, a: 1}
+    rgba: 4293632314
+  m_fontColor: {r: 0.23113208, g: 0.6329867, b: 0.9245283, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     //GameManager gm;
 
     private LevelInfo levelInfo;
-    public int explosionLength;
+    public int explosionLength; // TODO: FIRST BOMB HAS LENGTH OF 2 AND AFTER PLACING IT CHANGES TO 3
     private int currentBombAmount;
 
     public List<ObjectColors> bombList = new List<ObjectColors>();
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         {
             GameObject b = Instantiate(bombPrefabs[(int)bombList[bombList.Count - 1]], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
             b.GetComponent<Bomb>().explosionLength = explosionLength;
-            explosionLength = 3;
+            explosionLength = levelInfo.explosionLength;
             bombList.RemoveAt((int)bombList.Count - 1);
             currentBombAmount--;
             InventoryUI.instance.RemoveBomb();
