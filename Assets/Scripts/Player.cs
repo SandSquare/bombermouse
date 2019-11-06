@@ -62,20 +62,24 @@ public class Player : MonoBehaviour
         //    direction = vector3.zero;
         //}
         #endregion
-        if (!UIManager.Instance.WinPanelUI.activeInHierarchy)
+        if (!UIManager.Instance.windowOpen)
         {
+            if (!movement.enabled)
+            {
+                UnPause();
+            }
+            
             if (Input.GetButtonDown("Jump"))
             {
                 DropBomb();
             }
-            else if (Input.GetKeyDown("r"))
+        }
+        else
+        {
+            if (movement.enabled)
             {
-                GameManager.instance.RestartLevel();
-            }
-            else if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UIManager.Instance.OpenLosePanel();
-            }
+                Pause();
+            }          
         }
     }
 
@@ -84,7 +88,6 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Fire") && !isColliding)
         {
             Lose();
-            gameObject.GetComponent<Movement>().enabled = false;
         }
 
         if (other.CompareTag("Item") && !isColliding)
@@ -111,11 +114,22 @@ public class Player : MonoBehaviour
 
     private void Lose()
     {
+        gameObject.GetComponent<Movement>().enabled = false;
         //Play death animation and then open lose panel
 
         UIManager.Instance.OpenLosePanel();
         FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
         FindObjectOfType<SoundManager>().Play("GameOver");
+    }
+
+    public void Pause()
+    {
+        movement.enabled = false;
+    }
+
+    public void UnPause()
+    {
+        movement.enabled = true;
     }
 
     private void DropBomb()

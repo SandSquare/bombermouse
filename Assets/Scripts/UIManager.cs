@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         LosePanelUI.SetActive(true);
+        windowOpen = true;
     }
 
     public void OpenWinPanel(int level)
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour
             }
         }
         WinPanelUI.SetActive(true);
+        windowOpen = true;
     }
 
     public void OpenSettings()
@@ -117,8 +119,16 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void UpdateUI()
+    void Update()
     {
+        if (Input.GetKeyDown("r"))
+        {
+            GameManager.instance.RestartLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Instance.OpenLosePanel();
+        }
     }
 
     public void AddBomb(ObjectColors pickupType)
