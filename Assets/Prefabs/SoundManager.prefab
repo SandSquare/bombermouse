@@ -77,19 +77,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GlassWallDestroy
     clip: {fileID: 8300000, guid: d41d23bcf36dca24ea80fb1d8b0da46d, type: 3}
-    volume: 1
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: WoodBoxDamage
     clip: {fileID: 8300000, guid: 7e6459d3ee0693b49a068427aae2ff4c, type: 3}
-    volume: 0.6
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: WoodBoxDestroy
     clip: {fileID: 8300000, guid: 7c928c54eb65ced438d3c4b761f639f6, type: 3}
-    volume: 0.6
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
