@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8783000980806767184}
   - component: {fileID: 8783000980806767199}
   m_Layer: 10
-  m_Name: Bomb Orange
+  m_Name: Bomb Green
   m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

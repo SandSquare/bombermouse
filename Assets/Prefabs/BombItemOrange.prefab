@@ -48,6 +48,7 @@ MonoBehaviour:
   pickupType: 2
   ItemProperty: 0
   powerUpValue: 1
+  rotationSpeed: 30
 --- !u!212 &2818890839685805373
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: 1418395599
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 401c399fc7586f04d96a8465d43e7dc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dae0fafd296902041bc6d1d93a93ee11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
