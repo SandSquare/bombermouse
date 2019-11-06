@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
             {
                 UnPause();
             }
-            
             if (Input.GetButtonDown("Jump"))
             {
                 DropBomb();
@@ -125,10 +124,12 @@ public class Player : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
+        movement.enabled = false;
     }
 
     public void UnPause()
     {
+        movement.enabled = true;
         Time.timeScale = 1;
     }
 
