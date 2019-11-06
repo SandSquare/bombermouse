@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class InventoryUI : MonoBehaviour
     private int maxSize = 6;
 
     private bool bombDeleted = false;
+
+    [SerializeField]
+    private TextMeshProUGUI explosionLengthText;
 
 
     // Start is called before the first frame update
@@ -83,6 +87,8 @@ public class InventoryUI : MonoBehaviour
                 bombSlotChild.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
+
+        explosionLengthText.text = FindObjectOfType<Player>().explosionLength.ToString();
     }
 
 
