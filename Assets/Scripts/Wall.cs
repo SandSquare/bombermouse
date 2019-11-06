@@ -8,12 +8,12 @@ public class Wall : MonoBehaviour
 {
     [SerializeField]
     private WallType WallProperty = WallType.Normal;
-    [SerializeField, Range(1,5)]
+    [SerializeField, Range(1, 5)]
     private int hitpoints = 1;
     [SerializeField]
     public ObjectColors wallColor;
-    [SerializeField]
-    private float destroyDelay = 0.2f;
+    [SerializeField, Range(0, 1)]
+    private float destroyDelay = 0.05f;
 
     // Start is called before the first frame update
     void Start()
