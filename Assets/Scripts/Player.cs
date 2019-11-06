@@ -68,14 +68,6 @@ public class Player : MonoBehaviour
             {
                 DropBomb();
             }
-            else if (Input.GetKeyDown("r"))
-            {
-                GameManager.instance.RestartLevel();
-            }
-            else if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UIManager.Instance.OpenLosePanel();
-            }
         }
     }
 

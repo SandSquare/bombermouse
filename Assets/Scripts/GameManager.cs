@@ -87,8 +87,9 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Debug.Log("Restarted scene " + level);
-        InitGame();
-        SceneManager.LoadScene(level);
+        //InitGame();
+        //SceneManager.LoadScene(level);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
