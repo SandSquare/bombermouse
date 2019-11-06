@@ -35,20 +35,20 @@ public class Wall : MonoBehaviour
         if(hitpoints > 1 && WallProperty == WallType.HitpointWall)
         {
             hitpoints -= wallDamage;
-            FindObjectOfType<SoundManager>().Play("WoodBoxDamage");
+            FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDamage");
             GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
         else if (hitpoints <= 1 && WallProperty == WallType.HitpointWall || WallProperty == WallType.Normal)
         {
             Debug.Log("Normaali seinä tuhottu");
-            FindObjectOfType<SoundManager>().Play("WoodBoxDestroy");
+            FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
             Destroy(gameObject, destroyDelay);
         }
 
         else if (WallProperty == WallType.ColorWall)
         {
             Debug.Log("väri seinä tuhottu");
-            FindObjectOfType<SoundManager>().Play("GlassWallDestroy");
+            FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
             Destroy(gameObject, destroyDelay);
         } 
     }

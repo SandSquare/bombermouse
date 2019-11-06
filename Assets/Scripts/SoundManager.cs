@@ -18,7 +18,9 @@ public class SoundManager : MonoBehaviour
     public float HighPitchRange = 1.05f;
 
     [SerializeField]
-    public bool soundsOn = true;
+    public bool musicOn = true;
+    [SerializeField]
+    public bool sfxOn = true;
 
     // Singleton instance.
     public static SoundManager Instance = null;
@@ -26,7 +28,7 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         //If there is not already an instance of SoundManager, set it to this.
-            if (Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -52,19 +54,36 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        Play("BackgroundMusic");
+        PlaySFX("BackgroundMusic");
     }
 
-    public void Play(string name)
+    public void PlaySFX(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (sfxOn)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
-            return;
-        }
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Sound: " + name + " not found!");
+                return;
+            }
 
-        s.source.Play();
+            s.source.Play();
+        }
+    }
+
+    public void PlayMusic(string name)
+    {
+        if (musicOn)
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Sound: " + name + " not found!");
+                return;
+            }
+            s.source.Play();
+        }
     }
 
     public void Stop(string name)

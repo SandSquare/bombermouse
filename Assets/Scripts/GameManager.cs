@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float levelStartDelay = 2f;
     public float splashScreenStartDelay = .05f;
 
+    [SerializeField]
+    private int maxLevels;
+
     private Text levelNumber;
     public Text levelName;
     private Text bombText;
@@ -33,6 +36,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InitGame();
+        maxLevels = UnityEditor.EditorBuildSettings.scenes.Length;
+        //maxLevels = 3;
         //InventoryUI.instance.Init();
     }
 
@@ -73,7 +78,12 @@ public class GameManager : MonoBehaviour
         {
             level = levelIndex;
         }
-
+        // TODO Game clear screen
+        if (level >= maxLevels)
+        {
+            GameClear();
+            return;
+        }
         SceneManager.LoadScene(level);
         //levelName.text = LevelInfo.instance.levelName;
         //LevelInfo.instance.UpdateLevelName();
@@ -120,6 +130,13 @@ public class GameManager : MonoBehaviour
     {
         levelNumber.text = "";
         levelName.text = "You died.";
+        levelImage.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        levelNumber.text = "";
+        levelName.text = "Congratulation. \n You have completed the game. \n Very nice";
         levelImage.SetActive(true);
     }
 

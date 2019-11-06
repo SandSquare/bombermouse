@@ -103,7 +103,7 @@ public class UIManager : MonoBehaviour
     {
         if (levelToLoad <= 1)
         {
-            FindObjectOfType<SoundManager>().Play("BackgroundMusic");
+            FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             GameManager.instance.LoadNextScene(levelToLoad);
             return;
@@ -121,7 +121,7 @@ public class UIManager : MonoBehaviour
 
     public void OnRestartButton()
     {
-        FindObjectOfType<SoundManager>().Play("BackgroundMusic");
+        FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -131,6 +131,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void MusicsOnOff()
+    {
+        SoundManager.Instance.musicOn = SoundManager.Instance.musicOn ? false : true;
+    }
+
+    public void SFXOnOff()
+    {
+        SoundManager.Instance.sfxOn = SoundManager.Instance.sfxOn ? false : true;
+    }
 
     public void Update()
     {
