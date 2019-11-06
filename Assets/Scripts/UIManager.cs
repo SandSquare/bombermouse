@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         LosePanelUI.SetActive(true);
+        windowOpen = true;
     }
 
     public void OpenWinPanel(int level)
@@ -71,6 +72,7 @@ public class UIManager : MonoBehaviour
             }
         }
         WinPanelUI.SetActive(true);
+        windowOpen = true;
     }
 
     public void MenuPanel()
@@ -126,6 +128,7 @@ public class UIManager : MonoBehaviour
         // 0 is MainMenu
         SceneManager.LoadScene(0);
     }
+
 
     public void Update()
     {

@@ -12,6 +12,8 @@ public class Wall : MonoBehaviour
     private int hitpoints = 1;
     [SerializeField]
     public ObjectColors wallColor;
+    [SerializeField]
+    private float destroyDelay = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +42,14 @@ public class Wall : MonoBehaviour
         {
             Debug.Log("Normaali seinä tuhottu");
             FindObjectOfType<SoundManager>().Play("WoodBoxDestroy");
-            Destroy(gameObject);
+            Destroy(gameObject, destroyDelay);
         }
 
         else if (WallProperty == WallType.ColorWall)
         {
             Debug.Log("väri seinä tuhottu");
             FindObjectOfType<SoundManager>().Play("GlassWallDestroy");
-            Destroy(gameObject);
+            Destroy(gameObject, destroyDelay);
         } 
     }
 
@@ -62,7 +64,7 @@ public class Wall : MonoBehaviour
 public enum ObjectColors
 {
     Normal,
-    Blue,
-    Orange,
+    Purple,
+    Green,
     Red,
 }
