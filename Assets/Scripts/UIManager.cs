@@ -77,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     public void MenuPanel()
     {
-        if (PausePanelUI.activeInHierarchy)
+        if (PausePanelUI.activeInHierarchy || WinPanelUI.activeInHierarchy || LosePanelUI.activeInHierarchy)
         {
             //CloseSettings();
             PausePanelUI.SetActive(false);

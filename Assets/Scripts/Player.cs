@@ -124,12 +124,12 @@ public class Player : MonoBehaviour
 
     public void Pause()
     {
-        movement.enabled = false;
+        Time.timeScale = 0;
     }
 
     public void UnPause()
     {
-        movement.enabled = true;
+        Time.timeScale = 1;
     }
 
     private void DropBomb()
