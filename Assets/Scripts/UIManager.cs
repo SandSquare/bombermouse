@@ -81,11 +81,13 @@ public class UIManager : MonoBehaviour
         {
             //CloseSettings();
             PausePanelUI.SetActive(false);
+            windowOpen = false;
         }
         else
         {
             //OpenSettings();
             PausePanelUI.SetActive(true);
+            windowOpen = true;
         }
     }
 
