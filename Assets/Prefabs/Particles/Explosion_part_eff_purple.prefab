@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 727839322725752055}
   - component: {fileID: 727839322725751944}
   m_Layer: 10
-  m_Name: Explosion_part_eff
+  m_Name: Explosion_part_eff_purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9919218, g: 0.9481132, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1361,16 +1361,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.92941177, g: 0.36546698, b: 0.23529409, a: 1}
+        key0: {r: 0.87037426, g: 0.60784316, b: 0.972549, a: 1}
+        key1: {r: 0.6872754, g: 0.10588237, b: 0.8980392, a: 1}
         key2: {r: 0.2264151, g: 0.18262728, b: 0.18262728, a: 1}
         key3: {r: 0.2264151, g: 0.18262728, b: 0.18262728, a: 0}
         key4: {r: 0.2264151, g: 0.18262728, b: 0.18262728, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 20624
-        ctime1: 45104
+        ctime0: 2891
+        ctime1: 28720
         ctime2: 65150
         ctime3: 65150
         ctime4: 65150
@@ -4766,7 +4766,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4e1e67a6c82ec3439e0f40e8ce67bca, type: 2}
+  - {fileID: 2100000, guid: 0e6de21f1a1088149b8adbde986e01ba, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
