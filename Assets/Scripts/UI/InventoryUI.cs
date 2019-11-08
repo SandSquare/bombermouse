@@ -87,8 +87,8 @@ public class InventoryUI : MonoBehaviour
                 bombSlotChild.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-
-        explosionLengthText.text = FindObjectOfType<Player>().explosionLength.ToString();
+        //HAJOAAAA
+        //explosionLengthText.text = FindObjectOfType<Player>().explosionLength.ToString();
     }
 
 
