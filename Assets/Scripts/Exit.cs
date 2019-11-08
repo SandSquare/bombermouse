@@ -24,7 +24,12 @@ public class Exit : MonoBehaviour
             isColliding = true;
             LevelManager.instance.levelPoints[GameManager.instance.level - 1] = 1;
             SaveSystem.SaveGameData(LevelManager.instance);
-            FindObjectOfType<SoundManager>().Play("LevelComplete");
+
+            FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");
+
+            other.gameObject.GetComponent<Movement>().enabled = false;
+            FindObjectOfType<SoundManager>().PlayMusic("LevelComplete");
+
             FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
             UIManager.Instance.OpenWinPanel(loadLevel);
             //GameManager.instance.LoadNextScene(loadLevel);

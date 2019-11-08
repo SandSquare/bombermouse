@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Animator menuPanel;
+    [SerializeField]
+    public GameObject PausePanelUI;
     //public Animator dialog;
     GameObject inventoryUI;
     [SerializeField]
@@ -43,10 +44,6 @@ public class UIManager : MonoBehaviour
         //inventoryUI = this.gameObject.transform.GetChild(0).gameObject;
     }
 
-    //public void PlayOrPauseMusic()
-    //{
-    //    SoundManager.Instance.PlayOrPauseMusic();
-    //}
 
     public void OpenMainMenu()
     {
@@ -60,6 +57,7 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         LosePanelUI.SetActive(true);
+        windowOpen = true;
     }
 
     public void OpenWinPanel(int level)
@@ -74,24 +72,40 @@ public class UIManager : MonoBehaviour
             }
         }
         WinPanelUI.SetActive(true);
+        windowOpen = true;
+    }
+
+    public void MenuPanel()
+    {
+        if (PausePanelUI.activeInHierarchy || WinPanelUI.activeInHierarchy || LosePanelUI.activeInHierarchy)
+        {
+            //CloseSettings();
+            PausePanelUI.SetActive(false);
+            windowOpen = false;
+        }
+        else
+        {
+            //OpenSettings();
+            PausePanelUI.SetActive(true);
+            windowOpen = true;
+        }
     }
 
     public void OpenSettings()
     {
-        menuPanel.SetBool("isHidden", true);
     }
 
     public void CloseSettings()
     {
-        menuPanel.SetBool("isHidden", false);
     }
 
     public void OnNextLevelButton()
     {
         if (levelToLoad <= 1)
         {
-            FindObjectOfType<SoundManager>().Play("BackgroundMusic");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            GameManager.instance.LoadNextScene(levelToLoad);
             return;
         }
 
@@ -107,7 +121,7 @@ public class UIManager : MonoBehaviour
 
     public void OnRestartButton()
     {
-        FindObjectOfType<SoundManager>().Play("BackgroundMusic");
+        FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -117,8 +131,31 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void UpdateUI()
+    public void MusicsOnOff()
     {
+        SoundManager.Instance.musicOn = SoundManager.Instance.musicOn ? false : true;
+    }
+
+    public void SFXOnOff()
+    {
+        SoundManager.Instance.sfxOn = SoundManager.Instance.sfxOn ? false : true;
+    }
+
+    public void Update()
+    {
+        DoInputs();
+    }
+
+    private void DoInputs()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            GameManager.instance.RestartLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Instance.MenuPanel();
+        }
     }
 
     public void AddBomb(ObjectColors pickupType)

@@ -145,3 +145,4 @@ MonoBehaviour:
   WallProperty: 2
   hitpoints: 0
   wallColor: 2
+  destroyDelay: 0.05
