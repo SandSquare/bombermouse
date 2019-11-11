@@ -47,3 +47,6 @@ MonoBehaviour:
   bombAmount: 3
   explosionLength: 0
   objectColors: 0
+  clearTimes:
+  - 0
+  - 0

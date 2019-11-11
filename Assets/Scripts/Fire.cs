@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
 
-    private float timer;
+    public float timer;
 
     private int damage = 1;
     private bool wallDamaged = false;
@@ -19,9 +19,6 @@ public class Fire : MonoBehaviour
 
     [SerializeField]
     private LayerMask destructibleWall;
-
-    [SerializeField]
-    private Sprite[] fireSprites;
 
     private SpriteRenderer spriteRenderer;
 
