@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7ba827a366aba4d8db46c640156b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1449963681608232559, guid: cceda5278331ea4488de28d5b4cb3227,
+  explosionPrefab: {fileID: 727839322725751945, guid: bcb0f6fd7069baf4082d2fe164267441,
     type: 3}
   indestructibleMask:
     serializedVersion: 2
