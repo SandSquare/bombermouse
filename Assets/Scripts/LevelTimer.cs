@@ -6,24 +6,27 @@ using TMPro;
 public class LevelTimer : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI timerText; 
+    private TextMeshProUGUI timerText;
 
+    private bool runTimer;
     private float levelTimer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    private void Start()
+    {
+        runTimer = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        levelTimer += Time.deltaTime;
-
+        if (runTimer && !UIManager.Instance.windowOpen)
+        {
+            levelTimer += Time.deltaTime;
+        }
+        
         UpdateLevelTimer(levelTimer);
     }
 
-    public void UpdateLevelTimer(float totalSeconds)
+    private void UpdateLevelTimer(float totalSeconds)
     {
         int minutes = Mathf.FloorToInt(totalSeconds / 60f);
         int seconds = Mathf.RoundToInt(totalSeconds % 60f);
@@ -37,5 +40,27 @@ public class LevelTimer : MonoBehaviour
         }
 
         timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+    }
+
+    public void StartTimer()
+    {
+        runTimer = true;
+    }
+
+    public void StopTimer()
+    {
+        runTimer = false;
+    }
+
+    public float LevelCleared()
+    {
+        // call when level is cleared and returns time that it took to clear the level
+        StopTimer();
+        return levelTimer;
+    }
+
+    public void ResetTimer()
+    {
+        levelTimer = 0;
     }
 }

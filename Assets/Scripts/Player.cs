@@ -86,7 +86,11 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Fire") && !isColliding)
         {
-            Lose();
+            // Fire kills players only during 0.6 seconds of the explosion
+            if(other.GetComponent<Fire>().timer < 0.6f)
+            {
+                Lose();
+            }   
         }
 
         if (other.CompareTag("Item") && !isColliding)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8254255839103519394}
   m_Layer: 10
   m_Name: Explosion_part_eff_purple
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4830,7 +4830,6 @@ MonoBehaviour:
   destructibleWall:
     serializedVersion: 2
     m_Bits: 512
-  fireSprites: []
   isHorizontal: 0
   isLeft: 0
   isRight: 0

@@ -42,7 +42,8 @@ public class Collect : MonoBehaviour
         if ((int)time%2==0)
         {
             direction = 1;
-        } else
+        }
+        else
         {
             direction = -1;
         }

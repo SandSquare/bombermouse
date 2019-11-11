@@ -7,12 +7,14 @@ public class LevelInfo : MonoBehaviour
 {
     [SerializeField]
     public string levelName = "Make your way out!";
-    [SerializeField, Range(0,50)]
+    [SerializeField, Range(0, 50)]
     public int bombAmount = 0;
-    [SerializeField, Range(0,11)]
+    [SerializeField, Range(0, 11)]
     public int explosionLength;
     [SerializeField]
     public ObjectColors objectColors = ObjectColors.Normal;
+    [SerializeField]
+    public float[] clearTimes = new float[2];
 
     public static LevelInfo instance = null;
 
