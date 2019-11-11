@@ -8,10 +8,12 @@ public class Wall : MonoBehaviour
 {
     [SerializeField]
     private WallType WallProperty = WallType.Normal;
-    [SerializeField, Range(1,5)]
+    [SerializeField, Range(1, 5)]
     private int hitpoints = 1;
     [SerializeField]
     public ObjectColors wallColor;
+    [SerializeField, Range(0, 1)]
+    private float destroyDelay = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,15 +35,21 @@ public class Wall : MonoBehaviour
         if(hitpoints > 1 && WallProperty == WallType.HitpointWall)
         {
             hitpoints -= wallDamage;
+            FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDamage");
             GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
-        else if (hitpoints <= 1)
+        else if (hitpoints <= 1 && WallProperty == WallType.HitpointWall || WallProperty == WallType.Normal)
         {
-            Destroy(gameObject);
+            Debug.Log("Normaali seinä tuhottu");
+            FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
+            Destroy(gameObject, destroyDelay);
         }
+
         else if (WallProperty == WallType.ColorWall)
         {
-            Destroy(gameObject);
+            Debug.Log("väri seinä tuhottu");
+            FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
+            Destroy(gameObject, destroyDelay);
         } 
     }
 
@@ -56,7 +64,7 @@ public class Wall : MonoBehaviour
 public enum ObjectColors
 {
     Normal,
-    Blue,
-    Orange,
+    Purple,
+    Green,
     Red,
 }

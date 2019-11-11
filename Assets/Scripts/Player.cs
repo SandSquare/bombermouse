@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     //GameManager gm;
 
     private LevelInfo levelInfo;
-    public int explosionLength; // TODO: FIRST BOMB HAS LENGTH OF 2 AND AFTER PLACING IT CHANGES TO 3
+    public int explosionLength;
     private int currentBombAmount;
 
     public List<ObjectColors> bombList = new List<ObjectColors>();
@@ -62,19 +62,33 @@ public class Player : MonoBehaviour
         //    direction = vector3.zero;
         //}
         #endregion
-        if (Input.GetButtonDown("Jump"))
+        if (!UIManager.Instance.windowOpen)
         {
-            DropBomb();
+            if (!movement.enabled)
+            {
+                UnPause();
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                DropBomb();
+            }
         }
-        else if (Input.GetKeyDown("r"))
+        else
         {
-            //Debug.Log("moro");
-            GameManager.instance.RestartLevel();
+            if (movement.enabled)
+            {
+                Pause();
+            }          
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Fire") && !isColliding)
+        {
+            Lose();
+        }
+
         if (other.CompareTag("Item") && !isColliding)
         {
             Collect collect = other.gameObject.GetComponent<Collect>();
@@ -83,19 +97,41 @@ public class Player : MonoBehaviour
             {
                 Debug.Log($"{collect.pickupType} Vial found!");
                 bombList.Add(collect.pickupType);
+                FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);
                 //uimanager.AddBomb(pickupType);
             }
             else if (collect.ItemProperty == Collect.ItemType.PowerUp)
             {
                 Debug.Log("PowerUp found!");
+                FindObjectOfType<SoundManager>().PlaySFX("PowerUp");
                 explosionLength += collect.powerUpValue;
             }
             Destroy(other.gameObject);
         }
     }
 
+    private void Lose()
+    {
+        gameObject.GetComponent<Movement>().enabled = false;
+        //Play death animation and then open lose panel
 
+        UIManager.Instance.OpenLosePanel();
+        FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
+        FindObjectOfType<SoundManager>().PlaySFX("GameOver");
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        movement.enabled = false;
+    }
+
+    public void UnPause()
+    {
+        movement.enabled = true;
+        Time.timeScale = 1;
+    }
 
     private void DropBomb()
     {
@@ -107,7 +143,7 @@ public class Player : MonoBehaviour
             bombList.RemoveAt((int)bombList.Count - 1);
             currentBombAmount--;
             InventoryUI.instance.RemoveBomb();
-            
+
         }
     }
 }

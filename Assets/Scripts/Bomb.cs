@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     LayerMask destructibleMask;
 
-    [SerializeField, Range (0, 20)]
+    [SerializeField, Range(0, 20)]
     public int explosionLength = 3;
 
     [SerializeField, Range(0, 0.1f)]
@@ -39,6 +39,16 @@ public class Bomb : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        Animate();
+    }
+
+    private void Animate()
+    {
+        SpriteRenderer s = GetComponent<SpriteRenderer>();
+        //Color a = s.color;
+        //s.color = Color.Lerp(a, Color.red, timer * 0.02f);
+        float expansion = 0.1f;
+        transform.localScale += Vector3.one * expansion * Time.deltaTime;
     }
 
     private void Explode()
@@ -68,8 +78,8 @@ public class Bomb : MonoBehaviour
             wallHit = Physics2D.Raycast(transform.position, direction, i, destructibleMask);
 
             Debug.DrawRay(lastExplosionPosition, direction, Color.blue, 2);
-            
-            if(hit)
+
+            if (hit)
             {
                 if (hit.collider.gameObject.CompareTag("Pipe"))
                 {
@@ -86,7 +96,7 @@ public class Bomb : MonoBehaviour
             }
 
             if (!hit.collider && !wallHit.collider)
-            { 
+            {
                 explosion = Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
                 lastExplosionPosition = transform.position + (i * direction);
             }

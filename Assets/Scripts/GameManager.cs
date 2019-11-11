@@ -6,22 +6,26 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
-    private int level = 1;
+    public int level = 1;
     public float levelStartDelay = 2f;
     public float splashScreenStartDelay = .05f;
+
+    [SerializeField]
+    private int maxLevels;
 
     private Text levelNumber;
     public Text levelName;
     private Text bombText;
     private GameObject levelImage;
 
-    [SerializeField]
-    private UIManager uiManager;
+    //[SerializeField]
+    //private UIManager uiManager;
 
     [SerializeField]
     private GameObject splashScreen;
+    [SerializeField]
+    public GameObject levelManager;
 
     private Player player;
     public bool doingSetup;
@@ -32,6 +36,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InitGame();
+        maxLevels = UnityEditor.EditorBuildSettings.scenes.Length;
+        //maxLevels = 3;
         //InventoryUI.instance.Init();
     }
 
@@ -49,6 +55,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
+        levelManager = Instantiate(levelManager);
         //bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
         levelNumber = splashScreen.transform.GetChild(1).transform.GetChild(0).GetComponent<Text>();
@@ -58,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        uiManager.UpdateUI();
+        //uiManager.UpdateUI();
     }
 
     public void LoadNextScene(int levelIndex)
@@ -71,10 +78,16 @@ public class GameManager : MonoBehaviour
         {
             level = levelIndex;
         }
+        // TODO Game clear screen
+        if (level >= maxLevels)
+        {
+            GameClear();
+            return;
+        }
         SceneManager.LoadScene(level);
         //levelName.text = LevelInfo.instance.levelName;
         //LevelInfo.instance.UpdateLevelName();
-        
+
         InventoryUI.instance.Init();
         Debug.Log("Loaded scene " + level);
         InitGame();
@@ -84,8 +97,9 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Debug.Log("Restarted scene " + level);
-        InitGame();
-        SceneManager.LoadScene(level);
+        //InitGame();
+        //SceneManager.LoadScene(level);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
@@ -98,7 +112,7 @@ public class GameManager : MonoBehaviour
     public void InitGame()
     {
         doingSetup = true;
-        levelNumber.text = $"Level {level}:";
+        levelNumber.text = $"Level {level - 1}:";
         levelName.text = levelNames[level]!="" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
 
@@ -116,6 +130,13 @@ public class GameManager : MonoBehaviour
     {
         levelNumber.text = "";
         levelName.text = "You died.";
+        levelImage.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        levelNumber.text = "";
+        levelName.text = "Congratulation. \n You have completed the game. \n Very nice";
         levelImage.SetActive(true);
     }
 

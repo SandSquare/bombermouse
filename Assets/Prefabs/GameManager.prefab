@@ -46,8 +46,9 @@ MonoBehaviour:
   levelStartDelay: 1
   splashScreenStartDelay: 0.5
   levelName: {fileID: 0}
-  uiManager: {fileID: 0}
   splashScreen: {fileID: 5754140521992092002, guid: be25f94a41e61674080d8e616f0631a7,
+    type: 3}
+  levelManager: {fileID: 6674916752983974412, guid: c822dac6d5753fb4bad39531234ed584,
     type: 3}
   doingSetup: 0
   levelNames:

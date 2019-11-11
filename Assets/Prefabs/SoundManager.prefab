@@ -44,6 +44,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42581b9a89b164486290955f2e3158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: CollectBomb
+    clip: {fileID: 8300000, guid: 2493e467768d5bc4cb93fb731ce260b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PowerUp
+    clip: {fileID: 8300000, guid: d8cc735b4637f2e4e8fe5dba5144aa21, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: 158b9cb765a3d174c9fe96ac9fc1c6e1, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: LevelComplete
+    clip: {fileID: 8300000, guid: ec8a1650fe8e4134790db42495662ef5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 5483804b05332a54b9f383b3821945f6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GlassWallDestroy
+    clip: {fileID: 8300000, guid: d41d23bcf36dca24ea80fb1d8b0da46d, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WoodBoxDamage
+    clip: {fileID: 8300000, guid: 7e6459d3ee0693b49a068427aae2ff4c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WoodBoxDestroy
+    clip: {fileID: 8300000, guid: 7c928c54eb65ced438d3c4b761f639f6, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   EffectsSource: {fileID: 0}
   MusicSource: {fileID: 2932694841621312140}
   LowPitchRange: 0.95
@@ -56,10 +105,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7015151440338213622}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6891cb238d69ea64b9f9d2264b24da21, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 158b9cb765a3d174c9fe96ac9fc1c6e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.131
   m_Pitch: 1
