@@ -18,8 +18,13 @@ public class Movement : MonoBehaviour
     [SerializeField]
     LayerMask solid;
 
+    private float timer;
+
+    [SerializeField, Tooltip("Time it takes for player to move after another move.")]
+    private float inputDelayTime = 0.2f;
+
     void Update()
-    {
+    { 
         // if character is already moving, just return
         if (m_MoveCoroutine != null)
             return;
@@ -50,11 +55,15 @@ public class Movement : MonoBehaviour
         direction = new Vector2(xDir, yDir);
         legalMove = AttemptMove();
 
-        if (direction != Vector2.zero && legalMove)
+        timer += Time.deltaTime;
+
+        if (direction != Vector2.zero && legalMove && inputDelayTime <= timer)
         {
             // start moving your character
             m_MoveCoroutine = Move(direction);
             StartCoroutine(m_MoveCoroutine);
+            Debug.Log(timer);
+            timer = 0;
         }
     }
 

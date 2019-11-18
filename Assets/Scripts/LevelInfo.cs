@@ -13,17 +13,11 @@ public class LevelInfo : MonoBehaviour
     public int explosionLength;
     [SerializeField]
     public ObjectColors objectColors = ObjectColors.Normal;
-    [SerializeField]
+    [SerializeField, Tooltip("0 array is slower time, 1 array is fast time")]
     public float[] clearTimes = new float[2];
 
     public static LevelInfo instance = null;
-
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+ 
 
     private void Awake()
     {
@@ -38,11 +32,6 @@ public class LevelInfo : MonoBehaviour
             return;
         }
         //GameManager.instance.levelName.text = levelName;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void UpdateColor(ObjectColors color)

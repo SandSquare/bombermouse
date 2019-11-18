@@ -64,21 +64,10 @@ public class Player : MonoBehaviour
         #endregion
         if (!UIManager.Instance.windowOpen)
         {
-            if (!movement.enabled)
-            {
-                UnPause();
-            }
             if (Input.GetButtonDown("Jump"))
             {
                 DropBomb();
             }
-        }
-        else
-        {
-            if (movement.enabled)
-            {
-                Pause();
-            }          
         }
     }
 
@@ -123,18 +112,6 @@ public class Player : MonoBehaviour
         UIManager.Instance.OpenLosePanel();
         FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
         FindObjectOfType<SoundManager>().PlaySFX("GameOver");
-    }
-
-    public void Pause()
-    {
-        Time.timeScale = 0;
-        movement.enabled = false;
-    }
-
-    public void UnPause()
-    {
-        movement.enabled = true;
-        Time.timeScale = 1;
     }
 
     private void DropBomb()

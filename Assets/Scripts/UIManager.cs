@@ -40,8 +40,8 @@ public class UIManager : MonoBehaviour
     }
 
     void Start()
-    {
-        //inventoryUI = this.gameObject.transform.GetChild(0).gameObject;
+    { 
+        Time.timeScale = 1;
     }
 
 
@@ -82,12 +82,14 @@ public class UIManager : MonoBehaviour
             //CloseSettings();
             PausePanelUI.SetActive(false);
             windowOpen = false;
+            Time.timeScale = 1;
         }
         else
         {
             //OpenSettings();
             PausePanelUI.SetActive(true);
             windowOpen = true;
+            Time.timeScale = 0;
         }
     }
 
