@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2818890839685805373}
   - component: {fileID: -5927702734088023206}
   m_Layer: 10
-  m_Name: BombItemOrange
+  m_Name: BombItemGreen
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: 1418395599
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: dae0fafd296902041bc6d1d93a93ee11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 610e12a53a731e74ba434b0b19f6b65a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9142857, y: 0.9142857}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.9142857, y: 0.9142857}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
