@@ -40,10 +40,6 @@ public class Fire : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         timer += Time.deltaTime;
