@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     private void Start()
     {
+        SoundManager.Instance.PlayMusic("Menumusic");
     }
     
     public void NewGame()
@@ -32,10 +33,6 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    // public void Test()
-    // {
-    //     gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text += LevelManager.instance.title;
-    // }
 
     public void Quit()
     {

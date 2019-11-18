@@ -10,12 +10,15 @@ public class SoundManager : MonoBehaviour
     public Sound[] sounds;
 
     // Start is called before the first frame update
-    public AudioSource EffectsSource;
-    public AudioSource MusicSource;
+    public AudioSource currentEffectsSource;
+    public AudioSource currentMusicSource;
 
     // Random pitch adjustment range.
     public float LowPitchRange = .95f;
     public float HighPitchRange = 1.05f;
+
+    public float volume = 0.5f;
+    public float soundEffect = 0.5f;
 
     [SerializeField]
     public bool musicOn = true;
@@ -54,7 +57,6 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySFX("BackgroundMusic");
     }
 
     public void PlaySFX(string name)
@@ -69,6 +71,7 @@ public class SoundManager : MonoBehaviour
             }
 
             s.source.Play();
+            currentEffectsSource = s.source;
         }
     }
 
@@ -82,7 +85,12 @@ public class SoundManager : MonoBehaviour
                 Debug.LogWarning("Sound: " + name + " not found!");
                 return;
             }
+            if (currentMusicSource != null)
+            {
+                currentMusicSource.Stop();
+            }
             s.source.Play();
+            currentMusicSource = s.source;
         }
     }
 
@@ -94,8 +102,30 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-
         s.source.Stop();
+    }
+
+    public void StopMusic()
+    {
+        currentMusicSource.volume = 0f;
+    }
+
+    public void StopSFX()
+    {
+        currentEffectsSource.volume = 0f;
+    }
+
+    public void AdjustVolume(float volume)
+    {
+        currentMusicSource.volume = volume;
+    }
+
+    public void AdjustSFX(float volume)
+    {
+        if (currentEffectsSource != null)
+        {
+            currentEffectsSource.volume = volume;
+        }
     }
 
     // Initialize the singleton instance.

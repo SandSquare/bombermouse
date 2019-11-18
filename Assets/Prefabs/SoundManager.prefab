@@ -93,11 +93,26 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  EffectsSource: {fileID: 0}
-  MusicSource: {fileID: 2932694841621312140}
+  - name: Menumusic
+    clip: {fileID: 8300000, guid: 8410e60d3ea1d974fb1bff57e64f0212, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: e0c62d8b2df642045b3b291c8b1fced4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  currentEffectsSource: {fileID: 0}
+  currentMusicSource: {fileID: 0}
   LowPitchRange: 0.95
   HighPitchRange: 1.05
-  soundsOn: 1
+  volume: 0.5
+  soundEffect: 0.5
+  musicOn: 1
+  sfxOn: 1
 --- !u!82 &2932694841621312140
 AudioSource:
   m_ObjectHideFlags: 0
