@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
     }
 
     public int GetActiveScene()
