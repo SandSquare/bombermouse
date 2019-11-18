@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     private void Start()
     {
+        SoundManager.Instance.PlaySFX("BackgroundMusic");
     }
     
     public void NewGame()

@@ -17,6 +17,9 @@ public class SoundManager : MonoBehaviour
     public float LowPitchRange = .95f;
     public float HighPitchRange = 1.05f;
 
+    public float volume = 0.5f;
+    public float soundEffect = 0.5f;
+
     [SerializeField]
     public bool musicOn = true;
     [SerializeField]
@@ -54,7 +57,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySFX("BackgroundMusic");
+        PlayMusic("BackgroundMusic");
     }
 
     public void PlaySFX(string name)
@@ -96,6 +99,11 @@ public class SoundManager : MonoBehaviour
         }
 
         s.source.Stop();
+    }
+
+    public void AdjustVolume(float volume)
+    {
+
     }
 
     // Initialize the singleton instance.
