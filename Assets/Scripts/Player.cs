@@ -21,10 +21,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        //gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         legalMove = true;
         movement = GetComponent<Movement>();
-        //levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
 
         levelInfo = LevelInfo.instance;
         explosionLength = levelInfo.explosionLength;
