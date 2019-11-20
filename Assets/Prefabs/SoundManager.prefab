@@ -111,6 +111,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: BGM2
+    clip: {fileID: 8300000, guid: f3f3fa9833fd18a4d90fa0209dd3f829, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   currentEffectsSource: {fileID: 0}
   currentMusicSource: {fileID: 0}
   musicVolume: 0.5
