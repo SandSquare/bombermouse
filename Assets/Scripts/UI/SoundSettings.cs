@@ -25,12 +25,14 @@ public class SoundSettings : MonoBehaviour
 
     public void AdjustVolume(float volume)
     {
-        SoundManager.Instance.AdjustVolume(volume);
+        SoundManager.Instance.AdjustVolume(volume/10);
     }
 
     public void AdjustSFX(float volume)
     {
-        SoundManager.Instance.AdjustSFX(volume);
+        SoundManager.Instance.AdjustSFX(volume/10);
     }
+
+
 
 }
