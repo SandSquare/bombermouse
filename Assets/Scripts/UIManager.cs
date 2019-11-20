@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     private GameObject LosePanelUI;
     [SerializeField]
     public GameObject WinPanelUI;
+    [SerializeField]
+    private GameObject OptionsPanelUI;
 
     private int levelToLoad;
 
@@ -77,16 +79,21 @@ public class UIManager : MonoBehaviour
 
     public void MenuPanel()
     {
-        if (PausePanelUI.activeInHierarchy || WinPanelUI.activeInHierarchy || LosePanelUI.activeInHierarchy)
+        if (PausePanelUI.activeInHierarchy || WinPanelUI.activeInHierarchy || LosePanelUI.activeInHierarchy || OptionsPanelUI.activeInHierarchy)
         {
-            //CloseSettings();
-            PausePanelUI.SetActive(false);
-            windowOpen = false;
-            Time.timeScale = 1;
+            if (OptionsPanelUI.activeInHierarchy)
+            {
+                CloseSettings();
+            }
+            else
+            {
+                PausePanelUI.SetActive(false);
+                windowOpen = false;
+                Time.timeScale = 1;
+            }
         }
         else
         {
-            //OpenSettings();
             PausePanelUI.SetActive(true);
             windowOpen = true;
             Time.timeScale = 0;
@@ -95,10 +102,18 @@ public class UIManager : MonoBehaviour
 
     public void OpenSettings()
     {
+        if (PausePanelUI.activeInHierarchy || WinPanelUI.activeInHierarchy || LosePanelUI.activeInHierarchy)
+        {
+            OptionsPanelUI.SetActive(true);
+            PausePanelUI.SetActive(false);
+            windowOpen = true;
+        }
     }
 
     public void CloseSettings()
     {
+        OptionsPanelUI.SetActive(false);
+        PausePanelUI.SetActive(true);
     }
 
     public void OnNextLevelButton()

@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int[] levelPoints;
+    public int[] levelPoints = new int[20];
     public string title;
 
     public GameData(LevelManager levelManager)

@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe2bc92d0143bd409ec8bdfb0bd60db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPoints: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+  levelPoints: 00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   title: bruh

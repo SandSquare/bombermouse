@@ -36,11 +36,12 @@ public class GameLevels : MonoBehaviour
             levelBtn.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{points[i]}";
             levelBtn.transform.SetParent(this.gameObject.transform);
             Debug.Log("Found a scene file: " + levelName);
-            if (points[i] == 0)
+            if (points[i] == -1)
             {
                 levelBtn.GetComponent<Button>().interactable = false;
                 levelBtn.transform.GetChild(1).gameObject.SetActive(false);
-            } else
+            }
+            else
             {
                 latestLevel = i;
             }

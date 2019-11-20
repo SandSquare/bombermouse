@@ -21,10 +21,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        //gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         legalMove = true;
         movement = GetComponent<Movement>();
-        //levelInfo = GameObject.FindWithTag("LevelInfo").GetComponent<LevelInfo>();
 
         levelInfo = LevelInfo.instance;
         explosionLength = levelInfo.explosionLength;
@@ -39,29 +37,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //oldMovement 
-        #region InputGetKey
-        //if (input.getkeydown("w") || input.getkeydown("up"))
-        //{
-        //    direction = vector3.up;
-        //}
-        //else if (input.getkeydown("a") || input.getkeydown("left"))
-        //{
-        //    direction = vector3.left;
-        //}
-        //else if (input.getkeydown("s") || input.getkeydown("down"))
-        //{
-        //    direction = vector3.down;
-        //}
-        //else if (input.getkeydown("d") || input.getkeydown("right"))
-        //{
-        //    direction = vector3.right;
-        //}
-        //else
-        //{
-        //    direction = vector3.zero;
-        //}
-        #endregion
         if (!UIManager.Instance.windowOpen)
         {
             if (Input.GetButtonDown("Jump"))
@@ -88,7 +63,7 @@ public class Player : MonoBehaviour
             //isColliding = true;
             if (collect.ItemProperty == Collect.ItemType.Bomb)
             {
-                Debug.Log($"{collect.pickupType} Vial found!");
+                Debug.Log($"{collect.pickupType} Bomb found!");
                 bombList.Add(collect.pickupType);
                 FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);

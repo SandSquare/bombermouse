@@ -22,7 +22,9 @@ public class Exit : MonoBehaviour
         {
             Debug.Log("Exit found" + isColliding);
             isColliding = true;
-            LevelManager.instance.levelPoints[GameManager.instance.level - 1] = 1;
+            // TODO: Level points 1-3
+            LevelManager.instance.levelPoints[GameManager.instance.level - 2] = 1;
+            LevelManager.instance.levelPoints[GameManager.instance.level - 1] = 0;
             SaveSystem.SaveGameData(LevelManager.instance);
 
             FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");

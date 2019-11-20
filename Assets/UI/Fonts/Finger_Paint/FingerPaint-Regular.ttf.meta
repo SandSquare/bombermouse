@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a82e4454f16fe60499a30196bd3c0acf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Finger Paint
+  fontNames:
+  - Finger Paint
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e435df4d856d3c547a53765c5f81fc54, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

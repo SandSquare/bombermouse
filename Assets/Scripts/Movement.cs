@@ -62,7 +62,6 @@ public class Movement : MonoBehaviour
             // start moving your character
             m_MoveCoroutine = Move(direction);
             StartCoroutine(m_MoveCoroutine);
-            Debug.Log(timer);
             timer = 0;
         }
     }

@@ -100,17 +100,17 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Click
-    clip: {fileID: 8300000, guid: e0c62d8b2df642045b3b291c8b1fced4, type: 3}
+    clip: {fileID: 8300000, guid: 7517fa9bc4ef07548bde9e79885d436d, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   currentEffectsSource: {fileID: 0}
   currentMusicSource: {fileID: 0}
+  musicVolume: 0.5
+  sfxVolume: 0.5
   LowPitchRange: 0.95
   HighPitchRange: 1.05
-  volume: 0.5
-  soundEffect: 0.5
   musicOn: 1
   sfxOn: 1
 --- !u!82 &2932694841621312140
