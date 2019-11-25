@@ -40,11 +40,6 @@ public class LevelInfo : MonoBehaviour
         //GameManager.instance.levelName.text = levelName;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void UpdateColor(ObjectColors color)
     {
         this.objectColors = color;

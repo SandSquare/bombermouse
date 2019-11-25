@@ -7466,7 +7466,7 @@ PrefabInstance:
     - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
         type: 3}
       propertyPath: orthographic size
-      value: 7.938883
+      value: 7.9360523
       objectReference: {fileID: 0}
     - target: {fileID: 731739492744922598, guid: 146436f5e7ba1a44fb611713309c9f2b,
         type: 3}
@@ -9336,11 +9336,6 @@ PrefabInstance:
         type: 3}
       propertyPath: inputDelayTime
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778266850972728839, guid: 37c1781b3d7a42843b954bf5e40a53a9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c1781b3d7a42843b954bf5e40a53a9, type: 3}
