@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 076bbb647a1df6642a3c4149a66d1640
+guid: 5d6b50cedbae241448311f966c56a85c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2232719632485952366
-    second: walk_R_sheet_0
+      213: -7774064014781334615
+    second: walk_F_sheet_0
   - first:
-      213: -117439254093709264
-    second: walk_R_sheet_1
+      213: 8673221293064579901
+    second: walk_F_sheet_1
   - first:
-      213: -4796284460848790392
-    second: walk_R_sheet_2
+      213: 933061345658303716
+    second: walk_F_sheet_2
   - first:
-      213: 6092913813138352675
-    second: walk_R_sheet_3
+      213: -8735540962625344754
+    second: walk_F_sheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,85 +98,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_R_sheet_0
+      name: walk_F_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 287
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5664dfa67380fa449e2df036e1e0615
-      internalID: -2232719632485952366
+      spriteID: 796a3bbb56d75544fa990a94420c7c70
+      internalID: -7774064014781334615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_R_sheet_1
+      name: walk_F_sheet_1
       rect:
         serializedVersion: 2
-        x: 287
+        x: 256
         y: 0
-        width: 287
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526f1f2fe11033e48a1532682264f19f
-      internalID: -117439254093709264
+      spriteID: 582d37105156754469c7d2377a04adb1
+      internalID: 8673221293064579901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_R_sheet_2
+      name: walk_F_sheet_2
       rect:
         serializedVersion: 2
-        x: 574
+        x: 511
         y: 0
-        width: 287
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb0063c705d1a5a49959f3cbb176efc0
-      internalID: -4796284460848790392
+      spriteID: a74e6ff750912b145b11d9d26316f98a
+      internalID: 933061345658303716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_R_sheet_3
+      name: walk_F_sheet_3
       rect:
         serializedVersion: 2
-        x: 861
+        x: 768
         y: 0
-        width: 287
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4de894301717a6f45a9f39d8bd400537
-      internalID: 6092913813138352675
+      spriteID: c104e49f6f55c7c4aa1b346fcc1a6479
+      internalID: -8735540962625344754
       vertices: []
       indices: 
       edges: []

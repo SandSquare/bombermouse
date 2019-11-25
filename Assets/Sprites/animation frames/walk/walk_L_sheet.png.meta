@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: a5ba95b9f0f74114e83b29acd9af254b
+guid: 2bb3777db1f47a14ba28393d4b273fd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -27155840433499981
-    second: idle_R_sheet_0
+      213: 1557211037040095366
+    second: walk_L_sheet_0
   - first:
-      213: -8477630194772236542
-    second: idle_R_sheet_1
+      213: -7372603872127623639
+    second: walk_L_sheet_1
   - first:
-      213: -4800650670652661729
-    second: idle_R_sheet_2
+      213: 5041339749892712552
+    second: walk_L_sheet_2
   - first:
-      213: 4429062951673467470
-    second: idle_R_sheet_3
+      213: -6645681833798665570
+    second: walk_L_sheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,85 +98,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_R_sheet_0
+      name: walk_L_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 287
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c3a558bdaee6254aa6057031ba0907a
-      internalID: -27155840433499981
+      spriteID: a3b42bcf6e262f04e8896b98688f45a9
+      internalID: 1557211037040095366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_R_sheet_1
+      name: walk_L_sheet_1
       rect:
         serializedVersion: 2
         x: 287
         y: 0
         width: 287
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f360258ea0d7aad4596c6458f23175e7
-      internalID: -8477630194772236542
+      spriteID: bc928911b615840469d351fea0df6e3c
+      internalID: -7372603872127623639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_R_sheet_2
+      name: walk_L_sheet_2
       rect:
         serializedVersion: 2
         x: 574
         y: 0
         width: 287
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d8654ad31262e0478c074fc3b2f6806
-      internalID: -4800650670652661729
+      spriteID: a9c2069c12941da4d9fa809b7b1026a3
+      internalID: 5041339749892712552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_R_sheet_3
+      name: walk_L_sheet_3
       rect:
         serializedVersion: 2
         x: 861
         y: 0
         width: 287
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 961cb05030c8ee44191fd6f31694b8ab
-      internalID: 4429062951673467470
+      spriteID: 18a7762504c4f7f46990dfc7a79d3fc1
+      internalID: -6645681833798665570
       vertices: []
       indices: 
       edges: []
