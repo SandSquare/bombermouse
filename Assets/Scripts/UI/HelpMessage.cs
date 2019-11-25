@@ -37,9 +37,9 @@ public class HelpMessage : MonoBehaviour
                     firstMessage.SetActive(false);
                     if (!secondMessage.activeInHierarchy)
                     {
+                        timer = 0;
                         messagePanel.SetActive(false);
                     }
-                    timer = 0;
                 }
                 else if (isBombPickedup && !secondMessageShown)
                 {
