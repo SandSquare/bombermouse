@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
         legalMove = true;
         movement = GetComponent<Movement>();
 
-        helpMessageUI = GameObject.Find("HelpMessageUI").GetComponent<HelpMessage>();
+
+        helpMessageUI = GameObject.Find("HelpMessageUI")?.GetComponent<HelpMessage>();
 
         levelInfo = LevelInfo.instance;
         explosionLength = levelInfo.explosionLength;
@@ -71,16 +72,21 @@ public class Player : MonoBehaviour
                 bombList.Add(collect.pickupType);
                 FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);
-
-                helpMessageUI.PlayerPickUpMessage();
+                if (helpMessageUI)
+                {
+                    helpMessageUI.PlayerPickUpMessage();
+                }
             }
             else if (collect.ItemProperty == Collect.ItemType.PowerUp)
             {
                 Debug.Log("PowerUp found!");
                 FindObjectOfType<SoundManager>().PlaySFX("PowerUp");
                 explosionLength += collect.powerUpValue;
-
-                helpMessageUI.PlayerPowerUpMessage();
+                if (helpMessageUI)
+                {
+                    helpMessageUI.PlayerPowerUpMessage();
+                }
+                
             }
             Destroy(other.gameObject);
         }
