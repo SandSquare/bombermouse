@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance = null;
-    public int[] levelPoints;
+    public int[] levelPoints = new int[20];
     public string title = "bruh";
 
     void Awake()
