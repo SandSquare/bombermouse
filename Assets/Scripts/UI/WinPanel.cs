@@ -15,6 +15,8 @@ public class WinPanel : MonoBehaviour
     //private LevelInfo levelInfo;
     private float levelClearTime;
 
+    [SerializeField]
+    Sprite filledStar;
 
     // Start is called before the first frame update
     void Start()
@@ -32,16 +34,18 @@ public class WinPanel : MonoBehaviour
 
     void DisplayStars()
     {
-        if (levelClearTime < LevelInfo.instance.clearTimes[1])
-        {
-            // 3 star time
-            star2.GetComponent<Image>().color = Color.yellow;
-            star3.GetComponent<Image>().color = Color.yellow;
-        }
-        else if (levelClearTime < LevelInfo.instance.clearTimes[0])
+
+        if (levelClearTime < LevelInfo.instance.clearTime * 1.5f)
         {
             // 2 star time
-            star2.GetComponent<Image>().color = Color.yellow;
+            //star2.GetComponent<Image>().color = Color.yellow;
+            star2.GetComponent<Image>().sprite = filledStar;
+
+            if (levelClearTime < LevelInfo.instance.clearTime)
+            {
+                // 3 star time
+                star3.GetComponent<Image>().sprite = filledStar;
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ public class LevelTimer : MonoBehaviour
     private TextMeshProUGUI timerText;
 
     private bool runTimer;
-    private float levelTimer;
+    public float levelTimer;
 
     private void Start()
     {

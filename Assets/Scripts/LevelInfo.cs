@@ -13,8 +13,8 @@ public class LevelInfo : MonoBehaviour
     public int explosionLength;
     [SerializeField]
     public ObjectColors objectColors = ObjectColors.Normal;
-    [SerializeField]
-    public float[] clearTimes = new float[2];
+    [SerializeField, Tooltip("in seconds")]
+    public float clearTime = 5.0f;
 
     public static LevelInfo instance = null;
 

@@ -8,12 +8,5 @@ public class LevelStartScreen : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        //GameObject.FindWithTag("SplashScreen");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

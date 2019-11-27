@@ -13,6 +13,7 @@ TagManager:
   - UI
   - Pipe
   - Fire
+  - Timer
   layers:
   - Default
   - TransparentFX

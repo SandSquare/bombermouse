@@ -9,10 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
     public int level = 1;
     public float levelStartDelay = 2f;
+    public float gameClearDelay = 5f;
     public float splashScreenStartDelay = .05f;
 
     [SerializeField]
-    private int maxLevels;
+    public int maxLevels;
 
     private Text levelNumber;
     public Text levelName;
@@ -32,6 +33,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public string[] levelNames;
+
+    bool gameCleared = false;
+    private float time = 0;
+    private float clearScreenDuration = 5.0f;
 
     private void Start()
     {
@@ -63,11 +68,6 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
-    public void UpdateUI()
-    {
-        //uiManager.UpdateUI();
-    }
-
     public void LoadNextScene(int levelIndex)
     {
         if (levelIndex == 0)
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
             level = levelIndex;
         }
         // TODO Game clear screen
+        Debug.Log($"{level} {maxLevels}");
         if (level >= maxLevels)
         {
             GameClear();
@@ -113,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         doingSetup = true;
         levelNumber.text = $"Level {level - 1}:";
-        levelName.text = levelNames[level]!="" ? levelNames[level] : "Default Level Name";
+        levelName.text = levelNames[level] != "" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
 
         Invoke("HideLevelImage", levelStartDelay);
@@ -135,14 +136,24 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {
+        gameCleared = true;
         levelNumber.text = "";
-        levelName.text = "Congratulation. \n You have completed the game. \n Very nice";
+        levelName.text = "Congratulations! \n You have successfully escaped. \n Good job!";
         levelImage.SetActive(true);
+        Invoke("HideLevelImage", gameClearDelay);
     }
 
     void Update()
     {
-
+        if (gameCleared)
+        {
+            time += Time.deltaTime;
+            if (time > 4.0f)
+            {
+                SceneManager.LoadScene("MainMenu");
+                gameCleared = false;
+            }
+        }
     }
 
     public int GetActiveScene()
