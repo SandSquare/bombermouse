@@ -56,10 +56,10 @@ public class AspectCamera : MonoBehaviour
         m_camera.orthographicSize = (orth + verticalOrt) / 2;
     }
 
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        RefreshCamera();
-    }
-#endif
+//#if UNITY_EDITOR
+//    private void OnValidate()
+//    {
+//        RefreshCamera();
+//    }
+//#endif
 }
