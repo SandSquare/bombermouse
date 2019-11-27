@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1418395599
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: face8dff7b83dea41b3de330966b587a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1388198af8d1cc94ab8805296d2970d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   WallProperty: 1
   hitpoints: 2
   wallColor: 0
+  destroyDelay: 0.05
 --- !u!1 &3704237855136539668
 GameObject:
   m_ObjectHideFlags: 0
