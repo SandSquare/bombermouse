@@ -30,9 +30,10 @@ public class Exit : MonoBehaviour
             FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");
 
             other.gameObject.GetComponent<Movement>().enabled = false;
-            FindObjectOfType<SoundManager>().PlayMusic("LevelComplete");
+            //FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");
 
-            FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
+            SoundManager.Instance.Stop(SoundManager.Instance.currentMusicSource.name);
+            //FindObjectOfType<SoundManager>().Stop(SoundManager.Instance.currentMusicSource.name);
             UIManager.Instance.OpenWinPanel(loadLevel);
             //GameManager.instance.LoadNextScene(loadLevel);
             //GameManager.LoadScene(GameManager.GetActiveScene().buildIndex);

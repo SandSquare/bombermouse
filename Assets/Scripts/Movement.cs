@@ -18,16 +18,24 @@ public class Movement : MonoBehaviour
     [SerializeField]
     LayerMask solid;
 
-    private float timer;
+    private bool acceptingInput = true;
 
-    [SerializeField, Tooltip("Time it takes for player to move after another move.")]
-    private float inputDelayTime = 0.2f;
+    private Animator anim;
+    private bool walking;
+    private bool shouldIdle;
+    private Vector2 lastMove;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
-    { 
+    {
         // if character is already moving, just return
         if (m_MoveCoroutine != null)
             return;
+
 
 
         if (yDir != 0 && xDir == 0)
@@ -51,18 +59,32 @@ public class Movement : MonoBehaviour
             yDir = 0;
         }
 
+        if (!acceptingInput)
+        {
+            xDir = 0;
+            yDir = 0;
+        }
 
         direction = new Vector2(xDir, yDir);
         legalMove = AttemptMove();
 
-        timer += Time.deltaTime;
+        if (!walking)
+        {
+            shouldIdle = true;
+        }
 
-        if (direction != Vector2.zero && legalMove && inputDelayTime <= timer)
+        if (lastMove != direction && legalMove)
+        {
+            walking = false;
+            anim.SetBool("Walking", !shouldIdle);
+        }
+
+        if (direction != Vector2.zero && legalMove)
         {
             // start moving your character
             m_MoveCoroutine = Move(direction);
+            acceptingInput = false;
             StartCoroutine(m_MoveCoroutine);
-            timer = 0;
         }
     }
 
@@ -90,13 +112,27 @@ public class Movement : MonoBehaviour
         Vector2 orgPos = transform.position; // original position
         Vector2 newPos = orgPos + direction; // new position after move is done
         float t = 0; // placeholder to check if we're on the right spot
+        walking = true;
+        shouldIdle = false;
+        anim.SetBool("Walking", !shouldIdle);
+        anim.SetFloat("MoveX", direction.x);
+        anim.SetFloat("MoveY", direction.y);
         while (t < 1.0f) // loop while player is not in the right spot
         {
-            // calculate and set new position based on the deltaTime's value
+            if(t > 0.9f)
+            {
+                acceptingInput = true;
+            }
+
             transform.position = Vector2.Lerp(orgPos, newPos, (t += Time.deltaTime * m_SpeedFactor));
+            // calculate and set new position based on the deltaTime's value
             // wait for new frame
             yield return new WaitForEndOfFrame();
         }
+        acceptingInput = true;
+        anim.SetFloat("LastMoveX", direction.x);
+        anim.SetFloat("LastMoveY", direction.y);
+        lastMove = direction;
         // stop coroutine
         StopCoroutine(m_MoveCoroutine);
         // get rid of the reference to enable further movements

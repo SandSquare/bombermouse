@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public int explosionLength;
     private int currentBombAmount;
 
+    private HelpMessage helpMessageUI;
+
     public List<ObjectColors> bombList = new List<ObjectColors>();
     private bool isColliding = false;
 
@@ -23,6 +25,9 @@ public class Player : MonoBehaviour
     {
         legalMove = true;
         movement = GetComponent<Movement>();
+
+
+        helpMessageUI = GameObject.Find("HelpMessageUI")?.GetComponent<HelpMessage>();
 
         levelInfo = LevelInfo.instance;
         explosionLength = levelInfo.explosionLength;
@@ -37,9 +42,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!UIManager.Instance.windowOpen)
+        if (!UIManager.Instance.windowOpen && !GameManager.instance.doingSetup)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1"))
             {
                 DropBomb();
             }
@@ -67,13 +72,21 @@ public class Player : MonoBehaviour
                 bombList.Add(collect.pickupType);
                 FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);
-                //uimanager.AddBomb(pickupType);
+                if (helpMessageUI)
+                {
+                    helpMessageUI.PlayerPickUpMessage();
+                }
             }
             else if (collect.ItemProperty == Collect.ItemType.PowerUp)
             {
                 Debug.Log("PowerUp found!");
                 FindObjectOfType<SoundManager>().PlaySFX("PowerUp");
                 explosionLength += collect.powerUpValue;
+                if (helpMessageUI)
+                {
+                    helpMessageUI.PlayerPowerUpMessage();
+                }
+                
             }
             Destroy(other.gameObject);
         }

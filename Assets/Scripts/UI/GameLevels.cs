@@ -17,6 +17,7 @@ public class GameLevels : MonoBehaviour
 
     void Start()
     {
+
         int[] points = LevelManager.instance.levelPoints;
         // string folderName = Application.dataPath + "/Scenes/FinalLevels";
         // var dirInfo = new DirectoryInfo(folderName);
@@ -47,5 +48,6 @@ public class GameLevels : MonoBehaviour
             }
         }
         Debug.Log($"latest level: {latestLevel}");
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(transform.GetChild(latestLevel).gameObject);
     }
 }
