@@ -10,11 +10,11 @@ public class HelpMessage : MonoBehaviour
     [SerializeField]
     private GameObject firstMessage;
     [SerializeField]
-    private GameObject secondMessage;
-
     private float firstMessageTime = 5f;
-
-    private float secondMessageTime = 10f;
+    [SerializeField]
+    private GameObject secondMessage;
+    [SerializeField]
+    private float secondMessageTime = 7f;
 
     private bool isBombPickedup;
     private bool isPowerupPickedup;
