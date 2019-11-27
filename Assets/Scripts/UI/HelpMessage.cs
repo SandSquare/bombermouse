@@ -50,6 +50,15 @@ public class HelpMessage : MonoBehaviour
 
                     secondMessageShown = true;
                 }
+                else if(isPowerupPickedup && !secondMessageShown)
+                {
+                    timer = 0;
+                    firstMessage.SetActive(false);
+                    messagePanel.SetActive(true);
+                    secondMessage.SetActive(true);
+
+                    secondMessageShown = true;
+                }
             }
         }
 
