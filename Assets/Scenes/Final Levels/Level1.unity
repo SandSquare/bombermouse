@@ -9205,6 +9205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8061403640171679704, guid: b6cf7ade773b0484693d052f3c701762,
         type: 3}
+      propertyPath: clearTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061403640171679704, guid: b6cf7ade773b0484693d052f3c701762,
+        type: 3}
       propertyPath: bombAmount
       value: 3
       objectReference: {fileID: 0}
@@ -9212,6 +9217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: explosionLength
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061403640171679704, guid: b6cf7ade773b0484693d052f3c701762,
+        type: 3}
+      propertyPath: clearTimes.Array.data[0]
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2407084562956354730, guid: b6cf7ade773b0484693d052f3c701762,
         type: 3}
@@ -9285,12 +9295,12 @@ PrefabInstance:
     - target: {fileID: 3778266850972728837, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3778266850972728837, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3778266850972728837, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}

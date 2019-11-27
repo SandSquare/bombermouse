@@ -14,7 +14,7 @@ public class LevelInfo : MonoBehaviour
     [SerializeField]
     public ObjectColors objectColors = ObjectColors.Normal;
     [SerializeField]
-    public float[] clearTimes = new float[2];
+    public float[] clearTimes = new float[1];
 
     public static LevelInfo instance = null;
 
