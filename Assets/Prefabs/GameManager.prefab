@@ -43,8 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947fe5b6e2e4d4a46ab43736ca52f3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   levelStartDelay: 1
+  gameClearDelay: 5
   splashScreenStartDelay: 0.5
+  maxLevels: 0
   levelName: {fileID: 0}
   splashScreen: {fileID: 5754140521992092002, guid: be25f94a41e61674080d8e616f0631a7,
     type: 3}
@@ -56,6 +59,8 @@ MonoBehaviour:
   - Tutorial Stage
   - First Steps
   - Colorful Explosions
+  - 
+  - 
   - 
   - 
   - 

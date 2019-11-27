@@ -6,6 +6,7 @@ using TMPro;
 using UnityEditor;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLevels : MonoBehaviour
 {
@@ -24,13 +25,16 @@ public class GameLevels : MonoBehaviour
         // var allFileInfos = dirInfo.GetFiles("*.unity", SearchOption.AllDirectories);
         //List<EditorBuildSettingsScene> editorBuildSettingsScenes = new List<EditorBuildSettingsScene>();
         //EditorBuildSettings.scenes = editorBuildSettingsScenes.ToArray();
-        EditorBuildSettingsScene[] scenes = EditorBuildSettings.scenes;
-        scenes = scenes.Skip(2).ToArray();
+
+        int scenes = SceneManager.sceneCountInBuildSettings;
+
+        //EditorBuildSettingsScene[] scenes = EditorBuildSettings.scenes;
+        //scenes = scenes.Skip(2).ToArray();
         // Debug.Log("moi "+ scenes.Length);
-        for (int i = 0; i < scenes.Length; i++)
+        for (int i = 0; i < scenes-2; i++)
         {
             //string levelName = Path.GetFileNameWithoutExtension(allFileInfos[i].FullName);
-            string levelName = Path.GetFileNameWithoutExtension(scenes[i].path);
+            string levelName = "Level " + i;
             GameObject levelBtn = Instantiate(levelButton, Vector3.zero, Quaternion.identity);
             levelBtn.GetComponent<LevelButton>().levelNumber = i + 2;
             levelBtn.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = levelName;

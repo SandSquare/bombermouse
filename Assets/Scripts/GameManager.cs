@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InitGame();
-        maxLevels = UnityEditor.EditorBuildSettings.scenes.Length;
+        maxLevels = SceneManager.sceneCountInBuildSettings;
         //maxLevels = 3;
         //InventoryUI.instance.Init();
     }

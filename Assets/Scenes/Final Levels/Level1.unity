@@ -9705,11 +9705,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778266850972728856, guid: 37c1781b3d7a42843b954bf5e40a53a9,
         type: 3}
-      propertyPath: m_SpeedFactor
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778266850972728856, guid: 37c1781b3d7a42843b954bf5e40a53a9,
-        type: 3}
       propertyPath: inputDelayTime
       value: 0
       objectReference: {fileID: 0}

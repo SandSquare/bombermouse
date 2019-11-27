@@ -41,7 +41,8 @@ public class WinPanel : MonoBehaviour
             //star2.GetComponent<Image>().color = Color.yellow;
             star2.GetComponent<Image>().sprite = filledStar;
 
-            if (levelClearTime < LevelInfo.instance.clearTime)
+            // 1.1f modifier is because player was slowed 
+            if (levelClearTime < LevelInfo.instance.clearTime * 1.1f)
             {
                 // 3 star time
                 star3.GetComponent<Image>().sprite = filledStar;

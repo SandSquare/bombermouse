@@ -164,11 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e4cb61c1833ac41bc62c5476d9450a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpeedFactor: 8
+  m_SpeedFactor: 5
   solid:
     serializedVersion: 2
     m_Bits: 2560
-  inputDelayTime: 0.03
 --- !u!95 &3778266850972728839
 Animator:
   serializedVersion: 3
