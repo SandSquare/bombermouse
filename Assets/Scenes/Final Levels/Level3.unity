@@ -7734,7 +7734,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "You picked up a colored bomb. \n"
+  m_text: 'You picked up a colored bomb. Use shift to switch between different bombs.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 645efa5b0889e1e4e9f0c91849fc8b42, type: 2}
   m_sharedMaterial: {fileID: -8849533455028472606, guid: 645efa5b0889e1e4e9f0c91849fc8b42,
