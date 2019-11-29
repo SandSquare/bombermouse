@@ -144,10 +144,13 @@ public class Player : MonoBehaviour
     {
         if(bombList.Count > 0)
         {
-            GameObject b = Instantiate(bombPrefabs[(int)currentColor], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
-            b.GetComponent<Bomb>().explosionLength = explosionLength;
-            explosionLength = levelInfo.explosionLength;
-            bombList.Remove(currentColor);
+            if (bombList.Contains(currentColor))
+            {
+                GameObject b = Instantiate(bombPrefabs[(int)currentColor], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+                b.GetComponent<Bomb>().explosionLength = explosionLength;
+                explosionLength = levelInfo.explosionLength;
+                bombList.Remove(currentColor);
+            }
         }
     }
 }
