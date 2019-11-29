@@ -7,6 +7,8 @@ using TMPro;
 public class Wall : MonoBehaviour
 {
     [SerializeField]
+    Sprite sprite;
+    [SerializeField]
     private WallType WallProperty = WallType.Normal;
     [SerializeField, Range(1, 5)]
     private int hitpoints = 1;
@@ -20,7 +22,7 @@ public class Wall : MonoBehaviour
     {
         if(WallProperty == WallType.HitpointWall)
         {
-            GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
+            //GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
     }
     // This method damages and destroys walls
@@ -30,7 +32,8 @@ public class Wall : MonoBehaviour
         {
             hitpoints -= wallDamage;
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDamage");
-            GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
+            //GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
+            GetComponent<SpriteRenderer>().sprite = sprite;
         }
         else if (hitpoints <= 1 && WallProperty == WallType.HitpointWall || WallProperty == WallType.Normal)
         {
