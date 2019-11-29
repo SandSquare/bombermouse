@@ -241,8 +241,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Level X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8fb727ac19a430143a9b34f7f54b0bf5, type: 2}
-  m_sharedMaterial: {fileID: 1322309982711763229, guid: 8fb727ac19a430143a9b34f7f54b0bf5,
+  m_fontAsset: {fileID: 11400000, guid: 645efa5b0889e1e4e9f0c91849fc8b42, type: 2}
+  m_sharedMaterial: {fileID: -8849533455028472606, guid: 645efa5b0889e1e4e9f0c91849fc8b42,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -400,8 +400,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'points: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8fb727ac19a430143a9b34f7f54b0bf5, type: 2}
-  m_sharedMaterial: {fileID: 1322309982711763229, guid: 8fb727ac19a430143a9b34f7f54b0bf5,
+  m_fontAsset: {fileID: 11400000, guid: 645efa5b0889e1e4e9f0c91849fc8b42, type: 2}
+  m_sharedMaterial: {fileID: -8849533455028472606, guid: 645efa5b0889e1e4e9f0c91849fc8b42,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
