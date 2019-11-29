@@ -4986,14 +4986,14 @@ Transform:
   - {fileID: 702553332}
   - {fileID: 1463052749}
   - {fileID: 902179937}
-  - {fileID: 16080802}
+  - {fileID: 798650866}
   - {fileID: 1056650699}
-  - {fileID: 2141245343}
   - {fileID: 487045526}
   - {fileID: 1680472869}
-  - {fileID: 1246831538}
   - {fileID: 988090472}
-  - {fileID: 798650866}
+  - {fileID: 1246831538}
+  - {fileID: 2141245343}
+  - {fileID: 16080802}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8403,30 +8403,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1874383742744940970, guid: 003b6d400bb6fcc48bfdb109d756af90,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b3072ff805b36664693cab357c3108a1,
-        type: 3}
     - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291937716
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1322309982711763229, guid: 8fb727ac19a430143a9b34f7f54b0bf5,
+        type: 2}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704237855441351074, guid: 003b6d400bb6fcc48bfdb109d756af90,
+        type: 3}
+      propertyPath: m_overrideHtmlColors
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10332,6 +10362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
+        type: 3}
+      propertyPath: orthographic size
+      value: 7.9402795
       objectReference: {fileID: 0}
     - target: {fileID: 731739492744922598, guid: 146436f5e7ba1a44fb611713309c9f2b,
         type: 3}
