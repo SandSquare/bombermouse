@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public List<ObjectColors> bombList = new List<ObjectColors>();
     private bool isColliding = false;
 
+    private ObjectColors currentColor = ObjectColors.Normal;
+
     void Start()
     {
         legalMove = true;
@@ -46,7 +48,14 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1"))
             {
-                DropBomb();
+                ToggleDropBomb();
+                //DropBomb();
+            }
+
+            if (Input.GetButtonDown("Fire3"))
+            {
+                ToggleBomb();
+                Debug.Log(currentColor);
             }
         }
     }
@@ -113,6 +122,32 @@ public class Player : MonoBehaviour
             currentBombAmount--;
             InventoryUI.instance.RemoveBomb();
 
+        }
+    }
+    
+    private void ToggleBomb()
+    {
+        if(bombList.Count > 0)
+        {
+            if(currentColor < ObjectColors.Red)
+            {
+                currentColor++;
+            }
+            else
+            {
+                currentColor = ObjectColors.Normal;
+            }
+        }
+    }
+
+    private void ToggleDropBomb()
+    {
+        if(bombList.Count > 0)
+        {
+            GameObject b = Instantiate(bombPrefabs[(int)currentColor], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+            b.GetComponent<Bomb>().explosionLength = explosionLength;
+            explosionLength = levelInfo.explosionLength;
+            bombList.Remove(currentColor);
         }
     }
 }
