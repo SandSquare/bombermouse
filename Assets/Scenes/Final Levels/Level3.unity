@@ -1197,12 +1197,12 @@ PrefabInstance:
     - target: {fileID: 7193457441680987737, guid: 58c96a80a9ea6ab47817949774f35ec3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7193457441680987737, guid: 58c96a80a9ea6ab47817949774f35ec3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7193457441680987737, guid: 58c96a80a9ea6ab47817949774f35ec3,
         type: 3}
@@ -7734,7 +7734,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "You picked up a colored bomb. \n"
+  m_text: 'Colored bomb destroys a colored wall.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 645efa5b0889e1e4e9f0c91849fc8b42, type: 2}
   m_sharedMaterial: {fileID: -8849533455028472606, guid: 645efa5b0889e1e4e9f0c91849fc8b42,
@@ -10862,7 +10864,7 @@ PrefabInstance:
     - target: {fileID: 2984548040167917255, guid: a6f30fa88db1edf47b30effe2761c0c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2984548040167917255, guid: a6f30fa88db1edf47b30effe2761c0c9,
         type: 3}
