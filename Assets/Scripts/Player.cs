@@ -52,14 +52,14 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1"))
             {
-                ToggleDropBomb();
-                //DropBomb();
+                //ToggleDropBomb();
+                DropBomb();
             }
 
             if (Input.GetButtonDown("Fire3"))
             {
-                ToggleBomb();
-                InventoryUI.instance.SelectionHighlight();
+                //ToggleBomb();
+                //InventoryUI.instance.SelectionHighlight();
             }
         }
     }
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
                 bombList.Add(collect.pickupType);
                 UpdateBombAmounts();
                 FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
-                InventoryUI.instance.UpdateCounts();
+                InventoryUI.instance.AddBomb(other.gameObject);
                 if (helpMessageUI)
                 {
                     helpMessageUI.PlayerPickUpMessage();
@@ -164,34 +164,36 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ToggleBomb()
-    {
-        if (bombList.Count > 0)
-        {
-            if (currentColor < ObjectColors.Red)
-            {
-                currentColor++;
-            }
-            else
-            {
-                currentColor = ObjectColors.Normal;
-            }
-        }
-    }
+    //private void ToggleBomb()
+    //{
+    //    if (bombList.Count > 0)
+    //    {
+    //        if (currentColor < ObjectColors.Red)
+    //        {
+    //            currentColor++;
+    //        }
+    //        else
+    //        {
+    //            currentColor = ObjectColors.Normal;
+    //        }
+    //    }
+    //}
 
     private void ToggleDropBomb()
     {
         if (bombList.Count > 0)
         {
-            if (bombList.Contains(currentColor))
-            {
-                GameObject b = Instantiate(bombPrefabs[(int)currentColor], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
-                b.GetComponent<Bomb>().explosionLength = explosionLength;
-                explosionLength = levelInfo.explosionLength;
-                bombList.Remove(currentColor);
-                UpdateBombAmounts();
-                InventoryUI.instance.UpdateCounts();
-            }
+
+
+            //if (bombList.Contains(currentColor))
+            //{
+            //    GameObject b = Instantiate(bombPrefabs[(int)currentColor], new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0), bombPrefabs[(int)bombList[bombList.Count - 1]].transform.rotation);
+            //    b.GetComponent<Bomb>().explosionLength = explosionLength;
+            //    explosionLength = levelInfo.explosionLength;
+            //    bombList.Remove(currentColor);
+            //    UpdateBombAmounts();
+            //    InventoryUI.instance.UpdateCounts();
+            //}
         }
     }
 }
