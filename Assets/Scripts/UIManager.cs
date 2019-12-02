@@ -181,4 +181,9 @@ public class UIManager : MonoBehaviour
     {
         //inventoryUI
     }
+    
+    public void PlayClick()
+    {
+        SoundManager.Instance.PlaySFX("Click2");
+    }
 }
