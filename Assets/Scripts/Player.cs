@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Player : MonoBehaviour
     private LevelInfo levelInfo;
     public int explosionLength;
     private int currentBombAmount;
+
+    [SerializeField]
+    Sprite powerUp;
 
     private HelpMessage helpMessageUI;
 
@@ -117,7 +121,7 @@ public class Player : MonoBehaviour
             {
                 Debug.Log($"{collect.pickupType} Bomb found!");
                 bombList.Add(collect.pickupType);
-                UpdateBombAmounts();
+                //UpdateBombAmounts();
                 FindObjectOfType<SoundManager>().PlaySFX("CollectBomb");
                 InventoryUI.instance.AddBomb(other.gameObject);
                 if (helpMessageUI)
@@ -129,6 +133,8 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("PowerUp found!");
                 FindObjectOfType<SoundManager>().PlaySFX("PowerUp");
+                InventoryUI.instance.PowerUpPicked();
+                //InventoryUI.instance.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().sprite = ;
                 explosionLength += collect.powerUpValue;
                 if (helpMessageUI)
                 {
