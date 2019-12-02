@@ -38,7 +38,7 @@ public class GameLevels : MonoBehaviour
             GameObject levelBtn = Instantiate(levelButton, Vector3.zero, Quaternion.identity);
             levelBtn.GetComponent<LevelButton>().levelNumber = i + 2;
             levelBtn.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = levelName;
-            levelBtn.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{points[i]}";
+            levelBtn.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{points[i]} stars";
             levelBtn.transform.SetParent(this.gameObject.transform);
             Debug.Log("Found a scene file: " + levelName);
             if (points[i] == -1)

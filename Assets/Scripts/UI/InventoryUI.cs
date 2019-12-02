@@ -26,6 +26,13 @@ public class InventoryUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI explosionLengthText;
 
+    private Player player;
+
+    GameObject normalCount;
+    GameObject purpleCount;
+    GameObject greenCount;
+    GameObject redCount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +56,47 @@ public class InventoryUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     public void Init()
     {
+
+        //foreach(var color in player.bombCountDictionary)
+        //{
+        //    if (color.Key == ObjectColors.Normal)
+        //    {
+        //        normalCount = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
+        //        normalCount.transform.SetParent(this.gameObject.transform);
+        //        normalCount.transform.GetChild(1).GetComponent<Image>().sprite = bombColors[0];
+        //        normalCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+        //    }
+        //    if(color.Key == ObjectColors.Purple)
+        //    {
+        //        purpleCount = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
+        //        purpleCount.transform.SetParent(this.gameObject.transform);
+        //        purpleCount.transform.GetChild(1).GetComponent<Image>().sprite = bombColors[1];
+        //        purpleCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+        //    }
+        //    if (color.Key == ObjectColors.Green)
+        //    {
+        //        greenCount = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
+        //        greenCount.transform.SetParent(this.gameObject.transform);
+        //        greenCount.transform.GetChild(1).GetComponent<Image>().sprite = bombColors[2];
+        //        greenCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+        //    }
+        //    if (color.Key == ObjectColors.Red)
+        //    {
+        //        redCount = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
+        //        redCount.transform.SetParent(this.gameObject.transform);
+        //        redCount.transform.GetChild(1).GetComponent<Image>().sprite = bombColors[3];
+        //        redCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+        //    }
+
+        //}
+        //SelectionHighlight();
+
         int length = LevelInfo.instance.bombAmount;
         for (int i = 0; i < length; i++)
         {
@@ -63,10 +107,41 @@ public class InventoryUI : MonoBehaviour
         HighlightFirstBomb();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    //public void SelectionHighlight()
+    //{
+    //    if(player.currentColor == ObjectColors.Normal)
+    //    {
+    //        normalCount.transform.GetChild(0).gameObject.SetActive(true);
+
+    //        purpleCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        greenCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        redCount.transform.GetChild(0).gameObject.SetActive(false);
+    //    }
+    //    if(player.currentColor == ObjectColors.Purple)
+    //    {
+    //        purpleCount.transform.GetChild(0).gameObject.SetActive(true);
+
+    //        greenCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        redCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        normalCount.transform.GetChild(0).gameObject.SetActive(false);
+    //    }
+    //    if(player.currentColor == ObjectColors.Green)
+    //    {
+    //        greenCount.transform.GetChild(0).gameObject.SetActive(true);
+
+    //        redCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        purpleCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        normalCount.transform.GetChild(0).gameObject.SetActive(false);
+    //    }
+    //    if(player.currentColor == ObjectColors.Red)
+    //    {
+    //        redCount.transform.GetChild(0).gameObject.SetActive(true);
+
+    //        greenCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        purpleCount.transform.GetChild(0).gameObject.SetActive(false);
+    //        normalCount.transform.GetChild(0).gameObject.SetActive(false);
+    //    }
+    //}
 
     public void HighlightFirstBomb()
     {
@@ -119,4 +194,27 @@ public class InventoryUI : MonoBehaviour
         bombDeleted = true;
         HighlightFirstBomb();
     }
+
+    //public void UpdateCounts()
+    //{
+    //    foreach (var color in player.bombCountDictionary)
+    //    {
+    //        if (color.Key == ObjectColors.Normal && color.Value.ToString() != normalCount.GetComponentInChildren<TextMeshProUGUI>().text)
+    //        {
+    //            normalCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+    //        }
+    //        if (color.Key == ObjectColors.Purple)
+    //        {
+    //            purpleCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+    //        }
+    //        if (color.Key == ObjectColors.Green)
+    //        {
+    //            greenCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+    //        }
+    //        if (color.Key == ObjectColors.Red)
+    //        {
+    //            redCount.GetComponentInChildren<TextMeshProUGUI>().text = color.Value.ToString();
+    //        }
+    //    }
+    //}
 }

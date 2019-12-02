@@ -25,12 +25,6 @@ public class Wall : MonoBehaviour
             //GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     // This method damages and destroys walls
     public void DamageWall(int wallDamage)
     {
