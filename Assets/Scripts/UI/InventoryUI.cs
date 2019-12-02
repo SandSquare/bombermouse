@@ -160,17 +160,18 @@ public class InventoryUI : MonoBehaviour
 
             if(i == 0 && !bombDeleted)
             {
-                bombSlotChild.transform.GetChild(0).gameObject.SetActive(true);
-                FlashBomb(bombSlotChild);
+                bombSlotChild.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                bombSlotChild.transform.GetChild(1).gameObject.SetActive(true);
             }
             else if(i == 1 && bombDeleted)
             {
-                bombSlotChild.transform.GetChild(0).gameObject.SetActive(true);
-                FlashBomb(bombSlotChild);
+                bombSlotChild.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                bombSlotChild.transform.GetChild(1).gameObject.SetActive(true);
             }
             else
             {
-                bombSlotChild.transform.GetChild(0).gameObject.SetActive(false);
+                bombSlotChild.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                bombSlotChild.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
         explosionLengthText.text = FindObjectOfType<Player>().explosionLength.ToString();
@@ -191,7 +192,7 @@ public class InventoryUI : MonoBehaviour
     public void AddBomb(GameObject gameObject)
     {
         GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
-        newSlot.transform.GetChild(1).GetComponent<Image>().sprite = bombColors[(int)gameObject.GetComponent<Collect>().pickupType];
+        newSlot.transform.GetChild(0).GetComponent<Image>().sprite = bombColors[(int)gameObject.GetComponent<Collect>().pickupType];
 
         newSlot.transform.SetParent(this.gameObject.transform);
         newSlot.transform.SetSiblingIndex(0);
