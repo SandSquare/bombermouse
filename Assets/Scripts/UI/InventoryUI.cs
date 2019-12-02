@@ -105,7 +105,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < length; i++)
         {
             GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
-            newSlot.transform.SetParent(this.gameObject.transform);
+            newSlot.transform.SetParent(this.gameObject.transform, false);
         }
 
         HighlightFirstBomb();
@@ -174,7 +174,6 @@ public class InventoryUI : MonoBehaviour
                 bombSlotChild.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        explosionLengthText.text = FindObjectOfType<Player>().explosionLength.ToString();
     }
 
     float time = 0;
