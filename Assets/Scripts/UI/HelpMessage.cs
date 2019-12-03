@@ -10,7 +10,7 @@ public class HelpMessage : MonoBehaviour
     [SerializeField]
     private GameObject firstMessage;
     [SerializeField]
-    private float firstMessageTime = 5f;
+    private float firstMessageTime = 7f;
     [SerializeField]
     private GameObject secondMessage;
     [SerializeField]
