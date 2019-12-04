@@ -193,7 +193,7 @@ public class InventoryUI : MonoBehaviour
         GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
         newSlot.transform.GetChild(0).GetComponent<Image>().sprite = bombColors[(int)gameObject.GetComponent<Collect>().pickupType];
 
-        newSlot.transform.SetParent(this.gameObject.transform);
+        newSlot.transform.SetParent(this.gameObject.transform, false);
         newSlot.transform.SetSiblingIndex(0);
 
 

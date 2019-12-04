@@ -10,7 +10,7 @@ public class HelpMessage : MonoBehaviour
     [SerializeField]
     private GameObject firstMessage;
     [SerializeField]
-    private float firstMessageTime = 7f;
+    private float firstMessageTime = 5f;
     [SerializeField]
     private GameObject secondMessage;
     [SerializeField]
@@ -34,10 +34,11 @@ public class HelpMessage : MonoBehaviour
                 if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") || timer > firstMessageTime && !firstMessageShown)
                 {
                     //TODO: SECOND MESSAGE DOESNT DISAPPEAR timer resets maybe
-                    firstMessage.SetActive(false);
-                    if (!secondMessage.activeInHierarchy)
+                    
+                    if (!secondMessage.activeInHierarchy && firstMessage.activeInHierarchy)
                     {
-                        timer = 0;
+                        timer = 0; 
+                        firstMessage.SetActive(false);
                         messagePanel.SetActive(false);
                     }
                 }
@@ -47,6 +48,7 @@ public class HelpMessage : MonoBehaviour
                     firstMessage.SetActive(false);
                     messagePanel.SetActive(true);
                     secondMessage.SetActive(true);
+                    messagePanel.transform.GetChild(2).gameObject.SetActive(false);
 
                     secondMessageShown = true;
                 }

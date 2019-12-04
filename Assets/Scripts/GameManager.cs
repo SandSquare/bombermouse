@@ -78,8 +78,6 @@ public class GameManager : MonoBehaviour
         {
             level = levelIndex;
         }
-        // TODO Game clear screen
-        Debug.Log($"{level} {maxLevels}");
         if (level >= maxLevels)
         {
             GameClear();
@@ -89,7 +87,7 @@ public class GameManager : MonoBehaviour
         //levelName.text = LevelInfo.instance.levelName;
         //LevelInfo.instance.UpdateLevelName();
 
-        InventoryUI.instance.Init();
+        //InventoryUI.instance.Init();
         Debug.Log("Loaded scene " + level);
         InitGame();
         //Invoke("InitGame", splashScreenStartDelay);

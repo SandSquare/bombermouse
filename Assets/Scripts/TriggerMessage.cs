@@ -15,20 +15,22 @@ public class TriggerMessage : MonoBehaviour
     {
         if (collider.tag == "Player" && !hasTriggered)
         {
-            Debug.Log("joo");
             helpMessagePanel.SetActive(true);
+            helpMessagePanel.transform.GetChild(0).gameObject.SetActive(false);
+            helpMessagePanel.transform.GetChild(1).gameObject.SetActive(false);
             helpMessagePanel.transform.GetChild(2).gameObject.SetActive(true);
             hasTriggered = true;
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (hasTriggered && helpMessagePanel.activeInHierarchy)
         {
             timer += Time.deltaTime;
             if (timer > activeTime)
             {
+                helpMessagePanel.transform.GetChild(2).gameObject.SetActive(false);
                 helpMessagePanel.SetActive(false);
                 timer = 0;
             }

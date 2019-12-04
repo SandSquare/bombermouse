@@ -15,8 +15,12 @@ public class LevelButton : MonoBehaviour
         if (GameManager.instance != null)
         {
             GameManager.instance.level = levelNumber;
+            GameManager.instance.LoadNextScene(levelNumber);
         }
+        else
+        {
             SceneManager.LoadScene(levelNumber);
-        // GameManager.instance.LoadScene(levelNumber);
+
+        }
     }
 }
