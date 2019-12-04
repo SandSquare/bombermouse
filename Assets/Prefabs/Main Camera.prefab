@@ -101,7 +101,8 @@ MonoBehaviour:
     type: 3}
   soundManager: {fileID: 7015151440338213622, guid: 76853fb272df4084181b83813b88b7a4,
     type: 3}
-  soundsOn: 0
+  backgroundCanvas: {fileID: 3084230118458729534, guid: 170408e1a763b2b42836ea212408c65d,
+    type: 3}
 --- !u!114 &8533024794384063041
 MonoBehaviour:
   m_ObjectHideFlags: 0

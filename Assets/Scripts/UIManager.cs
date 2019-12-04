@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +18,18 @@ public class UIManager : MonoBehaviour
     public GameObject WinPanelUI;
     [SerializeField]
     private GameObject OptionsPanelUI;
+    
+    private GameObject player;
+
+    [SerializeField]
+    GameObject resumeButton;
+    [SerializeField]
+    GameObject restartButton;
+    [SerializeField]
+    GameObject nextLevelButton;
+    [SerializeField]
+    GameObject volumeSlider;
+
 
     private int levelToLoad;
 
@@ -36,7 +49,7 @@ public class UIManager : MonoBehaviour
             Debug.Log("Two UImanager instances");
             Destroy(gameObject);
         }
-
+        player = GameObject.FindGameObjectWithTag("Player");
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         //DontDestroyOnLoad(gameObject);
     }
@@ -44,6 +57,7 @@ public class UIManager : MonoBehaviour
     void Start()
     { 
         Time.timeScale = 1;
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
 
@@ -60,6 +74,7 @@ public class UIManager : MonoBehaviour
         }
         LosePanelUI.SetActive(true);
         windowOpen = true;
+        EventSystem.current.SetSelectedGameObject(restartButton);
     }
 
     public void OpenWinPanel(int level)
@@ -75,6 +90,7 @@ public class UIManager : MonoBehaviour
         }
         WinPanelUI.SetActive(true);
         windowOpen = true;
+        EventSystem.current.SetSelectedGameObject(nextLevelButton);
     }
 
     public void MenuPanel()
@@ -90,13 +106,18 @@ public class UIManager : MonoBehaviour
                 PausePanelUI.SetActive(false);
                 windowOpen = false;
                 Time.timeScale = 1;
+                player.GetComponent<Movement>().enabled = true;
             }
         }
         else
         {
             PausePanelUI.SetActive(true);
             windowOpen = true;
+           
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(resumeButton);
             Time.timeScale = 0;
+            player.GetComponent<Movement>().enabled = false;
         }
     }
 
@@ -107,6 +128,7 @@ public class UIManager : MonoBehaviour
             OptionsPanelUI.SetActive(true);
             PausePanelUI.SetActive(false);
             windowOpen = true;
+            EventSystem.current.SetSelectedGameObject(volumeSlider);
         }
     }
 
@@ -114,6 +136,7 @@ public class UIManager : MonoBehaviour
     {
         OptionsPanelUI.SetActive(false);
         PausePanelUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void OnNextLevelButton()

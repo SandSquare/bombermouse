@@ -16,6 +16,7 @@ public class TriggerMessage : MonoBehaviour
         if (collider.tag == "Player" && !hasTriggered)
         {
             helpMessagePanel.SetActive(true);
+            helpMessagePanel.transform.position = new Vector3(helpMessagePanel.transform.position.x, helpMessagePanel.transform.position.y - 200, 0);
             helpMessagePanel.transform.GetChild(0).gameObject.SetActive(false);
             helpMessagePanel.transform.GetChild(1).gameObject.SetActive(false);
             helpMessagePanel.transform.GetChild(2).gameObject.SetActive(true);
