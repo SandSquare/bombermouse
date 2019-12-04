@@ -6942,6 +6942,8 @@ MonoBehaviour:
   firstMessageTime: 5
   secondMessage: {fileID: 1136646453}
   secondMessageTime: 7
+  powerUpMessage: {fileID: 0}
+  powerUpMessageTime: 5
 --- !u!114 &1019281741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13044,7 +13046,7 @@ PrefabInstance:
     - target: {fileID: 8061403640171679704, guid: b6cf7ade773b0484693d052f3c701762,
         type: 3}
       propertyPath: clearTime
-      value: 40
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 2407084562956354730, guid: b6cf7ade773b0484693d052f3c701762,
         type: 3}
