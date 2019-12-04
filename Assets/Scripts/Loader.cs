@@ -11,7 +11,7 @@ public class Loader : MonoBehaviour
     public GameObject soundManager;
 
     [SerializeField]
-    private bool soundsOn = false;
+    private GameObject backgroundCanvas = null;
 
     void Awake()
     {
@@ -27,5 +27,9 @@ public class Loader : MonoBehaviour
             Instantiate(soundManager);
         //    //Instantiate SoundManager prefab
         //    Instantiate(soundManager);
+
+        backgroundCanvas.GetComponent<Canvas>().worldCamera = GetComponent<Camera>();
+
+        Instantiate(backgroundCanvas);
     }
 }
