@@ -15,6 +15,10 @@ public class HelpMessage : MonoBehaviour
     private GameObject secondMessage;
     [SerializeField]
     private float secondMessageTime = 7f;
+    [SerializeField]
+    private GameObject powerUpMessage;
+    [SerializeField]
+    private float powerUpMessageTime = 5f;
 
     private bool isBombPickedup;
     private bool isPowerupPickedup;
@@ -55,7 +59,7 @@ public class HelpMessage : MonoBehaviour
                     timer = 0;
                     firstMessage.SetActive(false);
                     messagePanel.SetActive(true);
-                    secondMessage.SetActive(true);
+                    powerUpMessage.SetActive(true);
 
                     secondMessageShown = true;
                 }
