@@ -19,17 +19,12 @@ public class InventoryUI : MonoBehaviour
     private Sprite[] bombColors;
 
     [SerializeField]
-    private Sprite powerUp;
-
+    private GameObject powerUpIconUI;
 
     [SerializeField]
     private int maxSize = 6;
 
     private bool bombDeleted = false;
-
-    [SerializeField]
-    private TextMeshProUGUI explosionLengthText;
-
     private Player player;
 
     GameObject normalCount;
@@ -113,7 +108,7 @@ public class InventoryUI : MonoBehaviour
 
     public void PowerUpPicked()
     {
-        gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().sprite = powerUp;
+        powerUpIconUI.SetActive(true);
     }
 
     //public void SelectionHighlight()
@@ -176,18 +171,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    float time = 0;
-    float flashTime = 1;
-    bool flashing = false;
-    GameObject firstBombSlot;
-
-    private void FlashBomb(GameObject bombSlotChild)
-    {
-        flashing = true;
-        firstBombSlot = bombSlotChild;
-    }
-    
-
     public void AddBomb(GameObject gameObject)
     {
         GameObject newSlot = Instantiate(bombSlot, Vector3.zero, Quaternion.identity);
@@ -215,20 +198,8 @@ public class InventoryUI : MonoBehaviour
 
         bombDeleted = true;
         HighlightFirstBomb();
-    }
 
-    private void FixedUpdate()
-    {
-        if (flashing)
-        {
-            //Image img = firstBombSlot.transform.GetChild(1).GetComponent<Image>();
-            //while (time < flashTime)
-            //{
-            //    time += Time.deltaTime;
-            //    img.color += ;
-            //}
-            //time = 0;
-        }
+        powerUpIconUI.SetActive(false);
     }
 
     //public void UpdateCounts()
