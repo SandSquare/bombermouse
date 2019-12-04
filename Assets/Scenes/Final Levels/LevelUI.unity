@@ -2625,10 +2625,10 @@ MonoBehaviour:
   LosePanelUI: {fileID: 2079880407}
   WinPanelUI: {fileID: 2038489144}
   OptionsPanelUI: {fileID: 1153917056}
-  resumeButton: {fileID: 0}
-  restartButton: {fileID: 0}
-  nextLevelButton: {fileID: 0}
-  volumeSlider: {fileID: 0}
+  resumeButton: {fileID: 222415322}
+  restartButton: {fileID: 245966734}
+  nextLevelButton: {fileID: 627045147}
+  volumeSlider: {fileID: 1032188297}
   windowOpen: 0
 --- !u!1 &915488046
 GameObject:
@@ -4633,7 +4633,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9b077841f8d6e4a4cbb8b285b7b1e3f1, type: 3}
   - {fileID: 21300000, guid: 40595cb35d7158949bef740421900fac, type: 3}
   - {fileID: 21300000, guid: 284edbdbecac2c84aac8598b6f7861ae, type: 3}
-  powerUp: {fileID: 21300000, guid: 3440dea0ddf14c744bc2a104fdd6c5ee, type: 3}
   powerUpIconUI: {fileID: 1829213238}
   maxSize: 8
 --- !u!114 &1492171232

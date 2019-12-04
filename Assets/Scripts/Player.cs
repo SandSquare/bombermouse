@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
                 //ToggleDropBomb();
                 DropBomb();
             }
-
             if (Input.GetButtonDown("Fire3"))
             {
                 //ToggleBomb();
