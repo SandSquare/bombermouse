@@ -72,13 +72,14 @@ public class Movement : MonoBehaviour
         {
             shouldIdle = true;
         }
-
+        //if (lastMove != direction && legalMove)
         if (lastMove != direction && legalMove)
         {
             walking = false;
             anim.SetBool("Walking", !shouldIdle);
         }
 
+        //if (direction != Vector2.zero && legalMove)
         if (direction != Vector2.zero && legalMove)
         {
             // start moving your character
@@ -120,7 +121,7 @@ public class Movement : MonoBehaviour
         anim.SetFloat("MoveY", direction.y);
         while (t < 1.0f) // loop while player is not in the right spot
         {
-            if(t > 0.9f)
+            if (t > 0.9f)
             {
                 acceptingInput = true;
             }

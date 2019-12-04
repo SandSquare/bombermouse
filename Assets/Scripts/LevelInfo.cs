@@ -18,11 +18,18 @@ public class LevelInfo : MonoBehaviour
 
     public static LevelInfo instance = null;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.Instance.PlayMusic("BGM2");
+        if (SoundManager.Instance.currentMusicSource == null)
+        {
+            SoundManager.Instance.PlayMusic("BGM2");
+        }
+        else if (SoundManager.Instance.currentMusicSource.clip.name == "Menumusic2")
+        {
+            SoundManager.Instance.PlayMusic("BGM2");
+        }
     }
 
     private void Awake()
