@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 222415325}
   - component: {fileID: 222415324}
   m_Layer: 5
-  m_Name: Backbutton (1)
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -976,7 +976,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1436,7 +1436,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1724,7 +1724,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1944,7 +1944,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2164,7 +2164,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2625,6 +2625,10 @@ MonoBehaviour:
   LosePanelUI: {fileID: 2079880407}
   WinPanelUI: {fileID: 2038489144}
   OptionsPanelUI: {fileID: 1153917056}
+  resumeButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  nextLevelButton: {fileID: 0}
+  volumeSlider: {fileID: 0}
   windowOpen: 0
 --- !u!1 &915488046
 GameObject:
@@ -3076,7 +3080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 222415322}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &989938190
@@ -3800,7 +3804,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4259,7 +4263,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4300,6 +4304,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 989938189}
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 222415322}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5205,7 +5220,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5693,7 +5708,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed6131f7f92775242ad87c3957ba5273, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: e25770d0ecd272e498b4726db3c410b5, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5723,6 +5738,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 989938189}
+        m_MethodName: SetSelectedGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1032188297}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

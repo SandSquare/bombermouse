@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +18,16 @@ public class UIManager : MonoBehaviour
     public GameObject WinPanelUI;
     [SerializeField]
     private GameObject OptionsPanelUI;
+
+    [SerializeField]
+    GameObject resumeButton;
+    [SerializeField]
+    GameObject restartButton;
+    [SerializeField]
+    GameObject nextLevelButton;
+    [SerializeField]
+    GameObject volumeSlider;
+
 
     private int levelToLoad;
 
@@ -60,6 +71,7 @@ public class UIManager : MonoBehaviour
         }
         LosePanelUI.SetActive(true);
         windowOpen = true;
+        EventSystem.current.SetSelectedGameObject(restartButton);
     }
 
     public void OpenWinPanel(int level)
@@ -75,6 +87,7 @@ public class UIManager : MonoBehaviour
         }
         WinPanelUI.SetActive(true);
         windowOpen = true;
+        EventSystem.current.SetSelectedGameObject(nextLevelButton);
     }
 
     public void MenuPanel()
@@ -89,6 +102,7 @@ public class UIManager : MonoBehaviour
             {
                 PausePanelUI.SetActive(false);
                 windowOpen = false;
+                EventSystem.current.SetSelectedGameObject(resumeButton);
                 Time.timeScale = 1;
             }
         }
@@ -97,6 +111,7 @@ public class UIManager : MonoBehaviour
             PausePanelUI.SetActive(true);
             windowOpen = true;
             Time.timeScale = 0;
+            
         }
     }
 
@@ -107,6 +122,7 @@ public class UIManager : MonoBehaviour
             OptionsPanelUI.SetActive(true);
             PausePanelUI.SetActive(false);
             windowOpen = true;
+            
         }
     }
 
