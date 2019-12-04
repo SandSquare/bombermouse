@@ -136,6 +136,7 @@ public class UIManager : MonoBehaviour
     {
         OptionsPanelUI.SetActive(false);
         PausePanelUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 

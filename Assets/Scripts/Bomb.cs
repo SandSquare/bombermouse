@@ -54,6 +54,7 @@ public class Bomb : MonoBehaviour
     private void Explode()
     {
         //Center explosion sprite switch and instantiate
+        SoundManager.Instance.PlaySFX("Bomb");
         GameObject centerFire = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         StartCoroutine(CreateExplosions(Vector3.up));

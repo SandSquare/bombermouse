@@ -108,6 +108,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator Move(Vector2 direction)
     {
+        SoundManager.Instance.PlaySFX("Walk");
         // Lerp(Vector2 a, Vector2 b, float t);
         Vector2 orgPos = transform.position; // original position
         Vector2 newPos = orgPos + direction; // new position after move is done

@@ -40,4 +40,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void PlayClick()
+    {
+        SoundManager.Instance.PlaySFX("Click2");
+    }
+
 }

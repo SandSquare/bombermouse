@@ -261,18 +261,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &150490451 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 910369150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b42581b9a89b164486290955f2e3158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &198411857
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,9 +354,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -532,9 +520,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1071,7 +1059,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.938931
+  orthographic size: 7.936078
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1332,9 +1320,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1967,46 +1955,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[12].name
-      value: WoodBoxDestroy
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[12].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7c928c54eb65ced438d3c4b761f639f6, type: 3}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[12].volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[12].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[13].name
-      value: WoodBoxDestroy
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[13].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7c928c54eb65ced438d3c4b761f639f6, type: 3}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[13].volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
-        type: 3}
-      propertyPath: sounds.Array.data[13].pitch
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 456294152723711307, guid: 76853fb272df4084181b83813b88b7a4,
         type: 3}
@@ -4571,6 +4519,7 @@ GameObject:
   - component: {fileID: 1465483763}
   - component: {fileID: 1465483762}
   - component: {fileID: 1465483761}
+  - component: {fileID: 1465483764}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -4670,6 +4619,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465483759}
   m_CullTransparentMesh: 0
+--- !u!114 &1465483764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465483759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e45ec406d80946429a2b6c14de2c79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1473399674
 GameObject:
   m_ObjectHideFlags: 0
@@ -5350,9 +5311,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5733,9 +5694,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5959,9 +5920,9 @@ MonoBehaviour:
           m_StringArgument: Click2
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 150490451}
-        m_MethodName: PlaySFX
-        m_Mode: 5
+      - m_Target: {fileID: 644128643}
+        m_MethodName: PlayClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

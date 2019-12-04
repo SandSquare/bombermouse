@@ -61,10 +61,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-    }
-
     public void PlaySFX(string name)
     {
         if (sfxOn)

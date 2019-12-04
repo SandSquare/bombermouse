@@ -76,7 +76,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: GlassWallDestroy
-    clip: {fileID: 8300000, guid: d41d23bcf36dca24ea80fb1d8b0da46d, type: 3}
+    clip: {fileID: 8300000, guid: 0ce397d08655be74ab35595e7b7f1df5, type: 3}
     volume: 0.6
     pitch: 1
     loop: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: WoodBoxDestroy
-    clip: {fileID: 8300000, guid: 7c928c54eb65ced438d3c4b761f639f6, type: 3}
+    clip: {fileID: 8300000, guid: 33bfac1618f42d04091ef56ce780f550, type: 3}
     volume: 0.4
     pitch: 1
     loop: 0
@@ -116,6 +116,18 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Walk
+    clip: {fileID: 8300000, guid: f9339e766adad9748b82db2c7626f0a8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bomb
+    clip: {fileID: 8300000, guid: 60cb42a01c7661e488f80fd88fda95b2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
   currentEffectsSource: {fileID: 0}
   currentMusicSource: {fileID: 0}
