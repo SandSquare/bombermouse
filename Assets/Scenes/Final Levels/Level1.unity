@@ -8173,7 +8173,22 @@ PrefabInstance:
     - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
         type: 3}
       propertyPath: orthographic size
-      value: 7.938883
+      value: 7.896342
+      objectReference: {fileID: 0}
+    - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 731739492744922597, guid: 146436f5e7ba1a44fb611713309c9f2b,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146436f5e7ba1a44fb611713309c9f2b, type: 3}
@@ -9144,6 +9159,8 @@ MonoBehaviour:
   firstMessageTime: 5
   secondMessage: {fileID: 1835860683}
   secondMessageTime: 10
+  powerUpMessage: {fileID: 0}
+  powerUpMessageTime: 5
 --- !u!4 &1969393675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2984548040167917255, guid: 047bf3551dab97f4f939c5027b2ebc51,

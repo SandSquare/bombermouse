@@ -35,18 +35,16 @@ public class HelpMessage : MonoBehaviour
             timer += Time.deltaTime;
             if (!UIManager.Instance.windowOpen && !GameManager.instance.doingSetup)
             {
-                if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") || timer > firstMessageTime && !firstMessageShown)
-                {
-                    //TODO: SECOND MESSAGE DOESNT DISAPPEAR timer resets maybe
-                    
-                    if (!secondMessage.activeInHierarchy && firstMessage.activeInHierarchy)
+                if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") && !firstMessageShown)
+                {  
+                    if (!secondMessage.activeInHierarchy && firstMessage.activeInHierarchy && secondMessage != null)
                     {
                         timer = 0; 
                         firstMessage.SetActive(false);
                         messagePanel.SetActive(false);
                     }
                 }
-                else if (isBombPickedup && !secondMessageShown)
+                else if (isBombPickedup && !secondMessageShown && secondMessage != null)
                 {
                     timer = 0;
                     firstMessage.SetActive(false);
@@ -70,7 +68,6 @@ public class HelpMessage : MonoBehaviour
 
         if(secondMessageShown && timer > secondMessageTime)
         {
-            Debug.Log("Hide seconcd Message!");
             messagePanel.SetActive(false);
             secondMessage.SetActive(false);
             timer = 0;
@@ -79,11 +76,17 @@ public class HelpMessage : MonoBehaviour
 
     public void PlayerPickUpMessage()
     {
-        isBombPickedup = true;
+        if(firstMessage != null)
+        {
+            isBombPickedup = true;
+        }
     }
 
     public void PlayerPowerUpMessage()
     {
-        isPowerupPickedup = true;
+        if(powerUpMessage != null)
+        {
+            isPowerupPickedup = true;
+        }   
     }
 }
