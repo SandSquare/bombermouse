@@ -144,21 +144,9 @@ public class UIManager : MonoBehaviour
     {
         if (levelToLoad <= 1)
         {
-            //SoundManager.Instance.PlayMusic("BackgroundMusic");
-            //FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             GameManager.instance.LoadNextScene(levelToLoad);
             return;
         }
-
-        //GameManager.instance.LoadNextScene(levelToLoad);
-        // if (levelToLoad <= 1)
-        // {
-        //     GameManager.instance.LoadNextScene(levelToLoad);
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //     return;
-        // }
-        // GameManager.instance.LoadNextScene(levelToLoad);
     }
 
     public void OnRestartButton()
