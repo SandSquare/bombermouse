@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        SoundManager.Instance.Stop("GameOver");
+        SoundManager.Instance.PlaySFX("Restart");
         Debug.Log("Restarted scene " + level);
         //InitGame();
         //SceneManager.LoadScene(level);

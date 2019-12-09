@@ -19,9 +19,12 @@ public class HelpMessage : MonoBehaviour
     private GameObject powerUpMessage;
     [SerializeField]
     private float powerUpMessageTime = 5f;
+    [SerializeField]
+    private bool showFirstMessageOnly = false;
 
     private bool isBombPickedup;
     private bool isPowerupPickedup;
+
 
     private float timer;
 
@@ -36,37 +39,53 @@ public class HelpMessage : MonoBehaviour
             if (!UIManager.Instance.windowOpen && !GameManager.instance.doingSetup)
             {
                 if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") && !firstMessageShown)
-                {  
-                    if (!secondMessage.activeInHierarchy && firstMessage.activeInHierarchy && secondMessage != null)
+                {
+                    if (firstMessage.activeInHierarchy)
                     {
-                        timer = 0; 
+                        if(secondMessage == null)
+                        {
+                            firstMessage.SetActive(false);
+                            messagePanel.SetActive(false);
+                            timer = 0;
+                        }
+                        else
+                        {
+                            if (!secondMessage.activeInHierarchy)
+                            {
+                                firstMessage.SetActive(false);
+                                messagePanel.SetActive(false);
+                                timer = 0;
+                                Debug.Log("timer reset 2");
+                            }
+                        }
+                    }                }
+                if (!showFirstMessageOnly)
+                {
+                    if (isBombPickedup && !secondMessageShown && secondMessage != null)
+                    {
+                        timer = 0;
                         firstMessage.SetActive(false);
-                        messagePanel.SetActive(false);
+                        messagePanel.SetActive(true);
+                        secondMessage.SetActive(true);
+                        messagePanel.transform.GetChild(2).gameObject.SetActive(false);
+
+                        secondMessageShown = true;
                     }
-                }
-                else if (isBombPickedup && !secondMessageShown && secondMessage != null)
-                {
-                    timer = 0;
-                    firstMessage.SetActive(false);
-                    messagePanel.SetActive(true);
-                    secondMessage.SetActive(true);
-                    messagePanel.transform.GetChild(2).gameObject.SetActive(false);
 
-                    secondMessageShown = true;
-                }
-                else if(isPowerupPickedup && !secondMessageShown)
-                {
-                    timer = 0;
-                    firstMessage.SetActive(false);
-                    messagePanel.SetActive(true);
-                    powerUpMessage.SetActive(true);
+                    else if (isPowerupPickedup && !secondMessageShown)
+                    {
+                        timer = 0;
+                        firstMessage.SetActive(false);
+                        messagePanel.SetActive(true);
+                        powerUpMessage.SetActive(true);
 
-                    secondMessageShown = true;
+                        secondMessageShown = true;
+                    }
                 }
             }
         }
 
-        if(secondMessageShown && timer > secondMessageTime)
+        if (secondMessageShown && timer > secondMessageTime && secondMessage.activeInHierarchy)
         {
             messagePanel.SetActive(false);
             secondMessage.SetActive(false);
@@ -76,7 +95,7 @@ public class HelpMessage : MonoBehaviour
 
     public void PlayerPickUpMessage()
     {
-        if(firstMessage != null)
+        if (firstMessage != null)
         {
             isBombPickedup = true;
         }
@@ -84,9 +103,9 @@ public class HelpMessage : MonoBehaviour
 
     public void PlayerPowerUpMessage()
     {
-        if(powerUpMessage != null)
+        if (powerUpMessage != null)
         {
             isPowerupPickedup = true;
-        }   
+        }
     }
 }

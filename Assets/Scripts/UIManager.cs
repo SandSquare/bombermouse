@@ -163,9 +163,8 @@ public class UIManager : MonoBehaviour
 
     public void OnRestartButton()
     {
-        //SoundManager.Instance.PlayMusic("BackgroundMusic");
-        //FindObjectOfType<SoundManager>().PlaySFX("BackgroundMusic");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.instance.RestartLevel();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnMainMenuButton()

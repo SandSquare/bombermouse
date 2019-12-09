@@ -151,10 +151,10 @@ public class Player : MonoBehaviour
         //Play death animation and then open lose panel
 
         UIManager.Instance.OpenLosePanel();
-        FindObjectOfType<SoundManager>().Stop("BackgroundMusic");
-        FindObjectOfType<SoundManager>().PlaySFX("GameOver");
+        SoundManager.Instance.Stop("BackgroundMusic");
+        SoundManager.Instance.PlaySFX("GameOver");
     }
-
+    
     private void DropBomb()
     {
         if (bombList.Count > 0)
