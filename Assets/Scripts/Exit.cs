@@ -13,11 +13,14 @@ public class Exit : MonoBehaviour
     LevelTimer timer;
     int level;
 
+    private Animator playerAnimator;
+
     private void Start()
     {
         //gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         isColliding = false;
         level = GameManager.instance.level;
+        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +35,7 @@ public class Exit : MonoBehaviour
             FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");
 
             other.gameObject.GetComponent<Movement>().enabled = false;
+            playerAnimator.SetBool("Walking", false);
             //FindObjectOfType<SoundManager>().PlaySFX("LevelComplete");
 
             SoundManager.Instance.Stop(SoundManager.Instance.currentMusicSource.name);
