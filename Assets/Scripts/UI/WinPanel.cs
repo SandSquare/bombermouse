@@ -12,6 +12,9 @@ public class WinPanel : MonoBehaviour
     [SerializeField]
     private LevelTimer levelTimer;
 
+    [SerializeField]
+    GameObject victoryParticles;
+
     //private LevelInfo levelInfo;
     private float levelClearTime;
 
@@ -25,6 +28,7 @@ public class WinPanel : MonoBehaviour
 
         GetTime();
         DisplayStars();
+        victoryParticles.SetActive(true);
     }
 
     void GetTime()
