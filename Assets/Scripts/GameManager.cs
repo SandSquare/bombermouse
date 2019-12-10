@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public float gameClearDelay = 5f;
     public float splashScreenStartDelay = .05f;
 
+    public float percentToTwoStars = 2.0f;
+    public float percentToThreeStars = 1.25f;
+
     [SerializeField]
     public int maxLevels;
 

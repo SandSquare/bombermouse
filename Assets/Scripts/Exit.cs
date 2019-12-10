@@ -59,11 +59,11 @@ public class Exit : MonoBehaviour
         int score = 1;
         timer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
         float bestTime = LevelInfo.instance.clearTime;
-        if (timer.levelTimer < bestTime)
+        if (timer.levelTimer < bestTime * GameManager.instance.percentToThreeStars)
         {
             score = 3;
         }
-        else if (timer.levelTimer < bestTime * 2)
+        else if (timer.levelTimer < bestTime * GameManager.instance.percentToTwoStars)
         {
             score = 2;
         }
