@@ -129,6 +129,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Restart
+    clip: {fileID: 8300000, guid: 7b77cb2ed71e06249af000960c2a954c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentEffectsSource: {fileID: 0}
   currentMusicSource: {fileID: 0}
   musicVolume: 0.5

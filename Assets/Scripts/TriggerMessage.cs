@@ -26,6 +26,7 @@ public class TriggerMessage : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Debug.Log
         if (hasTriggered && helpMessagePanel.activeInHierarchy)
         {
             timer += Time.deltaTime;
@@ -34,6 +35,7 @@ public class TriggerMessage : MonoBehaviour
                 helpMessagePanel.transform.GetChild(2).gameObject.SetActive(false);
                 helpMessagePanel.SetActive(false);
                 timer = 0;
+                Debug.Log("timer reset");
             }
         }
     }
