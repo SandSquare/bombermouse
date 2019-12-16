@@ -120,7 +120,6 @@ public class GameManager : MonoBehaviour
         levelNumber.text = $"Level {level - 1}:";
         levelName.text = levelNames[level] != "" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
-        GameObject.FindObjectOfType<LightController>().DoLights();
         Invoke("HideLevelImage", levelStartDelay);
     }
 
@@ -128,6 +127,7 @@ public class GameManager : MonoBehaviour
     {
         levelImage.SetActive(false);
         doingSetup = false;
+        GameObject.FindObjectOfType<LightController>().DoLights();
         levelName.text = "";
     }
 
