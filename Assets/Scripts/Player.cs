@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
             }
             else if (collect.ItemProperty == Collect.ItemType.PowerUp)
             {
+                Instantiate(starParticle, other.transform.position, Quaternion.identity);
+
                 Debug.Log("PowerUp found!");
                 FindObjectOfType<SoundManager>().PlaySFX("PowerUp");
                 InventoryUI.instance.PowerUpPicked();

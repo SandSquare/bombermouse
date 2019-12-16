@@ -36,16 +36,16 @@ public class Collect : MonoBehaviour
 
     private void Update()
     {
-        //time += Time.deltaTime;
-        //if ((int)time%2==0)
-        //{
-        //    direction = 1;
-        //}
-        //else
-        //{
-        //    direction = -1;
-        //}
-            transform.RotateAround(transform.position, Vector3.up, direction * rotationSpeed * Time.deltaTime);
+        time += Time.deltaTime;
+        if ((int)time % 2 == 0)
+        {
+            direction = 1;
+        }
+        else
+        {
+            direction = -1;
+        }
+        transform.RotateAround(transform.position, Vector3.up, direction * rotationSpeed * Time.deltaTime);
     }
 
     public enum ItemType

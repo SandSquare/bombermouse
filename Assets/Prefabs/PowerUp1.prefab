@@ -98,7 +98,7 @@ MonoBehaviour:
   pickupType: 0
   ItemProperty: 1
   powerUpValue: 18
-  rotationSpeed: 30
+  rotationSpeed: 90
 --- !u!61 &3344651557004147703
 BoxCollider2D:
   m_ObjectHideFlags: 0

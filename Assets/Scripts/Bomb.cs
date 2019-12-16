@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        Animate();
+        //Animate();
     }
 
     private void Animate()
@@ -63,7 +63,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector3.down));
         StartCoroutine(CreateExplosions(Vector3.left));
 
-        GetComponent<SpriteRenderer>().enabled = false;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
         Destroy(gameObject, fuseTime);
     }
 
