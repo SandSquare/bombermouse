@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
-        GameObject.FindObjectOfType<LightController>().DoLights();
+        //GameObject.FindObjectOfType<LightController>().DoLights();
         levelManager = Instantiate(levelManager);
         //bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         levelNumber.text = $"Level {level - 1}:";
         levelName.text = levelNames[level] != "" ? levelNames[level] : "Default Level Name";
         levelImage.SetActive(true);
-
+        GameObject.FindObjectOfType<LightController>().DoLights();
         Invoke("HideLevelImage", levelStartDelay);
     }
 
