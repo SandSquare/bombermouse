@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         splashScreen = Instantiate(splashScreen);
+        GameObject.FindObjectOfType<LightController>().DoLights();
         levelManager = Instantiate(levelManager);
         //bombText = splashScreen.transform.Find("BombText").GetComponent<Text>();
         levelImage = splashScreen.transform.GetChild(1).gameObject;
