@@ -44,6 +44,7 @@ public class Wall : MonoBehaviour
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
             GetComponent<Animator>().enabled = true;
             animator.SetBool("breakingDown", true);
+            GetComponent<Collider2D>().enabled = false;
             Invoke("BreakBox", 0.75f);
         }
 
@@ -51,6 +52,7 @@ public class Wall : MonoBehaviour
         {
             Debug.Log("väri seinä tuhottu");
             FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
+            GetComponent<Collider2D>().enabled = false;
             GetComponent<Animator>().enabled = true;
             Invoke("BreakBox", 0.75f);
         } 

@@ -89,7 +89,16 @@ public class HelpMessage : MonoBehaviour
         {
             messagePanel.SetActive(false);
             secondMessage.SetActive(false);
+            
             timer = 0;
+        }
+        if(powerUpMessage != null)
+        {
+            if(powerUpMessage.activeInHierarchy && timer > powerUpMessageTime)
+            {
+                messagePanel.SetActive(false);
+                powerUpMessage.SetActive(false);
+            }
         }
     }
 
