@@ -29,11 +29,13 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public Dictionary<ObjectColors, int> bombCountDictionary;
 
+    [SerializeField]
+    GameObject starParticle;
+
     void Start()
     {
         legalMove = true;
         movement = GetComponent<Movement>();
-
 
         helpMessageUI = GameObject.Find("HelpMessageUI")?.GetComponent<HelpMessage>();
 
@@ -118,6 +120,8 @@ public class Player : MonoBehaviour
             //isColliding = true;
             if (collect.ItemProperty == Collect.ItemType.Bomb)
             {
+                Instantiate(starParticle, other.transform.position, Quaternion.identity);
+
                 Debug.Log($"{collect.pickupType} Bomb found!");
                 bombList.Add(collect.pickupType);
                 //UpdateBombAmounts();
