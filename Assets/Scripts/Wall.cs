@@ -17,11 +17,12 @@ public class Wall : MonoBehaviour
     [SerializeField, Range(0, 1)]
     private float destroyDelay = 0.05f;
 
-    public bool breakingDown = false;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         if(WallProperty == WallType.HitpointWall)
         {
             //GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
@@ -35,14 +36,14 @@ public class Wall : MonoBehaviour
             hitpoints -= wallDamage;
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDamage");
             //GetComponentInChildren<TextMeshProUGUI>().text = hitpoints.ToString();
-            GetComponent<SpriteRenderer>().sprite = sprite;
+            GetComponent<Animator>().enabled = true;
         }
         else if (hitpoints <= 1 && WallProperty == WallType.HitpointWall || WallProperty == WallType.Normal)
         {
             Debug.Log("Normaali seinä tuhottu");
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
-            breakingDown = true;
             GetComponent<Animator>().enabled = true;
+            animator.SetBool("breakingDown", true);
             Invoke("BreakBox", 0.75f);
         }
 
@@ -50,7 +51,6 @@ public class Wall : MonoBehaviour
         {
             Debug.Log("väri seinä tuhottu");
             FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
-            breakingDown = true;
             GetComponent<Animator>().enabled = true;
             Invoke("BreakBox", 0.75f);
         } 
