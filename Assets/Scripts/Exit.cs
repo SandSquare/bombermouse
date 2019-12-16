@@ -69,8 +69,11 @@ public class Exit : MonoBehaviour
         }
         int previousBestTime = LevelManager.instance.levelPoints[level - 2];
         LevelManager.instance.levelPoints[GameManager.instance.level - 2] = Mathf.Max(previousBestTime,score);
-        int nextLevelPreviousTime = LevelManager.instance.levelPoints[level - 1];
-        LevelManager.instance.levelPoints[GameManager.instance.level - 1] = Mathf.Max(nextLevelPreviousTime, 0);
+        if(level - 1 < GameManager.instance.maxLevels-2)
+        {
+            int nextLevelPreviousTime = LevelManager.instance.levelPoints[level - 1];
+            LevelManager.instance.levelPoints[GameManager.instance.level - 1] = Mathf.Max(nextLevelPreviousTime, 0);
+        }
         SaveSystem.SaveGameData(LevelManager.instance);
     }
 }

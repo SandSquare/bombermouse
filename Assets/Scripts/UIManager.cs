@@ -178,14 +178,18 @@ public class UIManager : MonoBehaviour
 
     private void DoInputs()
     {
-        if (Input.GetKeyDown("r"))
+        if (!GameManager.instance.doingSetup)
         {
-            GameManager.instance.RestartLevel();
+            if (Input.GetKeyDown("r"))
+            {
+                GameManager.instance.RestartLevel();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Instance.MenuPanel();
+            }
         }
-        else if (Input.GetButtonDown("Cancel"))
-        {
-            Instance.MenuPanel();
-        }
+        
     }
 
     public void AddBomb(ObjectColors pickupType)
