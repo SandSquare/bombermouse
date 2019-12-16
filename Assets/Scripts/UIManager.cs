@@ -182,7 +182,7 @@ public class UIManager : MonoBehaviour
         {
             GameManager.instance.RestartLevel();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetButtonDown("Cancel"))
         {
             Instance.MenuPanel();
         }

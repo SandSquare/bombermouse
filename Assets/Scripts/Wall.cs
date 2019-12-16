@@ -17,6 +17,8 @@ public class Wall : MonoBehaviour
     [SerializeField, Range(0, 1)]
     private float destroyDelay = 0.05f;
 
+    public bool breakingDown = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +41,24 @@ public class Wall : MonoBehaviour
         {
             Debug.Log("Normaali seinä tuhottu");
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
-            Destroy(gameObject, destroyDelay);
+            breakingDown = true;
+            GetComponent<Animator>().enabled = true;
+            Invoke("BreakBox", 1f);
         }
 
         else if (WallProperty == WallType.ColorWall)
         {
             Debug.Log("väri seinä tuhottu");
             FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
-            Destroy(gameObject, destroyDelay);
+            breakingDown = true;
+            GetComponent<Animator>().enabled = true;
+            Invoke("BreakBox", 1f);
         } 
+    }
+
+    public void BreakBox()
+    {
+        Destroy(gameObject, destroyDelay);
     }
 
     public enum WallType

@@ -57,6 +57,7 @@ public class Bomb : MonoBehaviour
         SoundManager.Instance.PlaySFX("Bomb");
         GameObject centerFire = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+        FindObjectOfType<ShakeBehavior>().TriggerShake();
         StartCoroutine(CreateExplosions(Vector3.up));
         StartCoroutine(CreateExplosions(Vector3.right));
         StartCoroutine(CreateExplosions(Vector3.down));
