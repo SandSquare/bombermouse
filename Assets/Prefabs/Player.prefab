@@ -54,7 +54,11 @@ MonoBehaviour:
   - {fileID: 8783000980806767198, guid: 2f97a5a360ee992438012ce1c9c3901e, type: 3}
   - {fileID: 8783000980806767198, guid: 8092c187e3c50474284a9b666d7fee2e, type: 3}
   explosionLength: 0
+  powerUp: {fileID: 0}
   bombList: 
+  currentColor: 0
+  starParticle: {fileID: 4379819895019742982, guid: 6b9351a89fb899342bde292ea16c7fd6,
+    type: 3}
 --- !u!212 &3778266850972728838
 SpriteRenderer:
   m_ObjectHideFlags: 0
