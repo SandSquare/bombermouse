@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spotLight: {fileID: 4468931647976089141}
   globalLight: {fileID: 4468931649802486144}
+  spotLightSpeed: 7
 --- !u!1 &4468931649802486144
 GameObject:
   m_ObjectHideFlags: 0

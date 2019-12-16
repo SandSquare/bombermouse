@@ -11,6 +11,9 @@ public class LightController : MonoBehaviour
     [SerializeField]
     private GameObject globalLight;
 
+    [SerializeField]
+    private float spotLightSpeed = 5f;
+
     private GameObject exit;
     private GameObject player;
 
@@ -50,7 +53,7 @@ public class LightController : MonoBehaviour
     {
         while (Vector3.Distance(spotLight.transform.position, player.transform.position) > 0.05f)
         {
-            spotLight.transform.position = Vector2.MoveTowards(spotLight.transform.position, player.transform.position, 5f * Time.deltaTime);
+            spotLight.transform.position = Vector2.MoveTowards(spotLight.transform.position, player.transform.position, spotLightSpeed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
 
