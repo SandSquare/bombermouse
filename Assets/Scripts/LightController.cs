@@ -41,8 +41,6 @@ public class LightController : MonoBehaviour
             spotLight.SetActive(true);
             globalLight.GetComponent<Light2D>().intensity = 0.2f;
 
-            Debug.Log("lights are happening");
-
             if (!UIManager.Instance.windowOpen && !GameManager.instance.doingSetup && !lightMoved)
             {
                
@@ -51,7 +49,6 @@ public class LightController : MonoBehaviour
                 lightsHappened = true;
             }
         }
-        Debug.Log(startingLights + " " + !lightsHappened);
     }
 
     private IEnumerator MoveTowardsPlayer()
@@ -84,6 +81,5 @@ public class LightController : MonoBehaviour
         lightMoved = false;
         globalLight.GetComponent<Light2D>().intensity = 0.2f;
         spotLight.SetActive(true);
-        Debug.Log("doing lights");
     }
 }

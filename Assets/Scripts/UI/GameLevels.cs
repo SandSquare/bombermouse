@@ -48,7 +48,6 @@ public class GameLevels : MonoBehaviour
                 }
             }
             levelBtn.transform.SetParent(this.gameObject.transform);
-            Debug.Log("Found a scene file: " + levelName);
             if (points[i] == -1)
             {
                 levelBtn.GetComponent<Button>().interactable = false;
@@ -59,7 +58,6 @@ public class GameLevels : MonoBehaviour
                 latestLevel = i;
             }
         }
-        Debug.Log($"latest level: {latestLevel}");
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(transform.GetChild(latestLevel).gameObject);
     }
 }
