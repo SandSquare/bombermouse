@@ -43,7 +43,7 @@ public class Wall : MonoBehaviour
             FindObjectOfType<SoundManager>().PlaySFX("WoodBoxDestroy");
             breakingDown = true;
             GetComponent<Animator>().enabled = true;
-            Invoke("BreakBox", 1f);
+            Invoke("BreakBox", 0.75f);
         }
 
         else if (WallProperty == WallType.ColorWall)
@@ -52,7 +52,7 @@ public class Wall : MonoBehaviour
             FindObjectOfType<SoundManager>().PlaySFX("GlassWallDestroy");
             breakingDown = true;
             GetComponent<Animator>().enabled = true;
-            Invoke("BreakBox", 1f);
+            Invoke("BreakBox", 0.75f);
         } 
     }
 

@@ -48,7 +48,7 @@ MonoBehaviour:
   pickupType: 0
   ItemProperty: 0
   powerUpValue: 1
-  rotationSpeed: 30
+  rotationSpeed: 100
 --- !u!212 &2818890839685805373
 SpriteRenderer:
   m_ObjectHideFlags: 0
