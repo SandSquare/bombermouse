@@ -18,7 +18,7 @@ public class LightController : MonoBehaviour
     private GameObject player;
 
     private bool lightMoved;
-    private bool startingLights = false;
+    private bool startingLights;
     private bool lightsHappened = false;
 
     private void Awake()
@@ -37,16 +37,21 @@ public class LightController : MonoBehaviour
     {
         if (startingLights && !lightsHappened)
         {
+            startingLights = true;
             spotLight.SetActive(true);
             globalLight.GetComponent<Light2D>().intensity = 0.2f;
 
+            Debug.Log("lights are happening");
+
             if (!UIManager.Instance.windowOpen && !GameManager.instance.doingSetup && !lightMoved)
             {
+               
                 StartCoroutine(MoveTowardsPlayer());
 
                 lightsHappened = true;
             }
         }
+        Debug.Log(startingLights + " " + !lightsHappened);
     }
 
     private IEnumerator MoveTowardsPlayer()
@@ -66,7 +71,6 @@ public class LightController : MonoBehaviour
         {
             globalLight.GetComponent<Light2D>().intensity += 0.025f;
             spotLight.GetComponent<Light2D>().intensity -= 0.025f;
-            Debug.Log("global light increased");
             yield return new WaitForEndOfFrame();
         }
 
@@ -76,5 +80,10 @@ public class LightController : MonoBehaviour
     public void DoLights()
     {
         startingLights = true;
+        lightsHappened = false;
+        lightMoved = false;
+        globalLight.GetComponent<Light2D>().intensity = 0.2f;
+        spotLight.SetActive(true);
+        Debug.Log("doing lights");
     }
 }
