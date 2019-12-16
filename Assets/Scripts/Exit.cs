@@ -13,7 +13,15 @@ public class Exit : MonoBehaviour
     LevelTimer timer;
     int level;
 
+    [SerializeField]
+    private GameObject spotLight;
+
+    private GameObject player;
+
     private Animator playerAnimator;
+
+    private bool lightMoved = false;
+
 
     private void Start()
     {
@@ -21,6 +29,7 @@ public class Exit : MonoBehaviour
         isColliding = false;
         level = GameManager.instance.level;
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
