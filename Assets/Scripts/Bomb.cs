@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        //Animate();
+        Animate();
     }
 
     private void Animate()

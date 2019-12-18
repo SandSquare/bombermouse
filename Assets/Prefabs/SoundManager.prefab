@@ -135,6 +135,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: DropBomb
+    clip: {fileID: 8300000, guid: b947c8a56b51b8e4cb3f256821a824cd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentEffectsSource: {fileID: 0}
   currentMusicSource: {fileID: 0}
   musicVolume: 0.5
